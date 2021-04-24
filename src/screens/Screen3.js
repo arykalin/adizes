@@ -117,8 +117,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#e3e3e3",
     height: 852,
-    overflow: "scroll",
-    marginTop: 12
+    overflow: "scroll"
   },
   background: {
     flex: 1

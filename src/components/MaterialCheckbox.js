@@ -6,7 +6,7 @@ function MaterialCheckbox(props) {
   return (
     <TouchableOpacity style={[styles.container, props.style]}>
       <Icon
-        name={props.checked ? "checkbox-marked" : "checkbox-blank-outline"}
+        name={props.checkIcon || "checkbox-blank-outline"}
         style={styles.checkIcon}
       ></Icon>
     </TouchableOpacity>

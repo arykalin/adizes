@@ -60,10 +60,11 @@ function Screen2(props) {
             </View>
             <View style={styles.checkbox1}>
               <MaterialCheckbox
+                checkIconName="checkbox-blank-outline"
                 style={styles.materialCheckbox2}
               ></MaterialCheckbox>
             </View>
-            <View style={styles.checkbox2}>
+            <View style={styles.rect4}>
               <MaterialCheckbox
                 style={styles.materialCheckbox}
               ></MaterialCheckbox>
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
   group: {
     height: 925,
     overflow: "scroll",
-    marginTop: 20
+    backgroundColor: "rgba(230, 230, 230,1)"
   },
   image2: {
     width: 58,
@@ -199,11 +200,10 @@ const styles = StyleSheet.create({
     marginLeft: 48
   },
   materialCheckbox2: {
-    backgroundColor: "rgba(230, 230, 230,1)",
     borderRadius: 20,
     flex: 1
   },
-  checkbox2: {
+  rect4: {
     width: 26,
     height: 26,
     marginTop: 12,
