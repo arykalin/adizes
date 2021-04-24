@@ -43,15 +43,9 @@ const styles = StyleSheet.create({
     flex: 1
   },
   group: {
-    shadowColor: "rgba(100,100,100,1)",
-    shadowOffset: {
-      width: 3,
-      height: 3
-    },
-    elevation: 5,
-    shadowOpacity: 1,
-    shadowRadius: 0,
-    height: 900,
+    flex: 1,
+    backgroundColor: "#e3e3e3",
+    height: 852,
     overflow: "scroll"
   },
   logo: {
