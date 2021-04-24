@@ -97,7 +97,7 @@ function Screen3(props) {
             </View>
             <TouchableOpacity style={styles.button8}>
               <TouchableOpacity
-                onPress={() => props.navigation.navigate("Untitled")}
+                onPress={() => props.navigation.navigate("Screen4")}
                 style={styles.button}
               ></TouchableOpacity>
             </TouchableOpacity>
