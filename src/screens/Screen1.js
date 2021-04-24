@@ -51,9 +51,8 @@ const styles = StyleSheet.create({
     elevation: 5,
     shadowOpacity: 1,
     shadowRadius: 0,
-    flex: 1,
-    marginLeft: 5,
-    marginRight: -5
+    height: 900,
+    overflow: "scroll"
   },
   logo: {
     width: 107,
@@ -77,20 +76,19 @@ const styles = StyleSheet.create({
   },
   back: {
     top: 60,
-    height: 307,
+    height: 340,
     position: "absolute",
     left: 0,
     right: 0
   },
   бизнесИграПосмотриStack: {
-    height: 367,
+    height: 400,
     marginTop: 20
   },
   button: {
     width: 200,
     height: 60,
     borderRadius: 10,
-    marginTop: 33,
     alignSelf: "center"
   },
   rect: {

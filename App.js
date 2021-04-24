@@ -48,9 +48,9 @@ function App() {
 async function loadResourcesAsync() {
   await Promise.all([
     Font.loadAsync({
-      "montserrat-regular": require("./src/assets/fonts/montserrat-regular.ttf"),
+      "montserrat-700": require("./src/assets/fonts/montserrat-700.ttf"),
       "montserrat-600": require("./src/assets/fonts/montserrat-600.ttf"),
-      "montserrat-700": require("./src/assets/fonts/montserrat-700.ttf")
+      "montserrat-regular": require("./src/assets/fonts/montserrat-regular.ttf")
     })
   ]);
 }

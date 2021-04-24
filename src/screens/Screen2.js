@@ -86,12 +86,13 @@ const styles = StyleSheet.create({
     flex: 1
   },
   group: {
-    height: 960,
+    height: 925,
+    overflow: "scroll",
     marginTop: 20
   },
   image2: {
-    width: 219,
-    height: 35,
+    width: 58,
+    height: 34,
     marginTop: 30,
     marginLeft: 20
   },
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
     lineHeight: 14,
     textAlign: "justify",
-    marginTop: 15,
+    marginTop: 16,
     marginLeft: 18,
     marginRight: 18
   },
