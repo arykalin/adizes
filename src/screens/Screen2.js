@@ -7,6 +7,7 @@ import {
   TextInput,
   TouchableOpacity
 } from "react-native";
+import MaterialCheckbox from "../components/MaterialCheckbox";
 
 function Screen2(props) {
   return (
@@ -34,37 +35,38 @@ function Screen2(props) {
         <View style={styles.group2}>
           <View style={styles.registration_form}>
             <View style={styles.name}>
-              <View style={styles.textInputStack}>
+              <View style={styles.rect}>
                 <TextInput
                   placeholder="Lorem Ipsum"
                   style={styles.textInput}
                 ></TextInput>
-                <View style={styles.rect}></View>
               </View>
             </View>
             <View style={styles.surname}>
-              <View style={styles.textInput2Stack}>
+              <View style={styles.rect2}>
                 <TextInput
                   placeholder="Lorem Ipsum"
                   style={styles.textInput2}
                 ></TextInput>
-                <View style={styles.rect2}></View>
               </View>
             </View>
             <View style={styles.email}>
-              <View style={styles.textInput3Stack}>
+              <View style={styles.rect3}>
                 <TextInput
                   placeholder="Lorem Ipsum"
                   style={styles.textInput3}
                 ></TextInput>
-                <View style={styles.rect3}></View>
               </View>
             </View>
             <View style={styles.checkbox1}>
-              <View style={styles.rect4}></View>
+              <MaterialCheckbox
+                style={styles.materialCheckbox2}
+              ></MaterialCheckbox>
             </View>
             <View style={styles.checkbox2}>
-              <View style={styles.rect5}></View>
+              <MaterialCheckbox
+                style={styles.materialCheckbox}
+              ></MaterialCheckbox>
             </View>
           </View>
           <TouchableOpacity
@@ -84,13 +86,12 @@ const styles = StyleSheet.create({
     flex: 1
   },
   group: {
-    flex: 1,
-    marginBottom: -20,
+    height: 960,
     marginTop: 20
   },
   image2: {
     width: 219,
-    height: 28,
+    height: 35,
     marginTop: 30,
     marginLeft: 20
   },
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
     lineHeight: 14,
     textAlign: "justify",
-    marginTop: 22,
+    marginTop: 15,
     marginLeft: 18,
     marginRight: 18
   },
@@ -124,18 +125,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginLeft: 48
   },
-  textInput: {
-    top: 0,
-    left: 0,
-    position: "absolute",
-    fontFamily: "montserrat-600",
-    color: "#121212",
-    bottom: 0,
-    right: 0
-  },
   rect: {
-    top: 0,
-    position: "absolute",
     backgroundColor: "rgba(255,255,255,1)",
     shadowColor: "rgba(74,74,74,1)",
     shadowOffset: {
@@ -146,11 +136,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 10,
     borderRadius: 5,
-    left: 0,
-    right: 0,
-    bottom: 0
+    flex: 1
   },
-  textInputStack: {
+  textInput: {
+    fontFamily: "montserrat-600",
+    color: "#121212",
     flex: 1
   },
   surname: {
@@ -159,18 +149,7 @@ const styles = StyleSheet.create({
     marginTop: 27,
     marginLeft: 48
   },
-  textInput2: {
-    top: 0,
-    left: 0,
-    position: "absolute",
-    fontFamily: "montserrat-600",
-    color: "#121212",
-    bottom: 0,
-    right: 0
-  },
   rect2: {
-    top: 0,
-    position: "absolute",
     backgroundColor: "rgba(255,255,255,1)",
     shadowColor: "rgba(74,74,74,1)",
     shadowOffset: {
@@ -181,11 +160,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 10,
     borderRadius: 5,
-    left: 0,
-    bottom: 0,
-    right: 0
+    flex: 1
   },
-  textInput2Stack: {
+  textInput2: {
+    fontFamily: "montserrat-600",
+    color: "#121212",
     flex: 1
   },
   email: {
@@ -194,18 +173,7 @@ const styles = StyleSheet.create({
     marginTop: 27,
     marginLeft: 48
   },
-  textInput3: {
-    top: 0,
-    left: 0,
-    position: "absolute",
-    fontFamily: "montserrat-600",
-    color: "#121212",
-    bottom: 0,
-    right: 0
-  },
   rect3: {
-    top: 0,
-    position: "absolute",
     backgroundColor: "rgba(255,255,255,1)",
     shadowColor: "rgba(74,74,74,1)",
     shadowOffset: {
@@ -216,11 +184,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 10,
     borderRadius: 5,
-    left: 0,
-    right: 0,
-    bottom: 0
+    flex: 1
   },
-  textInput3Stack: {
+  textInput3: {
+    fontFamily: "montserrat-600",
+    color: "#121212",
     flex: 1
   },
   checkbox1: {
@@ -229,17 +197,9 @@ const styles = StyleSheet.create({
     marginTop: 19,
     marginLeft: 48
   },
-  rect4: {
-    backgroundColor: "rgba(255,255,255,1)",
-    shadowColor: "rgba(74,74,74,1)",
-    shadowOffset: {
-      width: 3,
-      height: 3
-    },
-    elevation: 30,
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    borderRadius: 5,
+  materialCheckbox2: {
+    backgroundColor: "rgba(230, 230, 230,1)",
+    borderRadius: 20,
     flex: 1
   },
   checkbox2: {
@@ -248,17 +208,7 @@ const styles = StyleSheet.create({
     marginTop: 12,
     marginLeft: 48
   },
-  rect5: {
-    backgroundColor: "rgba(255,255,255,1)",
-    shadowColor: "rgba(74,74,74,1)",
-    shadowOffset: {
-      width: 3,
-      height: 3
-    },
-    elevation: 30,
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    borderRadius: 5,
+  materialCheckbox: {
     flex: 1
   },
   button: {

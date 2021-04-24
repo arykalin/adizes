@@ -5,14 +5,14 @@ import { createDrawerNavigator } from "react-navigation-drawer";
 import AppLoading from "expo-app-loading";
 
 import * as Font from "expo-font";
-import Screen3 from "./src/screens/Screen3";
 import Screen1 from "./src/screens/Screen1";
 import Screen2 from "./src/screens/Screen2";
+import Screen3 from "./src/screens/Screen3";
 
 const DrawerNavigation = createDrawerNavigator({
   Screen1: Screen1,
   Screen2: Screen2,
-  Screen3: Screen3,
+  Screen3: Screen3
 });
 
 const StackNavigation = createStackNavigator(
@@ -22,7 +22,7 @@ const StackNavigation = createStackNavigator(
     },
     Screen1: Screen1,
     Screen2: Screen2,
-    Screen3: Screen3,
+    Screen3: Screen3
   },
   {
     headerMode: "none"
@@ -49,7 +49,8 @@ async function loadResourcesAsync() {
   await Promise.all([
     Font.loadAsync({
       "montserrat-regular": require("./src/assets/fonts/montserrat-regular.ttf"),
-      "montserrat-600": require("./src/assets/fonts/montserrat-600.ttf")
+      "montserrat-600": require("./src/assets/fonts/montserrat-600.ttf"),
+      "montserrat-700": require("./src/assets/fonts/montserrat-700.ttf")
     })
   ]);
 }

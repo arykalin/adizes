@@ -7,7 +7,6 @@ import {
   Text,
   TouchableOpacity
 } from "react-native";
-import Button from "../components/Button";
 
 function Screen3(props) {
   return (
@@ -96,11 +95,11 @@ function Screen3(props) {
                 ></Image>
               </TouchableOpacity>
             </View>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("Untitled")}
-              style={styles.button}
-            >
-              <Button style={styles.button}></Button>
+            <TouchableOpacity style={styles.button8}>
+              <TouchableOpacity
+                onPress={() => props.navigation.navigate("Untitled")}
+                style={styles.button}
+              ></TouchableOpacity>
             </TouchableOpacity>
           </View>
         </ImageBackground>
@@ -235,9 +234,24 @@ const styles = StyleSheet.create({
     height: 372,
     marginLeft: -8
   },
+  button8: {
+    width: 239,
+    height: 45,
+    marginTop: 16,
+    alignSelf: "center"
+  },
   button: {
-    width: 342,
-    height: 99
+    backgroundColor: "#ff4d00",
+    borderRadius: 10,
+    shadowColor: "rgba(0,0,0,1)",
+    shadowOffset: {
+      width: 3,
+      height: 3
+    },
+    elevation: 30,
+    shadowOpacity: 1,
+    shadowRadius: 10,
+    flex: 1
   }
 });
 
