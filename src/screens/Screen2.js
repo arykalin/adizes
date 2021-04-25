@@ -87,10 +87,9 @@ const styles = StyleSheet.create({
     flex: 1
   },
   group: {
-    flex: 1,
-    backgroundColor: "#e3e3e3",
-    height: 852,
-    overflow: "scroll"
+    height: 925,
+    overflow: "scroll",
+    backgroundColor: "rgba(230, 230, 230,1)"
   },
   image2: {
     width: 58,

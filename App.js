@@ -9,12 +9,16 @@ import Screen1 from "./src/screens/Screen1";
 import Screen2 from "./src/screens/Screen2";
 import Screen3 from "./src/screens/Screen3";
 import Screen4 from "./src/screens/Screen4";
+import DeathScreen from "./src/screens/DeathScreen";
+import ResurectionScreen from "./src/screens/ResurectionScreen";
 
 const DrawerNavigation = createDrawerNavigator({
   Screen1: Screen1,
   Screen2: Screen2,
   Screen3: Screen3,
-  Screen4: Screen4
+  Screen4: Screen4,
+  DeathScreen: DeathScreen,
+  ResurectionScreen: ResurectionScreen
 });
 
 const StackNavigation = createStackNavigator(
@@ -25,7 +29,9 @@ const StackNavigation = createStackNavigator(
     Screen1: Screen1,
     Screen2: Screen2,
     Screen3: Screen3,
-    Screen4: Screen4
+    Screen4: Screen4,
+    DeathScreen: DeathScreen,
+    ResurectionScreen: ResurectionScreen
   },
   {
     headerMode: "none"
@@ -51,8 +57,8 @@ function App() {
 async function loadResourcesAsync() {
   await Promise.all([
     Font.loadAsync({
-      "montserrat-700": require("./src/assets/fonts/montserrat-700.ttf"),
       "montserrat-600": require("./src/assets/fonts/montserrat-600.ttf"),
+      "montserrat-700": require("./src/assets/fonts/montserrat-700.ttf"),
       "montserrat-regular": require("./src/assets/fonts/montserrat-regular.ttf"),
       "montserrat-800": require("./src/assets/fonts/montserrat-800.ttf")
     })
