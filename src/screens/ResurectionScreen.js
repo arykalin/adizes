@@ -37,7 +37,9 @@ const styles = StyleSheet.create({
     flex: 1
   },
   group: {
-    flex: 1
+    height: 925,
+    overflow: "scroll",
+    flex: 1,
   },
   group_imageStyle: {},
   text: {

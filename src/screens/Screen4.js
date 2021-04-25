@@ -122,8 +122,9 @@ const styles = StyleSheet.create({
     flex: 1
   },
   group: {
-    height: 852,
-    overflow: "scroll"
+    height: 925,
+    overflow: "scroll",
+    flex: 1,
   },
   group3: {
     width: 340,
