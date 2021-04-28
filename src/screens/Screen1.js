@@ -43,9 +43,15 @@ const styles = StyleSheet.create({
     flex: 1
   },
   group: {
-    flex: 1,
-    backgroundColor: "#e3e3e3",
-    height: 852,
+    shadowColor: "rgba(100,100,100,1)",
+    shadowOffset: {
+      width: 3,
+      height: 3
+    },
+    elevation: 5,
+    shadowOpacity: 1,
+    shadowRadius: 0,
+    height: 900,
     overflow: "scroll"
   },
   logo: {
@@ -56,7 +62,7 @@ const styles = StyleSheet.create({
   },
   smartМенджмент: {
     fontFamily: "montserrat-600",
-    color: "rgba(255,73,5,1)",
+    color: "rgba(255,78,0,1)",
     fontSize: 20,
     textAlign: "center",
     marginTop: 20

@@ -13,18 +13,19 @@ function Screen4(props) {
     <View style={styles.container}>
       <View style={styles.group}>
         <View style={styles.group3}>
-          <View style={styles.comment_boxRow}>
+          <View style={styles.moreInfoRow}>
             <Image
-              source={require("../assets/images/comment.png")}
+              source={require("../assets/images/Group_29.png")}
               resizeMode="contain"
-              style={styles.comment_box}
+              style={styles.moreInfo}
             ></Image>
             <Image
-              source={require("../assets/images/statis.png")}
+              source={require("../assets/images/Group_64.png")}
               resizeMode="contain"
-              style={styles.image2}
+              style={styles.showProgress}
             ></Image>
           </View>
+          <View style={styles.progressBar}></View>
           <Text style={styles.этапIСтановление}>ЭТАП I. СТАНОВЛЕНИЕ</Text>
         </View>
         <View style={styles.group2}>
@@ -92,25 +93,11 @@ function Screen4(props) {
               </TouchableOpacity>
             </View>
           </View>
-          <ImageBackground
+          <Image
             source={require("../assets/images/screen_4_back.png")}
             resizeMode="contain"
             style={styles.back}
-            imageStyle={styles.back_imageStyle}
-          >
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("DeathScreen")}
-              style={styles.button9}
-            >
-              <View style={styles.rect}></View>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("ResurectionScreen")}
-              style={styles.button8}
-            >
-              <View style={styles.rect2}></View>
-            </TouchableOpacity>
-          </ImageBackground>
+          ></Image>
         </View>
       </View>
     </View>
@@ -122,9 +109,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   group: {
-    height: 925,
-    overflow: "scroll",
-    flex: 1,
+    height: 857
   },
   group3: {
     width: 340,
@@ -132,21 +117,30 @@ const styles = StyleSheet.create({
     marginTop: 60,
     alignSelf: "center"
   },
-  comment_box: {
-    width: 260,
-    height: 100
+  moreInfo: {
+    width: 50,
+    height: 50
   },
-  image2: {
-    width: 80,
-    height: 80,
-    marginLeft: 7,
+  showProgress: {
+    width: 50,
+    height: 50,
+    marginLeft: 190,
     marginTop: 10
   },
-  comment_boxRow: {
-    height: 100,
+  moreInfoRow: {
+    height: 60,
     flexDirection: "row",
-    marginLeft: 10,
-    marginRight: -17
+    marginTop: -10,
+    marginLeft: 20,
+    marginRight: 30
+  },
+  progressBar: {
+    width: 300,
+    height: 20,
+    backgroundColor: "rgba(208,2,27,1)",
+    marginTop: 30,
+    marginLeft: 20,
+    alignSelf: "center"
   },
   этапIСтановление: {
     fontFamily: "montserrat-800",
@@ -267,48 +261,6 @@ const styles = StyleSheet.create({
   back: {
     width: 360,
     height: 295
-  },
-  back_imageStyle: {},
-  button9: {
-    width: 40,
-    height: 40,
-    backgroundColor: "rgba(255,255,255,1)",
-    marginTop: 15,
-    marginLeft: 20
-  },
-  rect: {
-    width: 40,
-    height: 40,
-    backgroundColor: "rgba(0,0,0,1)",
-    borderRadius: 10,
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOffset: {
-      width: 3,
-      height: 3
-    },
-    elevation: 30,
-    shadowOpacity: 1,
-    shadowRadius: 10
-  },
-  button8: {
-    width: 40,
-    height: 40,
-    marginTop: 20,
-    marginLeft: 20
-  },
-  rect2: {
-    width: 40,
-    height: 40,
-    backgroundColor: "rgba(255,89,3,1)",
-    borderRadius: 10,
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOffset: {
-      width: 3,
-      height: 3
-    },
-    elevation: 30,
-    shadowOpacity: 1,
-    shadowRadius: 10
   }
 });
 

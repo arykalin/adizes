@@ -1,13 +1,5 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  View,
-  Image,
-  Text,
-  TextInput,
-  TouchableOpacity
-} from "react-native";
-import MaterialCheckbox from "../components/MaterialCheckbox";
+import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 
 function Screen2(props) {
   return (
@@ -33,48 +25,13 @@ function Screen2(props) {
           style={styles.image}
         ></Image>
         <View style={styles.group2}>
-          <View style={styles.registration_form}>
-            <View style={styles.name}>
-              <View style={styles.rect}>
-                <TextInput
-                  placeholder="Lorem Ipsum"
-                  style={styles.textInput}
-                ></TextInput>
-              </View>
-            </View>
-            <View style={styles.surname}>
-              <View style={styles.rect2}>
-                <TextInput
-                  placeholder="Lorem Ipsum"
-                  style={styles.textInput2}
-                ></TextInput>
-              </View>
-            </View>
-            <View style={styles.email}>
-              <View style={styles.rect3}>
-                <TextInput
-                  placeholder="Lorem Ipsum"
-                  style={styles.textInput3}
-                ></TextInput>
-              </View>
-            </View>
-            <View style={styles.checkbox1}>
-              <MaterialCheckbox
-                checkIconName="checkbox-blank-outline"
-                style={styles.materialCheckbox2}
-              ></MaterialCheckbox>
-            </View>
-            <View style={styles.rect4}>
-              <MaterialCheckbox
-                style={styles.materialCheckbox}
-              ></MaterialCheckbox>
-            </View>
-          </View>
           <TouchableOpacity
             onPress={() => props.navigation.navigate("Screen3")}
             style={styles.button}
           >
-            <View style={styles.register_button}></View>
+            <View style={styles.register_button}>
+              <Text style={styles.Далее}>ИГРАТЬ</Text>
+            </View>
           </TouchableOpacity>
         </View>
       </View>
@@ -84,13 +41,13 @@ function Screen2(props) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: "rgba(229,229,229,1)"
   },
   group: {
     height: 925,
     overflow: "scroll",
-    flex: 1,
-    backgroundColor: "rgba(230, 230, 230,1)"
+    backgroundColor: "rgba(229,229,229,1)"
   },
   image2: {
     width: 58,
@@ -115,109 +72,25 @@ const styles = StyleSheet.create({
   group2: {
     width: 375,
     height: 340,
-    backgroundColor: "rgba(238,238,238,1)",
+    backgroundColor: "rgba(235,232,232,1)",
+    marginLeft: -7,
     alignSelf: "center"
-  },
-  registration_form: {
-    height: 240,
-    backgroundColor: "rgba(238,238,238,1)"
-  },
-  name: {
-    width: 280,
-    height: 28,
-    marginTop: 15,
-    marginLeft: 48
-  },
-  rect: {
-    backgroundColor: "rgba(255,255,255,1)",
-    shadowColor: "rgba(74,74,74,1)",
-    shadowOffset: {
-      width: 3,
-      height: 3
-    },
-    elevation: 30,
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    borderRadius: 5,
-    flex: 1
-  },
-  textInput: {
-    fontFamily: "montserrat-600",
-    color: "#121212",
-    flex: 1
-  },
-  surname: {
-    width: 280,
-    height: 28,
-    marginTop: 27,
-    marginLeft: 48
-  },
-  rect2: {
-    backgroundColor: "rgba(255,255,255,1)",
-    shadowColor: "rgba(74,74,74,1)",
-    shadowOffset: {
-      width: 3,
-      height: 3
-    },
-    elevation: 30,
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    borderRadius: 5,
-    flex: 1
-  },
-  textInput2: {
-    fontFamily: "montserrat-600",
-    color: "#121212",
-    flex: 1
-  },
-  email: {
-    width: 280,
-    height: 28,
-    marginTop: 27,
-    marginLeft: 48
-  },
-  rect3: {
-    backgroundColor: "rgba(255,255,255,1)",
-    shadowColor: "rgba(74,74,74,1)",
-    shadowOffset: {
-      width: 3,
-      height: 3
-    },
-    elevation: 30,
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    borderRadius: 5,
-    flex: 1
-  },
-  textInput3: {
-    fontFamily: "montserrat-600",
-    color: "#121212",
-    flex: 1
-  },
-  checkbox1: {
-    width: 26,
-    height: 26,
-    marginTop: 19,
-    marginLeft: 48
-  },
-  materialCheckbox2: {
-    borderRadius: 20,
-    flex: 1
-  },
-  rect4: {
-    width: 26,
-    height: 26,
-    marginTop: 12,
-    marginLeft: 48
-  },
-  materialCheckbox: {
-    flex: 1
   },
   button: {
     width: 220,
     height: 40,
     borderRadius: 5,
-    marginTop: 20,
+    shadowColor: "rgba(0,0,0,1)",
+    shadowOffset: {
+      width: 3,
+      height: 3
+    },
+    elevation: 15,
+    shadowOpacity: 1,
+    shadowRadius: 5,
+    backgroundColor: "rgba(139,87,42,1)",
+    marginTop: 120,
+    marginLeft: 78,
     alignSelf: "center"
   },
   register_button: {
@@ -231,6 +104,13 @@ const styles = StyleSheet.create({
     elevation: 30,
     shadowOpacity: 1,
     shadowRadius: 10,
+    flex: 1
+  },
+  Далее: {
+    fontFamily: "montserrat-600",
+    color: "rgba(255,255,255,1)",
+    textAlign: "center",
+    fontSize: 30,
     flex: 1
   }
 });
