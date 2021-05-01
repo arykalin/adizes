@@ -69,7 +69,8 @@ function Screen4(props) {
         </View>
         <View style={styles.group2}>
           <View style={styles.circleGroup}>
-            <View style={styles.circleStack}>
+            <View style={styles.стратегияРазвитияStack}>
+              <Text style={styles.стратегияРазвития}>Стратегия развития</Text>
               <ImageBackground
                 source={require("../assets/images/main_circle.png")}
                 resizeMode="contain"
@@ -134,14 +135,14 @@ function Screen4(props) {
           </View>
           <View style={styles.group6}>
             <Image
-              source={require("../assets/images/pic_right.png")}
-              resizeMode="contain"
-              style={styles.back_right}
-            ></Image>
-            <Image
               source={require("../assets/images/screen_4_back.png")}
               resizeMode="contain"
               style={styles.back_left}
+            ></Image>
+            <Image
+              source={require("../assets/images/pic_right.png")}
+              resizeMode="contain"
+              style={styles.back_right}
             ></Image>
           </View>
         </View>
@@ -273,6 +274,17 @@ const styles = StyleSheet.create({
     marginTop: 45,
     marginLeft: 10
   },
+  стратегияРазвития: {
+    position: "absolute",
+    fontFamily: "montserrat-700",
+    color: "rgba(68,68,68,1)",
+    width: 112,
+    height: 50,
+    textAlign: "center",
+    fontSize: 20,
+    left: 114,
+    top: 158
+  },
   circle: {
     top: 35,
     width: 340,
@@ -361,7 +373,7 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70
   },
-  circleStack: {
+  стратегияРазвитияStack: {
     width: 340,
     flex: 1,
     marginBottom: -30,
@@ -375,12 +387,12 @@ const styles = StyleSheet.create({
     marginTop: 15,
     alignSelf: "center"
   },
-  back_right: {
+  back_left: {
     width: 180,
     height: 175,
     flex: 1
   },
-  back_left: {
+  back_right: {
     width: 180,
     height: 175,
     flex: 1

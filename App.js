@@ -15,12 +15,11 @@ import Screen3 from "./src/screens/Screen3";
 import Screen4 from "./src/screens/Screen4";
 
 const DrawerNavigation = createDrawerNavigator({
-    Screen1: Screen1,
+  Screen1: Screen1,
   DeathScreen: DeathScreen,
   IconDescriptions: IconDescriptions,
   Registration: Registration,
   ResurectionScreen: ResurectionScreen,
-
   Screen2: Screen2,
   Screen3: Screen3,
   Screen4: Screen4
@@ -31,7 +30,7 @@ const StackNavigation = createStackNavigator(
     DrawerNavigation: {
       screen: DrawerNavigation
     },
-      Screen1: Screen1,
+    Screen1: Screen1,
     DeathScreen: DeathScreen,
     IconDescriptions: IconDescriptions,
     Registration: Registration,

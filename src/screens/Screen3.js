@@ -361,7 +361,7 @@ const styles = StyleSheet.create({
     width: 292,
     height: 570,
     marginTop: 122,
-    marginLeft: 34
+    marginLeft: 178
   }
 });
 
