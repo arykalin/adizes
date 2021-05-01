@@ -12,20 +12,59 @@ function Screen4(props) {
   return (
     <View style={styles.container}>
       <View style={styles.group}>
-        <View style={styles.group3}>
-          <View style={styles.moreInfoRow}>
-            <Image
-              source={require("../assets/images/Group_29.png")}
-              resizeMode="contain"
-              style={styles.moreInfo}
-            ></Image>
-            <Image
-              source={require("../assets/images/Group_64.png")}
-              resizeMode="contain"
-              style={styles.showProgress}
-            ></Image>
+        <View style={styles.stage_layer}>
+          <View style={styles.group4}>
+            <View style={styles.moreInfoButtonRow}>
+              <View style={styles.moreInfoButton}>
+                <Image
+                  source={require("../assets/images/Group_29.png")}
+                  resizeMode="contain"
+                  style={styles.moreInfo}
+                ></Image>
+                <Text style={styles.подробно}>Подробно</Text>
+              </View>
+              <View style={styles.showProgressButton}>
+                <Image
+                  source={require("../assets/images/Group_64.png")}
+                  resizeMode="contain"
+                  style={styles.showProgress}
+                ></Image>
+                <Text style={styles.прогресс}>Прогресс</Text>
+              </View>
+            </View>
+            <View style={styles.stage_bar}>
+              <View style={styles.progressBarStack}>
+                <View style={styles.progressBar}></View>
+                <View style={styles.group5}>
+                  <Image
+                    source={require("../assets/images/circle_colored_icon.png")}
+                    resizeMode="contain"
+                    style={styles.stage1}
+                  ></Image>
+                  <Image
+                    source={require("../assets/images/circli_grey_icon.png")}
+                    resizeMode="contain"
+                    style={styles.stage2}
+                  ></Image>
+                  <Image
+                    source={require("../assets/images/circli_grey_icon.png")}
+                    resizeMode="contain"
+                    style={styles.stage3}
+                  ></Image>
+                  <Image
+                    source={require("../assets/images/circli_grey_icon.png")}
+                    resizeMode="contain"
+                    style={styles.stage4}
+                  ></Image>
+                  <Image
+                    source={require("../assets/images/circli_grey_icon.png")}
+                    resizeMode="contain"
+                    style={styles.stage5}
+                  ></Image>
+                </View>
+              </View>
+            </View>
           </View>
-          <View style={styles.progressBar}></View>
           <Text style={styles.этапIСтановление}>ЭТАП I. СТАНОВЛЕНИЕ</Text>
         </View>
         <View style={styles.group2}>
@@ -93,11 +132,18 @@ function Screen4(props) {
               </TouchableOpacity>
             </View>
           </View>
-          <Image
-            source={require("../assets/images/screen_4_back.png")}
-            resizeMode="contain"
-            style={styles.back}
-          ></Image>
+          <View style={styles.group6}>
+            <Image
+              source={require("../assets/images/pic_right.png")}
+              resizeMode="contain"
+              style={styles.back_right}
+            ></Image>
+            <Image
+              source={require("../assets/images/screen_4_back.png")}
+              resizeMode="contain"
+              style={styles.back_left}
+            ></Image>
+          </View>
         </View>
       </View>
     </View>
@@ -109,48 +155,111 @@ const styles = StyleSheet.create({
     flex: 1
   },
   group: {
-    height: 857
+    height: 940,
+    overflow: "scroll"
   },
-  group3: {
+  stage_layer: {
     width: 340,
     height: 140,
     marginTop: 60,
     alignSelf: "center"
   },
+  group4: {
+    width: 310,
+    height: 110,
+    marginTop: -10,
+    alignSelf: "center"
+  },
+  moreInfoButton: {
+    width: 50,
+    height: 50,
+    justifyContent: "space-between"
+  },
   moreInfo: {
     width: 50,
     height: 50
   },
-  showProgress: {
+  подробно: {
+    fontFamily: "montserrat-700",
+    color: "rgba(68,68,68,1)",
+    alignSelf: "center"
+  },
+  showProgressButton: {
     width: 50,
     height: 50,
-    marginLeft: 190,
-    marginTop: 10
+    justifyContent: "space-between",
+    marginLeft: 210
   },
-  moreInfoRow: {
-    height: 60,
-    flexDirection: "row",
-    marginTop: -10,
-    marginLeft: 20,
-    marginRight: 30
+  showProgress: {
+    width: 50,
+    height: 50
+  },
+  прогресс: {
+    fontFamily: "montserrat-700",
+    color: "rgba(68,68,68,1)",
+    flex: 1,
+    alignSelf: "center"
+  },
+  moreInfoButtonRow: {
+    height: 50,
+    flexDirection: "row"
+  },
+  stage_bar: {
+    width: 310,
+    height: 10,
+    marginTop: 40
   },
   progressBar: {
-    width: 300,
-    height: 20,
-    backgroundColor: "rgba(208,2,27,1)",
-    marginTop: 30,
-    marginLeft: 20,
-    alignSelf: "center"
+    top: 12,
+    height: 10,
+    position: "absolute",
+    backgroundColor: "rgba(101,101,101,1)",
+    left: 0,
+    borderRadius: 5,
+    width: 310
+  },
+  group5: {
+    width: 276,
+    height: 35,
+    position: "absolute",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    left: 17,
+    top: 0
+  },
+  stage1: {
+    width: 35,
+    height: 35
+  },
+  stage2: {
+    width: 35,
+    height: 35
+  },
+  stage3: {
+    width: 35,
+    height: 35
+  },
+  stage4: {
+    width: 35,
+    height: 35
+  },
+  stage5: {
+    width: 35,
+    height: 35
+  },
+  progressBarStack: {
+    width: 310,
+    height: 35,
+    marginTop: -12
   },
   этапIСтановление: {
     fontFamily: "montserrat-800",
-    color: "rgba(74,74,74,1)",
-    fontSize: 25,
-    height: 34,
-    width: 374,
+    color: "rgba(68,68,68,1)",
+    fontSize: 20,
     textAlign: "center",
-    marginTop: 6,
-    marginLeft: -17
+    lineHeight: 5,
+    marginTop: 26,
+    marginLeft: 45
   },
   group2: {
     width: 360,
@@ -258,9 +367,23 @@ const styles = StyleSheet.create({
     marginBottom: -30,
     marginTop: -35
   },
-  back: {
+  group6: {
     width: 360,
-    height: 295
+    height: 160,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 15,
+    alignSelf: "center"
+  },
+  back_right: {
+    width: 180,
+    height: 175,
+    flex: 1
+  },
+  back_left: {
+    width: 180,
+    height: 175,
+    flex: 1
   }
 });
 
