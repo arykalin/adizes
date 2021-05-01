@@ -14,106 +14,111 @@ import AgingComponent from "../components/AgingComponent";
 import ResurectionComponent from "../components/ResurectionComponent";
 import DeathComponent from "../components/DeathComponent";
 
-function Index(props) {
+function Screen3(props) {
   return (
-      <View style={styles.container}>
+    <View style={styles.container}>
+      <View style={styles.group2}>
         <ImageBackground
-            source={require("../assets/images/Group_22.png")}
-            resizeMode="contain"
-            style={styles.background}
-            imageStyle={styles.background_imageStyle}
+          source={require("../assets/images/Group_22.png")}
+          resizeMode="contain"
+          style={styles.background}
+          imageStyle={styles.background_imageStyle}
         >
           <View style={styles.group6StackStack}>
             <View style={styles.group6Stack}>
               <View style={styles.group6}>
                 <View style={styles.progressLineStack}>
                   <ImageBackground
-                      source={require("../assets/images/Group_8.png")}
-                      resizeMode="contain"
-                      style={styles.progressLine}
-                      imageStyle={styles.progressLine_imageStyle}
+                    source={require("../assets/images/Group_8.png")}
+                    resizeMode="contain"
+                    style={styles.progressLine}
+                    imageStyle={styles.progressLine_imageStyle}
                   >
                     <TouchableOpacity style={styles.button6}>
                       <Image
-                          source={require("../assets/images/5.png")}
-                          resizeMode="contain"
-                          style={styles.i5}
+                        source={require("../assets/images/5.png")}
+                        resizeMode="contain"
+                        style={styles.i5}
                       ></Image>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button5}>
                       <Image
-                          source={require("../assets/images/41.png")}
-                          resizeMode="contain"
-                          style={styles.i4}
+                        source={require("../assets/images/41.png")}
+                        resizeMode="contain"
+                        style={styles.i4}
                       ></Image>
                     </TouchableOpacity>
                     <View style={styles.button3Row}>
                       <TouchableOpacity style={styles.button3}>
                         <Image
-                            source={require("../assets/images/2.png")}
-                            resizeMode="contain"
-                            style={styles.i2}
+                          source={require("../assets/images/2.png")}
+                          resizeMode="contain"
+                          style={styles.i2}
                         ></Image>
                       </TouchableOpacity>
                       <TouchableOpacity style={styles.button4}>
                         <Image
-                            source={require("../assets/images/3.png")}
-                            resizeMode="contain"
-                            style={styles.i3}
+                          source={require("../assets/images/3.png")}
+                          resizeMode="contain"
+                          style={styles.i3}
                         ></Image>
                       </TouchableOpacity>
                       <TouchableOpacity style={styles.button7}>
                         <Image
-                            source={require("../assets/images/6.png")}
-                            resizeMode="contain"
-                            style={styles.i6}
+                          source={require("../assets/images/6.png")}
+                          resizeMode="contain"
+                          style={styles.i6}
                         ></Image>
                       </TouchableOpacity>
                     </View>
                   </ImageBackground>
                   <TouchableOpacity
-                      onPress={() => props.navigation.navigate("Untitled")}
-                      style={styles.button2}
+                    onPress={() => props.navigation.navigate("Untitled")}
+                    style={styles.button2}
                   >
                     <Image
-                        source={require("../assets/images/1.png")}
-                        resizeMode="contain"
-                        style={styles.i1}
+                      source={require("../assets/images/1.png")}
+                      resizeMode="contain"
+                      style={styles.i1}
                     ></Image>
                   </TouchableOpacity>
                 </View>
                 <TouchableOpacity style={styles.button8}>
                   <TouchableOpacity
-                      onPress={() => props.navigation.navigate("Screen4")}
-                      style={styles.button}
+                    onPress={() => props.navigation.navigate("Screen4")}
+                    style={styles.button}
                   ></TouchableOpacity>
                 </TouchableOpacity>
               </View>
               <View style={styles.descriptions}>
                 <View style={styles.becomingComponentStack}>
                   <BecomingComponent
-                      style={styles.becomingComponent}
+                    style={styles.becomingComponent}
                   ></BecomingComponent>
                   <GrowingComponent
-                      style={styles.growingComponent}
+                    style={styles.growingComponent}
                   ></GrowingComponent>
                   <MaturityComponent
-                      style={styles.maturityComponent}
+                    style={styles.maturityComponent}
                   ></MaturityComponent>
-                  <AgingComponent style={styles.agingComponent}></AgingComponent>
+                  <AgingComponent
+                    style={styles.agingComponent}
+                  ></AgingComponent>
                   <ResurectionComponent
-                      style={styles.resurectionComponent}
+                    style={styles.resurectionComponent}
                   ></ResurectionComponent>
-                  <DeathComponent style={styles.deathComponent}></DeathComponent>
+                  <DeathComponent
+                    style={styles.deathComponent}
+                  ></DeathComponent>
                 </View>
               </View>
             </View>
             <View style={styles.group5}>
               <Text style={styles.lifecycle}>
                 Жизненный цикл компании - это совокупность стадий развития,
-                которые организация проходит за период своего существования.{"\n"}
-                Выделяют основные 5 этапов жизненного цикла (подробности о каждом
-                этапе вы узнаете далее):
+                которые организация проходит за период своего существования.
+                {"\n"}Выделяют основные 5 этапов жизненного цикла (подробности о
+                каждом этапе вы узнаете далее):
               </Text>
               <Text style={styles.lifecycle2}>
                 Становление{"\n"}Развитие{"\n"}Зрелость{"\n"}Старение{"\n"}
@@ -123,23 +128,28 @@ function Index(props) {
                 На каждом этапе жизненного цикла, Вы, как руководитель,
                 столкнетесь с различными вызовами. В зависимости от выбранного
                 вами управленческого решения и ответа на вопрос, вам будут
-                начисляться баллы/проценты . Если вызов окажется для Вас сложным,
-                Вы сможете познакомиться с информацией, которая будет Вам полезна
-                в Вашей бизнес практике. Удачи!
+                начисляться баллы/проценты . Если вызов окажется для Вас
+                сложным, Вы сможете познакомиться с информацией, которая будет
+                Вам полезна в Вашей бизнес практике. Удачи!
               </Text>
             </View>
           </View>
         </ImageBackground>
       </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: "rgba(230, 230, 230,1)"
+  },
+  group2: {
+    flex: 1,
     backgroundColor: "#e3e3e3",
-    overflow: "scroll",
-    width: 375,
-    height: 852
+    height: 852,
+    overflow: "scroll"
   },
   background: {
     flex: 1
@@ -344,7 +354,7 @@ const styles = StyleSheet.create({
     fontSize: 11,
     width: 320,
     height: 150,
-    marginTop: 90,
+    marginTop: 15,
     alignSelf: "center"
   },
   group6StackStack: {
@@ -355,4 +365,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Index;
+export default Screen3;

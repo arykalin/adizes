@@ -30,7 +30,7 @@ function Screen2(props) {
             style={styles.button}
           >
             <View style={styles.register_button}>
-              <Text style={styles.Далее}>ИГРАТЬ</Text>
+              <Text style={styles.Далее}>Далее</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   group: {
     height: 925,
     overflow: "scroll",
-    backgroundColor: "rgba(229,229,229,1)"
+    backgroundColor: "rgba(255,255,255,1)"
   },
   image2: {
     width: 58,
@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
   },
   loremIpsum: {
     fontFamily: "montserrat-regular",
-    color: "rgba(74,74,74,1)",
-    fontSize: 10,
+    color: "rgba(68,68,68,1)",
+    fontSize: 12,
     lineHeight: 14,
     textAlign: "justify",
     marginTop: 16,
@@ -66,14 +66,13 @@ const styles = StyleSheet.create({
     marginRight: 18
   },
   image: {
-    height: 200,
-    marginTop: 20
+    height: 200
   },
   group2: {
     width: 375,
-    height: 340,
-    backgroundColor: "rgba(235,232,232,1)",
-    marginLeft: -7,
+    height: 160,
+    backgroundColor: "rgba(255,255,255,1)",
+    marginTop: 65,
     alignSelf: "center"
   },
   button: {
@@ -89,8 +88,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 5,
     backgroundColor: "rgba(139,87,42,1)",
-    marginTop: 120,
-    marginLeft: 78,
+    marginTop: 60,
     alignSelf: "center"
   },
   register_button: {
