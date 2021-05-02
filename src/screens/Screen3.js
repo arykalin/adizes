@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component, useState} from "react";
 import {
   StyleSheet,
   View,
@@ -13,8 +13,11 @@ import MaturityComponent from "../components/MaturityComponent";
 import AgingComponent from "../components/AgingComponent";
 import ResurectionComponent from "../components/ResurectionComponent";
 import DeathComponent from "../components/DeathComponent";
+import {Modal} from "react-native-web";
 
 function Screen3(props) {
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <View style={styles.container}>
       <View style={styles.group2}>
@@ -90,6 +93,7 @@ function Screen3(props) {
                   ></TouchableOpacity>
                 </TouchableOpacity>
               </View>
+              <Modal onRequestClose={() => setIsVisible(false)} transparent visible={isVisible}>
               <View style={styles.descriptions}>
                 <View style={styles.becomingComponentStack}>
                   <BecomingComponent
@@ -112,6 +116,7 @@ function Screen3(props) {
                   ></DeathComponent>
                 </View>
               </View>
+              </Modal>
             </View>
             <View style={styles.group5}>
               <Text style={styles.lifecycle}>
