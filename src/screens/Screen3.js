@@ -7,128 +7,136 @@ import {
   TouchableOpacity,
   Text,
   Modal,
-  Button
 } from "react-native";
-import BecomingComponent from "../components/BecomingComponent";
-import GrowingComponent from "../components/GrowingComponent";
-import MaturityComponent from "../components/MaturityComponent";
-import AgingComponent from "../components/AgingComponent";
-import ResurectionComponent from "../components/ResurectionComponent";
-import DeathComponent from "../components/DeathComponent";
 
 function Screen3(props) {
   const [showBecoming, setShowBecoming] = useState(false);
 
   return (
-    <View style={styles.container}>
-      <View style={styles.group2}>
-        <ImageBackground
-          source={require("../assets/images/Group_22.png")}
-          resizeMode="contain"
-          style={styles.background}
-          imageStyle={styles.background_imageStyle}
-        >
-          <View style={styles.group6StackStack}>
-            <View style={styles.group6Stack}>
-              <View style={styles.group6}>
-                <View style={styles.progressLineStack}>
-                  <ImageBackground
-                    source={require("../assets/images/Group_8.png")}
-                    resizeMode="contain"
-                    style={styles.progressLine}
-                    imageStyle={styles.progressLine_imageStyle}
-                  >
-                    <TouchableOpacity style={styles.button6}>
-                      <Image
-                        source={require("../assets/images/5.png")}
+      <View style={styles.container}>
+        <View style={styles.group2}>
+          <ImageBackground
+              source={require("../assets/images/Group_22.png")}
+              resizeMode="contain"
+              style={styles.background}
+              imageStyle={styles.background_imageStyle}
+          >
+            <View style={styles.group6StackStack}>
+              <View style={styles.group6Stack}>
+                <View style={styles.group6}>
+                  <View style={styles.progressLineStack}>
+                    <ImageBackground
+                        source={require("../assets/images/Group_8.png")}
                         resizeMode="contain"
-                        style={styles.i5}
+                        style={styles.progressLine}
+                        imageStyle={styles.progressLine_imageStyle}
+                    >
+                      <TouchableOpacity style={styles.button6}>
+                        <Image
+                            source={require("../assets/images/5.png")}
+                            resizeMode="contain"
+                            style={styles.i5}
+                        ></Image>
+                      </TouchableOpacity>
+                      <TouchableOpacity style={styles.button5}>
+                        <Image
+                            source={require("../assets/images/41.png")}
+                            resizeMode="contain"
+                            style={styles.i4}
+                        ></Image>
+                      </TouchableOpacity>
+                      <View style={styles.button3Row}>
+                        <TouchableOpacity style={styles.button3}>
+                          <Image
+                              source={require("../assets/images/2.png")}
+                              resizeMode="contain"
+                              style={styles.i2}
+                          ></Image>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.button4}>
+                          <Image
+                              source={require("../assets/images/3.png")}
+                              resizeMode="contain"
+                              style={styles.i3}
+                          ></Image>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.button7}>
+                          <Image
+                              source={require("../assets/images/6.png")}
+                              resizeMode="contain"
+                              style={styles.i6}
+                          ></Image>
+                        </TouchableOpacity>
+                      </View>
+                    </ImageBackground>
+                    <TouchableOpacity
+                        onPress={() => setShowBecoming(true)}
+                        style={styles.button2}
+                    >
+                      <Image
+                          source={require("../assets/images/1.png")}
+                          resizeMode="contain"
+                          style={styles.i1}
                       ></Image>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button5}>
-                      <Image
-                        source={require("../assets/images/41.png")}
-                        resizeMode="contain"
-                        style={styles.i4}
-                      ></Image>
-                    </TouchableOpacity>
-                    <View style={styles.button3Row}>
-                      <TouchableOpacity style={styles.button3}>
-                        <Image
-                          source={require("../assets/images/2.png")}
-                          resizeMode="contain"
-                          style={styles.i2}
-                        ></Image>
-                      </TouchableOpacity>
-                      <TouchableOpacity style={styles.button4}>
-                        <Image
-                          source={require("../assets/images/3.png")}
-                          resizeMode="contain"
-                          style={styles.i3}
-                        ></Image>
-                      </TouchableOpacity>
-                      <TouchableOpacity style={styles.button7}>
-                        <Image
-                          source={require("../assets/images/6.png")}
-                          resizeMode="contain"
-                          style={styles.i6}
-                        ></Image>
-                      </TouchableOpacity>
-                    </View>
-                  </ImageBackground>
-                  <TouchableOpacity
-                    onPress={() => setShowBecoming(true)}
-                    style={styles.button2}
-                  >
-                    <Image
-                      source={require("../assets/images/1.png")}
-                      resizeMode="contain"
-                      style={styles.i1}
-                    ></Image>
+                  </View>
+                  <TouchableOpacity style={styles.button8}>
+                    <TouchableOpacity
+                        onPress={() => props.navigation.navigate("Screen4")}
+                        style={styles.button}
+                    ></TouchableOpacity>
                   </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={styles.button8}>
-                  <TouchableOpacity
-                    onPress={() => props.navigation.navigate("Screen4")}
-                    style={styles.button}
-                  ></TouchableOpacity>
-                </TouchableOpacity>
-              </View>
-                <View style={styles.descriptions}>
-                  <View style={styles.becomingComponentStack}>
-                    <Modal onRequestClose={() => setShowBecoming(false)} transparent visible={showBecoming}>
-                    <BecomingComponent
-                      style={styles.becomingComponent}
-                    ></BecomingComponent>
-                    <Button onPress={() => setShowBecoming(false)} title={'Close'} />
-                    </Modal>
+                <Modal onRequestClose={() => setShowBecoming(false)} transparent visible={showBecoming}>
+                <View style={styles.descriptionBecoming}>
+                  <View style={styles.group7Stack}>
+                    <Text style={styles.becomingText}>
+                      На стадии Становления определяются направления деятельности
+                      компании, ее цели и стратегия.{"\n"}Главная задача этапа —
+                      определиться с ключевыми компетенциями и создать
+                      востребованный рынком продукт,{"\n"}Это критичный период,
+                      поскольку на этой стадии компания либо добьется успеха, либо
+                      потерпит крах и перестанет существовать.{"\n"}Чаще всего
+                      причины кроются в неопытности руководства
+                    </Text>
+                    <View style={styles.group7}>
+                      <TouchableOpacity
+                          onPress={() => setShowBecoming(false)}
+                          style={styles.button9}
+                      >
+                        <View style={styles.rect}>
+                          <Text style={styles.close}>ЗАКРЫТЬ</Text>
+                        </View>
+                      </TouchableOpacity>
+                    </View>
                   </View>
                 </View>
+                </Modal>
+              </View>
+              <View style={styles.group5}>
+                <Text style={styles.lifecycle}>
+                  Жизненный цикл компании - это совокупность стадий развития,
+                  которые организация проходит за период своего существования.
+                  {"\n"}Выделяют основные 5 этапов жизненного цикла (подробности о
+                  каждом этапе вы узнаете далее):
+                </Text>
+                <Text style={styles.lifecycle2}>
+                  Становление{"\n"}Развитие{"\n"}Зрелость{"\n"}Старение{"\n"}
+                  Возрождение или Смерть
+                </Text>
+                <Text style={styles.lifecycle3}>
+                  На каждом этапе жизненного цикла, Вы, как руководитель,
+                  столкнетесь с различными вызовами. В зависимости от выбранного
+                  вами управленческого решения и ответа на вопрос, вам будут
+                  начисляться баллы/проценты . Если вызов окажется для Вас
+                  сложным, Вы сможете познакомиться с информацией, которая будет
+                  Вам полезна в Вашей бизнес практике. Удачи!
+                </Text>
+              </View>
             </View>
-            <View style={styles.group5}>
-              <Text style={styles.lifecycle}>
-                Жизненный цикл компании - это совокупность стадий развития,
-                которые организация проходит за период своего существования.
-                {"\n"}Выделяют основные 5 этапов жизненного цикла (подробности о
-                каждом этапе вы узнаете далее):
-              </Text>
-              <Text style={styles.lifecycle2}>
-                Становление{"\n"}Развитие{"\n"}Зрелость{"\n"}Старение{"\n"}
-                Возрождение или Смерть
-              </Text>
-              <Text style={styles.lifecycle3}>
-                На каждом этапе жизненного цикла, Вы, как руководитель,
-                столкнетесь с различными вызовами. В зависимости от выбранного
-                вами управленческого решения и ответа на вопрос, вам будут
-                начисляться баллы/проценты . Если вызов окажется для Вас
-                сложным, Вы сможете познакомиться с информацией, которая будет
-                Вам полезна в Вашей бизнес практике. Удачи!
-              </Text>
-            </View>
-          </View>
-        </ImageBackground>
+          </ImageBackground>
+        </View>
       </View>
-    </View>
   );
 }
 
@@ -246,69 +254,69 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     flex: 1
   },
-  descriptions: {
+  descriptionBecoming: {
     top: 0,
     width: 280,
     height: 360,
     position: "absolute",
     backgroundColor: "rgba(230, 230, 230,1)",
-    borderRadius: 5,
+    borderRadius: 10,
     shadowColor: "rgba(0,0,0,1)",
     shadowOffset: {
       width: 3,
       height: 3
     },
-    elevation: 15,
+    elevation: 30,
     shadowOpacity: 1,
-    shadowRadius: 5,
+    shadowRadius: 10,
     left: 7
   },
-  becomingComponent: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    height: 334,
-    width: 240
+  group7: {
+    top: 240,
+    left: 40,
+    width: 180,
+    height: 40,
+    position: "absolute"
   },
-  growingComponent: {
-    position: "absolute",
-    top: 20,
-    left: 0,
-    height: 312,
-    width: 240
-  },
-  maturityComponent: {
-    position: "absolute",
-    top: 20,
-    left: 0,
-    height: 320,
-    width: 240
-  },
-  agingComponent: {
-    position: "absolute",
-    top: 20,
-    left: 0,
-    height: 320,
-    width: 240
-  },
-  resurectionComponent: {
-    position: "absolute",
-    top: 20,
-    left: 0,
-    height: 320,
-    width: 240
-  },
-  deathComponent: {
-    position: "absolute",
-    top: 20,
-    left: 0,
-    height: 320,
-    width: 240
-  },
-  becomingComponentStack: {
-    width: 240,
-    height: 340,
+  button9: {
+    width: 140,
+    height: 40,
     marginLeft: 20
+  },
+  rect: {
+    width: 140,
+    height: 40,
+    backgroundColor: "rgba(255,78,0,1)",
+    borderRadius: 10,
+    shadowColor: "rgba(0,0,0,1)",
+    shadowOffset: {
+      width: 3,
+      height: 3
+    },
+    elevation: 30,
+    shadowOpacity: 1,
+    shadowRadius: 10
+  },
+  close: {
+    fontFamily: "montserrat-600",
+    color: "rgba(255,255,255,1)",
+    marginTop: 11,
+    marginLeft: 34
+  },
+  becomingText: {
+    top: 0,
+    position: "absolute",
+    fontFamily: "roboto-regular",
+    color: "#121212",
+    height: 320,
+    width: 260,
+    left: 0
+  },
+  group7Stack: {
+    width: 260,
+    height: 320,
+    marginTop: 20,
+    marginLeft: 10
   },
   group6Stack: {
     top: 78,
