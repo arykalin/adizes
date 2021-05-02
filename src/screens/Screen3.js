@@ -17,7 +17,7 @@ import ResurectionComponent from "../components/ResurectionComponent";
 import DeathComponent from "../components/DeathComponent";
 
 function Screen3(props) {
-  const [isVisible, setIsVisible] = useState(false);
+  const [showBecoming, setShowBecoming] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -77,7 +77,7 @@ function Screen3(props) {
                     </View>
                   </ImageBackground>
                   <TouchableOpacity
-                    onPress={() => setIsVisible(true)}
+                    onPress={() => setShowBecoming(true)}
                     style={styles.button2}
                   >
                     <Image
@@ -94,31 +94,16 @@ function Screen3(props) {
                   ></TouchableOpacity>
                 </TouchableOpacity>
               </View>
-              <Modal onRequestClose={() => setIsVisible(false)} transparent visible={isVisible}>
                 <View style={styles.descriptions}>
                   <View style={styles.becomingComponentStack}>
+                    <Modal onRequestClose={() => setShowBecoming(false)} transparent visible={showBecoming}>
                     <BecomingComponent
                       style={styles.becomingComponent}
                     ></BecomingComponent>
-                    <GrowingComponent
-                      style={styles.growingComponent}
-                    ></GrowingComponent>
-                    <MaturityComponent
-                      style={styles.maturityComponent}
-                    ></MaturityComponent>
-                    <AgingComponent
-                      style={styles.agingComponent}
-                    ></AgingComponent>
-                    <ResurectionComponent
-                      style={styles.resurectionComponent}
-                    ></ResurectionComponent>
-                    <DeathComponent
-                      style={styles.deathComponent}
-                    ></DeathComponent>
+                    <Button onPress={() => setShowBecoming(false)} title={'Close'} />
+                    </Modal>
                   </View>
                 </View>
-                <Button onPress={() => setIsVisible(false)} title={'Close'} />
-              </Modal>
             </View>
             <View style={styles.group5}>
               <Text style={styles.lifecycle}>
