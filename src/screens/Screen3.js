@@ -11,6 +11,11 @@ import {
 
 function Screen3(props) {
   const [showBecoming, setShowBecoming] = useState(false);
+  const [showGrowing, setShowGrowing] = useState(false);
+  const [showMaturity, setShowMaturity] = useState(false);
+  const [showAging, setShowAging] = useState(false);
+  const [showResurection, setShowResurection] = useState(false);
+  const [showDeath, setShowDeath] = useState(false);
 
   return (
       <View style={styles.container}>
@@ -46,7 +51,9 @@ function Screen3(props) {
                         ></Image>
                       </TouchableOpacity>
                       <View style={styles.button3Row}>
-                        <TouchableOpacity style={styles.button3}>
+                        <TouchableOpacity
+                            onPress={() => setShowGrowing(true)}
+                            style={styles.button3}>
                           <Image
                               source={require("../assets/images/2.png")}
                               resizeMode="contain"
@@ -84,7 +91,9 @@ function Screen3(props) {
                     <TouchableOpacity
                         onPress={() => props.navigation.navigate("Screen4")}
                         style={styles.button}
-                    ></TouchableOpacity>
+                    >
+                      <Text style={styles.next}>ДАЛЕЕ</Text>
+                    </TouchableOpacity>
                   </TouchableOpacity>
                 </View>
                 <Modal onRequestClose={() => setShowBecoming(false)} transparent visible={showBecoming}>
@@ -112,6 +121,29 @@ function Screen3(props) {
                   </View>
                 </View>
                 </Modal>
+                <Modal onRequestClose={() => setShowGrowing(false)} transparent visible={showGrowing}>
+                <View style={styles.descriptionBecoming}>
+                  <View style={styles.group7Stack}>
+                    <Text style={styles.becomingText}>
+                      Стадия роста начинается в тот момент, когда компания расширяется, выбран
+                      свой сегмент, наработана клиентская база.Цель этапа - обеспечение
+                      стабильности и создание репутации компании{"\n"}на рынке, рост объема
+                      продаж и доли рынка.{"\n"}Стадия роста подходит к концу, когда темпы
+                      продаж замедляются.
+                    </Text>
+                    <View style={styles.group7}>
+                      <TouchableOpacity
+                          onPress={() => setShowGrowing(false)}
+                          style={styles.button9}
+                      >
+                        <View style={styles.rect}>
+                          <Text style={styles.close}>ЗАКРЫТЬ</Text>
+                        </View>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                </View>
+                </Modal>
               </View>
               <View style={styles.group5}>
                 <Text style={styles.lifecycle}>
@@ -119,10 +151,6 @@ function Screen3(props) {
                   которые организация проходит за период своего существования.
                   {"\n"}Выделяют основные 5 этапов жизненного цикла (подробности о
                   каждом этапе вы узнаете далее):
-                </Text>
-                <Text style={styles.lifecycle2}>
-                  Становление{"\n"}Развитие{"\n"}Зрелость{"\n"}Старение{"\n"}
-                  Возрождение или Смерть
                 </Text>
                 <Text style={styles.lifecycle3}>
                   На каждом этапе жизненного цикла, Вы, как руководитель,
@@ -259,6 +287,7 @@ const styles = StyleSheet.create({
     width: 280,
     height: 360,
     position: "absolute",
+    alignSelf: "center",
     backgroundColor: "rgba(230, 230, 230,1)",
     borderRadius: 10,
     shadowColor: "rgba(0,0,0,1)",
@@ -362,6 +391,13 @@ const styles = StyleSheet.create({
     height: 570,
     marginTop: 122,
     marginLeft: 41
+  },
+  next: {
+    fontFamily: "montserrat-600",
+    color: "rgba(255,255,255,1)",
+    fontSize: 20,
+    marginTop: 11,
+    marginLeft: 82
   }
 });
 
