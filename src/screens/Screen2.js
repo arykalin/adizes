@@ -42,7 +42,8 @@ function Screen2(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(229,229,229,1)"
+    backgroundColor: "rgba(229,229,229,1)",
+    overflow: "scroll"
   },
   group: {
     height: 925,

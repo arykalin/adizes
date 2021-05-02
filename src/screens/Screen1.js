@@ -3,16 +3,8 @@ import { StyleSheet, View, Image, Text, TouchableOpacity, Modal, Button } from "
 import { Center } from "@builderx/utils";
 
 function Screen1(props) {
-  const [isVisible, setIsVisible] = useState(false);
   return (
     <View style={styles.container}>
-      <Button onPress={() => setIsVisible(true)} title={'Transparent modal'} />
-      <Modal onRequestClose={() => setIsVisible(false)} transparent visible={isVisible}>
-        <View style={styles.containeralt}>
-          <Text style={{ textAlign: 'center' }}>Modal with "transparent" value</Text>
-          <Button onPress={() => setIsVisible(false)} title={'Close'} />
-        </View>
-      </Modal>
       <View style={styles.group}>
         <Image
           source={require("../assets/images/smit_logo.png")}
@@ -48,7 +40,8 @@ function Screen1(props) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    overflow: "scroll"
   },
   group: {
     shadowColor: "rgba(100,100,100,1)",

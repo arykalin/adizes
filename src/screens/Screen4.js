@@ -156,7 +156,8 @@ function Screen4(props) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    overflow: "scroll"
   },
   group: {
     height: 940,
