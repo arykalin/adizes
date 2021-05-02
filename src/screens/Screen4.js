@@ -2,152 +2,155 @@ import React, { Component } from "react";
 import {
   StyleSheet,
   View,
+  TouchableOpacity,
   Image,
   Text,
-  ImageBackground,
-  TouchableOpacity
+  ImageBackground
 } from "react-native";
 
 function Screen4(props) {
   return (
-    <View style={styles.container}>
-      <View style={styles.group}>
-        <View style={styles.stage_layer}>
-          <View style={styles.group4}>
-            <View style={styles.moreInfoButtonRow}>
-              <View style={styles.moreInfoButton}>
-                <Image
-                  source={require("../assets/images/Group_29.png")}
-                  resizeMode="contain"
-                  style={styles.moreInfo}
-                ></Image>
-                <Text style={styles.подробно}>Подробно</Text>
+      <View style={styles.container}>
+        <View style={styles.group}>
+          <View style={styles.stage_layer}>
+            <View style={styles.group4}>
+              <View style={styles.button9Row}>
+                <TouchableOpacity style={styles.button9}>
+                  <Image
+                      source={require("../assets/images/Group_29.png")}
+                      resizeMode="contain"
+                      style={styles.moreInfo}
+                  ></Image>
+                  <Text style={styles.подробно}>Подробно</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => props.navigation.navigate("Screen4")}
+                    style={styles.button8}
+                >
+                  <Image
+                      source={require("../assets/images/Group_64.png")}
+                      resizeMode="contain"
+                      style={styles.showProgress}
+                  ></Image>
+                  <Text style={styles.прогресс}>Прогресс</Text>
+                </TouchableOpacity>
               </View>
-              <View style={styles.showProgressButton}>
-                <Image
-                  source={require("../assets/images/Group_64.png")}
-                  resizeMode="contain"
-                  style={styles.showProgress}
-                ></Image>
-                <Text style={styles.прогресс}>Прогресс</Text>
-              </View>
-            </View>
-            <View style={styles.stage_bar}>
-              <View style={styles.progressBarStack}>
-                <View style={styles.progressBar}></View>
-                <View style={styles.group5}>
-                  <Image
-                    source={require("../assets/images/circle_colored_icon.png")}
-                    resizeMode="contain"
-                    style={styles.stage1}
-                  ></Image>
-                  <Image
-                    source={require("../assets/images/circli_grey_icon.png")}
-                    resizeMode="contain"
-                    style={styles.stage2}
-                  ></Image>
-                  <Image
-                    source={require("../assets/images/circli_grey_icon.png")}
-                    resizeMode="contain"
-                    style={styles.stage3}
-                  ></Image>
-                  <Image
-                    source={require("../assets/images/circli_grey_icon.png")}
-                    resizeMode="contain"
-                    style={styles.stage4}
-                  ></Image>
-                  <Image
-                    source={require("../assets/images/circli_grey_icon.png")}
-                    resizeMode="contain"
-                    style={styles.stage5}
-                  ></Image>
+              <View style={styles.stage_bar}>
+                <View style={styles.progressBarStack}>
+                  <View style={styles.progressBar}></View>
+                  <View style={styles.group5}>
+                    <Image
+                        source={require("../assets/images/circle_colored_icon.png")}
+                        resizeMode="contain"
+                        style={styles.stage1}
+                    ></Image>
+                    <Image
+                        source={require("../assets/images/circli_grey_icon.png")}
+                        resizeMode="contain"
+                        style={styles.stage2}
+                    ></Image>
+                    <Image
+                        source={require("../assets/images/circli_grey_icon.png")}
+                        resizeMode="contain"
+                        style={styles.stage3}
+                    ></Image>
+                    <Image
+                        source={require("../assets/images/circli_grey_icon.png")}
+                        resizeMode="contain"
+                        style={styles.stage4}
+                    ></Image>
+                    <Image
+                        source={require("../assets/images/circli_grey_icon.png")}
+                        resizeMode="contain"
+                        style={styles.stage5}
+                    ></Image>
+                  </View>
                 </View>
               </View>
             </View>
+            <Text style={styles.этапIСтановление}>ЭТАП I. СТАНОВЛЕНИЕ</Text>
           </View>
-          <Text style={styles.этапIСтановление}>ЭТАП I. СТАНОВЛЕНИЕ</Text>
-        </View>
-        <View style={styles.group2}>
-          <View style={styles.circleGroup}>
-            <View style={styles.стратегияРазвитияStack}>
-              <Text style={styles.стратегияРазвития}>Стратегия развития</Text>
-              <ImageBackground
-                source={require("../assets/images/main_circle.png")}
-                resizeMode="contain"
-                style={styles.circle}
-                imageStyle={styles.circle_imageStyle}
-              >
-                <View style={styles.button4Row}>
-                  <TouchableOpacity style={styles.button4}>
-                    <Image
-                      source={require("../assets/images/buisiness_proc.png")}
+          <View style={styles.group2}>
+            <View style={styles.circleGroup}>
+              <View style={styles.стратегияРазвитияStack}>
+                <Text style={styles.стратегияРазвития}>Стратегия развития</Text>
+                <ImageBackground
+                    source={require("../assets/images/main_circle.png")}
+                    resizeMode="contain"
+                    style={styles.circle}
+                    imageStyle={styles.circle_imageStyle}
+                >
+                  <View style={styles.button4Row}>
+                    <TouchableOpacity style={styles.button4}>
+                      <Image
+                          source={require("../assets/images/buisiness_proc.png")}
+                          resizeMode="contain"
+                          style={styles.progress}
+                      ></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button2}>
+                      <Image
+                          source={require("../assets/images/corp_leadership.png")}
+                          resizeMode="contain"
+                          style={styles.corp}
+                      ></Image>
+                    </TouchableOpacity>
+                  </View>
+                  <View style={styles.buttonRow}>
+                    <TouchableOpacity style={styles.button}>
+                      <Image
+                          source={require("../assets/images/scheme.png")}
+                          resizeMode="contain"
+                          style={styles.scheme}
+                      ></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.button3}>
+                      <Image
+                          source={require("../assets/images/finances.png")}
+                          resizeMode="contain"
+                          style={styles.finances}
+                      ></Image>
+                    </TouchableOpacity>
+                  </View>
+                </ImageBackground>
+                <TouchableOpacity style={styles.button5}>
+                  <Image
+                      source={require("../assets/images/developement.png")}
                       resizeMode="contain"
-                      style={styles.progress}
-                    ></Image>
-                  </TouchableOpacity>
-                  <TouchableOpacity style={styles.button2}>
-                    <Image
-                      source={require("../assets/images/corp_leadership.png")}
+                      style={styles.developement}
+                  ></Image>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button6}>
+                  <Image
+                      source={require("../assets/images/Group.png")}
                       resizeMode="contain"
-                      style={styles.corp}
-                    ></Image>
-                  </TouchableOpacity>
-                </View>
-                <View style={styles.buttonRow}>
-                  <TouchableOpacity style={styles.button}>
-                    <Image
-                      source={require("../assets/images/scheme.png")}
+                      style={styles.corp_leadership}
+                  ></Image>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button7}>
+                  <Image
+                      source={require("../assets/images/leadership.png")}
                       resizeMode="contain"
-                      style={styles.scheme}
-                    ></Image>
-                  </TouchableOpacity>
-                  <TouchableOpacity style={styles.button3}>
-                    <Image
-                      source={require("../assets/images/finances.png")}
-                      resizeMode="contain"
-                      style={styles.finances}
-                    ></Image>
-                  </TouchableOpacity>
-                </View>
-              </ImageBackground>
-              <TouchableOpacity style={styles.button5}>
-                <Image
-                  source={require("../assets/images/developement.png")}
-                  resizeMode="contain"
-                  style={styles.developement}
-                ></Image>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.button6}>
-                <Image
-                  source={require("../assets/images/Group.png")}
-                  resizeMode="contain"
-                  style={styles.corp_leadership}
-                ></Image>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.button7}>
-                <Image
-                  source={require("../assets/images/leadership.png")}
-                  resizeMode="contain"
-                  style={styles.image}
-                ></Image>
-              </TouchableOpacity>
+                      style={styles.image}
+                  ></Image>
+                </TouchableOpacity>
+              </View>
             </View>
-          </View>
-          <View style={styles.group6}>
-            <Image
-              source={require("../assets/images/screen_4_back.png")}
-              resizeMode="contain"
-              style={styles.back_left}
-            ></Image>
-            <Image
-              source={require("../assets/images/pic_right.png")}
-              resizeMode="contain"
-              style={styles.back_right}
-            ></Image>
+            <View style={styles.group6}>
+              <Image
+                  source={require("../assets/images/screen_4_back.png")}
+                  resizeMode="contain"
+                  style={styles.back_left}
+              ></Image>
+              <Image
+                  source={require("../assets/images/pic_right.png")}
+                  resizeMode="contain"
+                  style={styles.back_right}
+              ></Image>
+            </View>
           </View>
         </View>
       </View>
-    </View>
   );
 }
 
@@ -171,7 +174,7 @@ const styles = StyleSheet.create({
     marginTop: -10,
     alignSelf: "center"
   },
-  moreInfoButton: {
+  button9: {
     width: 50,
     height: 50,
     justifyContent: "space-between"
@@ -185,7 +188,7 @@ const styles = StyleSheet.create({
     color: "rgba(68,68,68,1)",
     alignSelf: "center"
   },
-  showProgressButton: {
+  button8: {
     width: 50,
     height: 50,
     justifyContent: "space-between",
@@ -201,7 +204,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: "center"
   },
-  moreInfoButtonRow: {
+  button9Row: {
     height: 50,
     flexDirection: "row"
   },
