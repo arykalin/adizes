@@ -13,7 +13,7 @@ import MaturityComponent from "../components/MaturityComponent";
 import AgingComponent from "../components/AgingComponent";
 import ResurectionComponent from "../components/ResurectionComponent";
 import DeathComponent from "../components/DeathComponent";
-import {Modal} from "react-native-web";
+import {Modal} from "react-native";
 
 function Screen3(props) {
   const [isVisible, setIsVisible] = useState(false);
