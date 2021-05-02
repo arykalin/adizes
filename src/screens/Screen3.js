@@ -5,7 +5,9 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
-  Text
+  Text,
+  Modal,
+  Button
 } from "react-native";
 import BecomingComponent from "../components/BecomingComponent";
 import GrowingComponent from "../components/GrowingComponent";
@@ -13,7 +15,6 @@ import MaturityComponent from "../components/MaturityComponent";
 import AgingComponent from "../components/AgingComponent";
 import ResurectionComponent from "../components/ResurectionComponent";
 import DeathComponent from "../components/DeathComponent";
-import {Modal} from "react-native";
 
 function Screen3(props) {
   const [isVisible, setIsVisible] = useState(false);
@@ -76,7 +77,7 @@ function Screen3(props) {
                     </View>
                   </ImageBackground>
                   <TouchableOpacity
-                    onPress={() => props.navigation.navigate("Untitled")}
+                    onPress={() => setIsVisible(true)}
                     style={styles.button2}
                   >
                     <Image
@@ -94,28 +95,29 @@ function Screen3(props) {
                 </TouchableOpacity>
               </View>
               <Modal onRequestClose={() => setIsVisible(false)} transparent visible={isVisible}>
-              <View style={styles.descriptions}>
-                <View style={styles.becomingComponentStack}>
-                  <BecomingComponent
-                    style={styles.becomingComponent}
-                  ></BecomingComponent>
-                  <GrowingComponent
-                    style={styles.growingComponent}
-                  ></GrowingComponent>
-                  <MaturityComponent
-                    style={styles.maturityComponent}
-                  ></MaturityComponent>
-                  <AgingComponent
-                    style={styles.agingComponent}
-                  ></AgingComponent>
-                  <ResurectionComponent
-                    style={styles.resurectionComponent}
-                  ></ResurectionComponent>
-                  <DeathComponent
-                    style={styles.deathComponent}
-                  ></DeathComponent>
+                <View style={styles.descriptions}>
+                  <View style={styles.becomingComponentStack}>
+                    <BecomingComponent
+                      style={styles.becomingComponent}
+                    ></BecomingComponent>
+                    <GrowingComponent
+                      style={styles.growingComponent}
+                    ></GrowingComponent>
+                    <MaturityComponent
+                      style={styles.maturityComponent}
+                    ></MaturityComponent>
+                    <AgingComponent
+                      style={styles.agingComponent}
+                    ></AgingComponent>
+                    <ResurectionComponent
+                      style={styles.resurectionComponent}
+                    ></ResurectionComponent>
+                    <DeathComponent
+                      style={styles.deathComponent}
+                    ></DeathComponent>
+                  </View>
                 </View>
-              </View>
+                <Button onPress={() => setIsVisible(false)} title={'Close'} />
               </Modal>
             </View>
             <View style={styles.group5}>

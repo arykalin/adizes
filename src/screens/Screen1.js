@@ -1,10 +1,18 @@
-import React, { Component } from "react";
-import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
+import React, {Component, useState} from "react";
+import { StyleSheet, View, Image, Text, TouchableOpacity, Modal, Button } from "react-native";
 import { Center } from "@builderx/utils";
 
 function Screen1(props) {
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <View style={styles.container}>
+      <Button onPress={() => setIsVisible(true)} title={'Transparent modal'} />
+      <Modal onRequestClose={() => setIsVisible(false)} transparent visible={isVisible}>
+        <View style={styles.containeralt}>
+          <Text style={{ textAlign: 'center' }}>Modal with "transparent" value</Text>
+          <Button onPress={() => setIsVisible(false)} title={'Close'} />
+        </View>
+      </Modal>
       <View style={styles.group}>
         <Image
           source={require("../assets/images/smit_logo.png")}
