@@ -26,6 +26,11 @@ function Screen3(props) {
               style={styles.background}
               imageStyle={styles.background_imageStyle}
           >
+            <Image
+                source={require("../assets/images/smit_logo.png")}
+                resizeMode="contain"
+                style={styles.logo}
+            ></Image>
             <View style={styles.group6StackStack}>
               <View style={styles.group6Stack}>
                 <View style={styles.group6}>
@@ -169,14 +174,7 @@ function Screen3(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(230, 230, 230,1)",
-    flexDirection: "row"
-  },
-  loremIpsum: {
-    fontFamily: "montserrat-regular",
-    color: "rgba(255,255,255,1)",
-    marginLeft: -115,
-    marginTop: 343
+    backgroundColor: "rgba(230, 230, 230,1)"
   },
   group2: {
     flex: 1,
@@ -189,6 +187,12 @@ const styles = StyleSheet.create({
     flex: 1
   },
   background_imageStyle: {},
+  logo: {
+    width: 50,
+    height: 50,
+    marginTop: 35,
+    marginLeft: 23
+  },
   group6: {
     top: 74,
     width: 292,
@@ -296,6 +300,9 @@ const styles = StyleSheet.create({
     marginLeft: 82
   },
   descriptionBecoming: {
+    width: 280,
+    height: 360,
+    position: "absolute",
     backgroundColor: "rgba(230, 230, 230,1)",
     borderRadius: 10,
     shadowColor: "rgba(0,0,0,1)",
@@ -306,21 +313,30 @@ const styles = StyleSheet.create({
     elevation: 30,
     shadowOpacity: 1,
     shadowRadius: 10,
-    width: 280,
-    height: 360
+    left: 7,
+    top: 0
   },
   group7: {
-    top: 240,
-    left: 40,
     width: 180,
     height: 40,
-    position: "absolute"
+    marginTop: 260,
+    marginLeft: 50
+  },
+  becomingText: {
+    top: 0,
+    position: "absolute",
+    fontFamily: "montserrat-regular",
+    color: "rgba(64,64,64,1)",
+    height: 320,
+    width: 260,
+    left: 0
   },
   button9: {
+    top: 265,
+    left: 60,
     width: 140,
     height: 40,
-    marginTop: 25,
-    marginLeft: 20
+    position: "absolute"
   },
   rect: {
     width: 140,
@@ -342,29 +358,14 @@ const styles = StyleSheet.create({
     marginTop: 11,
     marginLeft: 34
   },
-  becomingText: {
-    top: 0,
-    position: "absolute",
-    fontFamily: "montserrat-regular",
-    color: "rgba(64,64,64,1)",
-    height: 320,
-    width: 260,
-    left: 0
-  },
   becomingTextStack: {
     width: 260,
     height: 320,
     marginTop: -240,
     marginLeft: -40
   },
-  group7Stack: {
-    width: 260,
-    height: 320,
-    marginTop: 20,
-    marginLeft: 10
-  },
   group6Stack: {
-    top: 186,
+    top: 161,
     left: 0,
     width: 292,
     height: 446,
@@ -373,20 +374,19 @@ const styles = StyleSheet.create({
   mainDescription: {
     top: 0,
     width: 292,
-    height: 200,
+    height: 220,
     position: "absolute",
     left: 0
   },
   lifecycle3: {
     fontFamily: "montserrat-regular",
     color: "#404040",
-    fontSize: 12,
+    fontSize: 11,
     flex: 1
   },
   group6StackStack: {
     width: 292,
-    height: 632,
-    marginTop: 60,
+    height: 607,
     marginLeft: 41
   }
 });
