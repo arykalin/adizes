@@ -128,24 +128,23 @@ function Screen3(props) {
                 </Modal>
                 <Modal onRequestClose={() => setShowGrowing(false)} transparent visible={showGrowing}>
                 <View style={styles.descriptionBecoming}>
-                  <View style={styles.group7Stack}>
+                  <View style={styles.becomingTextStack}>
                     <Text style={styles.becomingText}>
-                      Стадия роста начинается в тот момент, когда компания расширяется, выбран
-                      свой сегмент, наработана клиентская база.Цель этапа - обеспечение
-                      стабильности и создание репутации компании{"\n"}на рынке, рост объема
-                      продаж и доли рынка.{"\n"}Стадия роста подходит к концу, когда темпы
-                      продаж замедляются.
+                      На стадии Становления определяются направления деятельности компании,
+                      ее цели и стратегия.{"\n"}Главная задача этапа — определиться с
+                      ключевыми компетенциями и создать востребованный рынком продукт,{"\n"}
+                      Это критичный период, поскольку на этой стадии компания либо добьется
+                      успеха, либо потерпит крах и перестанет существовать.{"\n"}Чаще всего
+                      причины кроются в неопытности руководства
                     </Text>
-                    <View style={styles.group7}>
-                      <TouchableOpacity
-                          onPress={() => setShowGrowing(false)}
-                          style={styles.button9}
-                      >
-                        <View style={styles.rect}>
-                          <Text style={styles.close}>ЗАКРЫТЬ</Text>
-                        </View>
-                      </TouchableOpacity>
-                    </View>
+                    <TouchableOpacity
+                        onPress={() => setShowGrowing(false)}
+                        style={styles.button9}
+                    >
+                      <View style={styles.rect}>
+                        <Text style={styles.close}>ЗАКРЫТЬ</Text>
+                      </View>
+                    </TouchableOpacity>
                   </View>
                 </View>
                 </Modal>
@@ -300,10 +299,7 @@ const styles = StyleSheet.create({
     marginLeft: 82
   },
   descriptionBecoming: {
-    width: 280,
-    height: 360,
-    position: "absolute",
-    backgroundColor: "rgba(230, 230, 230,1)",
+    backgroundColor: "rgba(255,255,255,1)",
     borderRadius: 10,
     shadowColor: "rgba(0,0,0,1)",
     shadowOffset: {
@@ -313,14 +309,21 @@ const styles = StyleSheet.create({
     elevation: 30,
     shadowOpacity: 1,
     shadowRadius: 10,
-    left: 7,
-    top: 0
+    width: 280,
+    height: 360
   },
   group7: {
     width: 180,
     height: 40,
     marginTop: 260,
     marginLeft: 50
+  },
+  group6Stack: {
+    top: 161,
+    left: 0,
+    width: 292,
+    height: 446,
+    position: "absolute"
   },
   becomingText: {
     top: 0,
@@ -361,15 +364,8 @@ const styles = StyleSheet.create({
   becomingTextStack: {
     width: 260,
     height: 320,
-    marginTop: -240,
-    marginLeft: -40
-  },
-  group6Stack: {
-    top: 161,
-    left: 0,
-    width: 292,
-    height: 446,
-    position: "absolute"
+    marginTop: 20,
+    marginLeft: 10
   },
   mainDescription: {
     top: 0,
