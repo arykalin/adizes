@@ -41,16 +41,20 @@ function Screen3(props) {
                         style={styles.progressLine}
                         imageStyle={styles.progressLine_imageStyle}
                     >
-                      <TouchableOpacity style={styles.button6}>
+                      <TouchableOpacity
+                          onPress={() => setShowAging(true)}
+                          style={styles.button6}>
                         <Image
                             source={require("../assets/images/5.png")}
                             resizeMode="contain"
                             style={styles.i5}
                         ></Image>
                       </TouchableOpacity>
-                      <TouchableOpacity style={styles.button5}>
+                      <TouchableOpacity
+                          onPress={() => setShowAging(true)}
+                          style={styles.button5}>
                         <Image
-                            source={require("../assets/images/41.png")}
+                            source={require("../assets/images/4.png")}
                             resizeMode="contain"
                             style={styles.i4}
                         ></Image>
@@ -65,7 +69,9 @@ function Screen3(props) {
                               style={styles.i2}
                           ></Image>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.button4}>
+                        <TouchableOpacity
+                            onPress={() => setShowMaturity(true)}
+                            style={styles.button4}>
                           <Image
                               source={require("../assets/images/3.png")}
                               resizeMode="contain"
@@ -133,6 +139,89 @@ function Screen3(props) {
                         обеспечение стабильности и создание репутации компании
                         на рынке, рост объема продаж и доли рынка.
                         Стадия роста подходит к концу, когда темпы продаж замедляются.
+                    </Text>
+                    <TouchableOpacity
+                        onPress={() => setShowGrowing(false)}
+                        style={styles.popupButtonClose}
+                    >
+                      <View style={styles.rect}>
+                        <Text style={styles.close}>ЗАКРЫТЬ</Text>
+                      </View>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                </Modal>
+                <Modal onRequestClose={() => setShowMaturity(false)} transparent visible={showMaturity}>
+                  <View style={styles.popupDescription}>
+                    <View style={styles.becomingTextStack}>
+                      <Text style={styles.becomingText}>
+                        Компания в период зрелости — один из ключевых игроков в выбранной нише.
+                        Продажи растут, хоть и не так динамично, как в период роста.
+                        Доля рынка либо продолжает понемногу расти, либо колеблется в установившихся пределах.
+                        Основная цель – обеспечение стабильности, максимизация доходов за
+                        счет улучшения внутренних показателей эффективности и более жесткого
+                        контроля над соблюдением стандартов работы.
+                    </Text>
+                    <TouchableOpacity
+                        onPress={() => setShowGrowing(false)}
+                        style={styles.popupButtonClose}
+                    >
+                      <View style={styles.rect}>
+                        <Text style={styles.close}>ЗАКРЫТЬ</Text>
+                      </View>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                </Modal>
+                <Modal onRequestClose={() => setShowAging(false)} transparent visible={showAging}>
+                  <View style={styles.popupDescription}>
+                    <View style={styles.becomingTextStack}>
+                      <Text style={styles.becomingText}>
+                        На стадии Старения снижаются конкурентоспособность компании, ее продажи падают.
+                        Цель - борьба за выживание и стабильность.
+                        В результате компания может либо начать абсолютно новый процесс обновления
+                        и снова «возродиться», либо прекратить свою деятельность как самостоятельная структура.
+                    </Text>
+                    <TouchableOpacity
+                        onPress={() => setShowGrowing(false)}
+                        style={styles.popupButtonClose}
+                    >
+                      <View style={styles.rect}>
+                        <Text style={styles.close}>ЗАКРЫТЬ</Text>
+                      </View>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                </Modal>
+                <Modal onRequestClose={() => setShowResurection(false)} transparent visible={showResurection}>
+                  <View style={styles.popupDescription}>
+                    <View style={styles.becomingTextStack}>
+                      <Text style={styles.becomingText}>
+                        Стадия Возрождения возникает не во всех компаниях.
+                        Она происходит тогда, когда компания понимает, что теряет свою
+                        конкурентоспособность, и начинает бороться за свое существование.
+                        Стадия Возрождения может быть успешной, а может не принести желаемого
+                        результата.Главная цель в этот период - оживление компании..
+                    </Text>
+                    <TouchableOpacity
+                        onPress={() => setShowGrowing(false)}
+                        style={styles.popupButtonClose}
+                    >
+                      <View style={styles.rect}>
+                        <Text style={styles.close}>ЗАКРЫТЬ</Text>
+                      </View>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                </Modal>
+                <Modal onRequestClose={() => setShowDeath(false)} transparent visible={showDeath}>
+                  <View style={styles.popupDescription}>
+                    <View style={styles.becomingTextStack}>
+                      <Text style={styles.becomingText}>
+                        В случае, если компания не может совершить прорыв и выжимает
+                        последнее из когда-то успешных проектов, ее ждет крах..
+                        Для владельца это означает потерю контроля, компания банкротится,
+                        ее активы скупаются.
                     </Text>
                     <TouchableOpacity
                         onPress={() => setShowGrowing(false)}
