@@ -115,7 +115,7 @@ function Screen3(props) {
                       </Text>
                       <TouchableOpacity
                           onPress={() => setShowBecoming(false)}
-                          style={styles.button9}
+                          style={styles.popupButtonClose}
                       >
                         <View style={styles.rect}>
                           <Text style={styles.close}>ЗАКРЫТЬ</Text>
@@ -136,7 +136,7 @@ function Screen3(props) {
                     </Text>
                     <TouchableOpacity
                         onPress={() => setShowGrowing(false)}
-                        style={styles.button9}
+                        style={styles.popupButtonClose}
                     >
                       <View style={styles.rect}>
                         <Text style={styles.close}>ЗАКРЫТЬ</Text>
@@ -333,7 +333,7 @@ const styles = StyleSheet.create({
     width: 260,
     left: 0
   },
-  button9: {
+  popupButtonClose: {
     top: 265,
     left: 60,
     width: 140,
@@ -382,7 +382,7 @@ const styles = StyleSheet.create({
   group6StackStack: {
     width: 292,
     height: 607,
-    marginLeft: 41
+    flex: 1
   }
 });
 
