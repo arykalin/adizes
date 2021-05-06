@@ -102,9 +102,9 @@ function Screen3(props) {
                   </TouchableOpacity>
                 </View>
                 <Modal onRequestClose={() => setShowBecoming(false)} transparent visible={showBecoming}>
-                <View style={styles.descriptionBecoming}>
-                    <View style={styles.group7Stack}>
-                      <Text style={styles.becomingText}>
+                <View style={styles.popupDescription}>
+                  <View style={styles.becomingTextStack}>
+                    <Text style={styles.becomingText}>
                         На стадии Становления определяются направления деятельности
                         компании, ее цели и стратегия.{"\n"}Главная задача этапа —
                         определиться с ключевыми компетенциями и создать востребованный
@@ -113,7 +113,6 @@ function Screen3(props) {
                         существовать.{"\n"}Чаще всего причины кроются в неопытности
                         руководства
                       </Text>
-                      <View style={styles.group7}>
                       <TouchableOpacity
                           onPress={() => setShowBecoming(false)}
                           style={styles.button9}
@@ -122,20 +121,18 @@ function Screen3(props) {
                           <Text style={styles.close}>ЗАКРЫТЬ</Text>
                         </View>
                       </TouchableOpacity>
-                      </View>
                     </View>
                 </View>
                 </Modal>
                 <Modal onRequestClose={() => setShowGrowing(false)} transparent visible={showGrowing}>
-                <View style={styles.descriptionBecoming}>
-                  <View style={styles.becomingTextStack}>
-                    <Text style={styles.becomingText}>
-                      На стадии Становления определяются направления деятельности компании,
-                      ее цели и стратегия.{"\n"}Главная задача этапа — определиться с
-                      ключевыми компетенциями и создать востребованный рынком продукт,{"\n"}
-                      Это критичный период, поскольку на этой стадии компания либо добьется
-                      успеха, либо потерпит крах и перестанет существовать.{"\n"}Чаще всего
-                      причины кроются в неопытности руководства
+                  <View style={styles.popupDescription}>
+                    <View style={styles.becomingTextStack}>
+                      <Text style={styles.becomingText}>
+                        Стадия роста начинается в тот момент, когда компания расширяется,
+                        выбран свой сегмент, наработана клиентская база.Цель этапа -
+                        обеспечение стабильности и создание репутации компании
+                        на рынке, рост объема продаж и доли рынка.
+                        Стадия роста подходит к концу, когда темпы продаж замедляются.
                     </Text>
                     <TouchableOpacity
                         onPress={() => setShowGrowing(false)}
@@ -298,7 +295,7 @@ const styles = StyleSheet.create({
     marginTop: 11,
     marginLeft: 82
   },
-  descriptionBecoming: {
+  popupDescription: {
     backgroundColor: "rgba(255,255,255,1)",
     borderRadius: 10,
     shadowColor: "rgba(0,0,0,1)",
@@ -310,7 +307,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 10,
     width: 280,
-    height: 360
+    height: 360,
+    marginTop: 30,
+    marginLeft: 82
   },
   group7: {
     width: 180,
