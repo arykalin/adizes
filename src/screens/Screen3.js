@@ -382,7 +382,8 @@ const styles = StyleSheet.create({
   group6StackStack: {
     width: 292,
     height: 607,
-    flex: 1
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
 
