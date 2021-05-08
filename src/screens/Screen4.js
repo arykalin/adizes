@@ -160,17 +160,7 @@ function Screen4(props) {
                         </View>
                         <Modal onRequestClose={() => setShowQuestion(false)} transparent visible={showQuestion}>
                             <View style={styles.questionsGroup}>
-                                <View style={styles.questionsChoices}>
                                     <View style={styles.questionButton}>
-                                        <TouchableOpacity
-                                            style={styles.questionRectangle}
-                                        ></TouchableOpacity>
-                                        <TouchableOpacity
-                                            style={styles.questionRectangle}
-                                        ></TouchableOpacity>
-                                        <TouchableOpacity
-                                            style={styles.questionRectangle}
-                                        ></TouchableOpacity>
                                         <TouchableOpacity
                                             onPress={() => setShowQuestion(false)}
                                             style={styles.backButton}>
@@ -180,8 +170,16 @@ function Screen4(props) {
                                                 style={styles.backButtonImage}
                                             ></Image>
                                         </TouchableOpacity>
+                                        <TouchableOpacity
+                                            style={styles.questionRectangle}
+                                        ></TouchableOpacity>
+                                        <TouchableOpacity
+                                            style={styles.questionRectangle}
+                                        ></TouchableOpacity>
+                                        <TouchableOpacity
+                                            style={styles.questionRectangle}
+                                        ></TouchableOpacity>
                                     </View>
-                                </View>
                             </View>
                         </Modal>
                     </View>
@@ -263,7 +261,7 @@ const styles = StyleSheet.create({
     stage_bar: {
         width: 310,
         height: 10,
-        marginTop: 25,
+        marginTop: 27,
         alignSelf: "center"
     },
     progressBar: {
@@ -310,10 +308,9 @@ const styles = StyleSheet.create({
         marginTop: -12
     },
     stageName: {
-        width: 250,
+        alignSelf: "center",
         height: 16,
         marginTop: 16,
-        marginLeft: 45
     },
     stageNameText: {
         fontFamily: "montserrat-800",
@@ -446,19 +443,24 @@ const styles = StyleSheet.create({
     },
     questionsGroup: {
         flex: 1,
-        justifyContent: 'center',
         alignSelf: 'center',
         width: '90%',
         height: '70%',
+        paddingVertical: 10,
         marginTop: 30,
         marginBottom: 10,
         borderWidth: 3,
         borderColor: "rgba(254,164,38,1)",
-        backgroundColor: "rgba(255,255,255,1)"
+        backgroundColor: "rgba(255,255,255,1)",
     },
-    questionsChoices: {
-        flex: 1,
-        paddingVertical: 10,
+    backButton: {
+        borderWidth: 3,
+        borderColor: "red",
+        // flex: 1,
+        width: 50,
+        height: 50,
+        alignSelf: 'center',
+        marginTop: -50,
     },
     questionButton: {
         flex: 1,
@@ -468,21 +470,14 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     questionRectangle: {
+        borderWidth: 3,
+        borderColor: "red",
         backgroundColor: "rgba(101,101,101,1)",
         flex: 1,
-        // borderWidth: 3,
-        // borderColor: "red",
+        width: '90%',
+        height: '90%',
+        alignSelf: 'center',
         marginTop: 10,
-        // width: '90%',
-        // height: '90%',
-        // alignSelf: 'center',
-    },
-    backButton: {
-        top: -25,
-        left: 122,
-        width: 50,
-        height: 50,
-        position: "absolute"
     },
     backButtonImage: {
         width: 50,
