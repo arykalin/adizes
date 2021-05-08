@@ -30,9 +30,9 @@ function Screen3(props) {
                 resizeMode="contain"
                 style={styles.logo}
             ></Image>
-            <View style={styles.group6StackStack}>
-              <View style={styles.group6Stack}>
-                <View style={styles.group6}>
+            <View style={styles.progressStackStack}>
+              <View style={styles.progressStack}>
+                <View style={styles.progress}>
                   <View style={styles.progressLineStack}>
                     <ImageBackground
                         source={require("../assets/images/Group_8.png")}
@@ -258,15 +258,10 @@ function Screen3(props) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "rgba(230, 230, 230,1)"
-  },
-  group2: {
-    flex: 1,
     backgroundColor: "rgba(232,232,232,1)",
-    height: 852,
     overflow: "scroll",
-    marginLeft: 33
+    width: 1020,
+    height: 852
   },
   background: {
     flex: 1
@@ -277,13 +272,6 @@ const styles = StyleSheet.create({
     height: 50,
     marginTop: 35,
     marginLeft: 23
-  },
-  group6: {
-    top: 74,
-    width: 292,
-    height: 372,
-    position: "absolute",
-    left: 0
   },
   progressLine: {
     width: 292,
@@ -473,7 +461,27 @@ const styles = StyleSheet.create({
     height: 607,
     justifyContent: 'center',
     alignItems: 'center'
-  }
+  },
+  progressStackStack: {
+    width: 762,
+    height: 607,
+    marginTop: 85,
+    marginLeft: 129
+  },
+  progressStack: {
+    top: 161,
+    left: 0,
+    width: 762,
+    height: 446,
+    position: "absolute"
+  },
+  progress: {
+    top: 74,
+    width: 292,
+    height: 372,
+    position: "absolute",
+    left: 235
+  },
 });
 
 export default Screen3;
