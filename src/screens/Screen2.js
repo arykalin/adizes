@@ -4,33 +4,33 @@ import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 function Screen2(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.group}>
+      <View style={styles.mainView}>
         <Image
           source={require("../assets/images/smit_logo1.png")}
           resizeMode="contain"
-          style={styles.image2}
+          style={styles.logoImage}
         ></Image>
         <Text style={styles.loremIpsum}>
-          Бизнес игра SMART management - лучший способ понять, с какими вызовами
+          {"\t"}Бизнес игра SMART management - лучший способ понять, с какими вызовами
           вы, как руководитель компании, сталкиваетесь на разных этапах ее
           развития и какие стратегические и тактические решения должны быть
-          приняты, чтобы компания продолжала успешно расти.{"\n"}В основе игры
-          лежит теория жизненного цикла организации.{"\n"}В игре V этапов,
+          приняты, чтобы компания продолжала успешно расти.{"\n"}{"\n"}{"\t"}В основе игры
+          лежит теория жизненного цикла организации.{"\n"}{"\n"}{"\t"}В игре V этапов,
           проходя которые вы приведете свою компанию либо к смерти и
           ликвидациии, либо к новому этапу роста.
         </Text>
         <Image
           source={require("../assets/images/screen2_sucess.png")}
           resizeMode="contain"
-          style={styles.image}
+          style={styles.sucessImage}
         ></Image>
-        <View style={styles.group2}>
+        <View style={styles.nextButtonView}>
           <TouchableOpacity
             onPress={() => props.navigation.navigate("Screen3")}
             style={styles.button}
           >
-            <View style={styles.register_button}>
-              <Text style={styles.Далее}>Далее</Text>
+            <View style={styles.nextButton}>
+              <Text style={styles.NextText}>Далее</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -43,18 +43,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "rgba(229,229,229,1)",
-    overflow: "scroll"
-  },
-  group: {
-    height: 925,
     overflow: "scroll",
-    backgroundColor: "rgba(255,255,255,1)"
+    alignItems: 'flex-start',
+    borderWidth: 3,
+    borderColor: "#000000",
   },
-  image2: {
-    width: 58,
-    height: 34,
-    marginTop: 30,
-    marginLeft: 20
+  mainView: {
+    flex: 1,
+    backgroundColor: "rgba(255,255,255,1)",
+    alignSelf: 'center',
+    borderWidth: 3,
+    borderColor: "#000000",
+  },
+  logoImage: {
+    flex: 1,
+    width: 50,
+    height: 50,
+    positionLeft: '5%',
+    borderWidth: 3,
+    borderColor: "#000000",
   },
   loremIpsum: {
     fontFamily: "montserrat-regular",
@@ -64,17 +71,23 @@ const styles = StyleSheet.create({
     textAlign: "justify",
     marginTop: 16,
     marginLeft: 18,
-    marginRight: 18
+    marginRight: 18,
+    borderWidth: 3,
+    borderColor: "#000000",
   },
-  image: {
-    height: 200
+  sucessImage: {
+    height: 200,
+    borderWidth: 3,
+    borderColor: "#000000",
   },
-  group2: {
-    width: 375,
-    height: 160,
+  nextButtonView: {
+    // width: 375,
+    // height: 160,
     backgroundColor: "rgba(255,255,255,1)",
     marginTop: 65,
-    alignSelf: "center"
+    alignSelf: "center",
+    borderWidth: 3,
+    borderColor: "#000000",
   },
   button: {
     width: 220,
@@ -92,7 +105,7 @@ const styles = StyleSheet.create({
     marginTop: 60,
     alignSelf: "center"
   },
-  register_button: {
+  nextButton: {
     backgroundColor: "#ff5c00",
     borderRadius: 5,
     shadowColor: "rgba(74,74,74,1)",
@@ -105,7 +118,7 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     flex: 1
   },
-  Далее: {
+  NextText: {
     fontFamily: "montserrat-600",
     color: "rgba(255,255,255,1)",
     textAlign: "center",
