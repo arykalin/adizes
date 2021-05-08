@@ -278,7 +278,6 @@ const styles = StyleSheet.create({
     mainView: {
         flex: 1,
         backgroundColor: "rgba(232,232,232,1)",
-        justifyContent: 'center',
         alignSelf: 'center',
     },
     background: {
@@ -291,13 +290,11 @@ const styles = StyleSheet.create({
     },
     progress: {
         top: 74,
-        justifyContent: 'center',
         alignSelf: 'center',
     },
     progressStackStack: {
-        justifyContent: 'center',
+        flex: 1,
         alignSelf: 'center',
-        alignItems: 'flex-start',
     },
     progressLine: {
         width: 292,
@@ -493,20 +490,21 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     mainDescription: {
-        // borderWidth: 1,
+        // borderWidth: 3,
         // borderColor: "#000000",
-        top: 0,
         flex: 1,
         width: 300,
-        height: 60,
         justifyContent: 'center',
         alignSelf: 'center',
 
     },
     logo: {
+        flex: 1,
         width: 50,
-        height: 50,
-        marginTop: -50
+        height: 20,
+        marginTop: -50,
+        borderWidth: 3,
+        borderColor: "#000000",
     },
     mainDescriptionText: {
         fontFamily: "montserrat-regular",
