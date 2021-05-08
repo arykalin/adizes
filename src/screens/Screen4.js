@@ -11,9 +11,9 @@ import {
 function Screen4(props) {
   return (
       <View style={styles.container}>
-        <View style={styles.group}>
-          <View style={styles.stage_layer}>
-            <View style={styles.group4}>
+        <View style={styles.mainGroup}>
+          <View style={styles.infoScreen}>
+            <View style={styles.infoScreenIcons}>
               <View style={styles.button9Row}>
                 <TouchableOpacity style={styles.button9}>
                   <Image
@@ -24,7 +24,7 @@ function Screen4(props) {
                   <Text style={styles.подробно}>Подробно</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress={() => props.navigation.navigate("Screen4")}
+                    onPress={() => props.navigation.navigate("Screen1")}
                     style={styles.button8}
                 >
                   <Image
@@ -70,10 +70,12 @@ function Screen4(props) {
             </View>
             <Text style={styles.этапIСтановление}>ЭТАП I. СТАНОВЛЕНИЕ</Text>
           </View>
-          <View style={styles.group2}>
+          <View style={styles.gameScreen}>
             <View style={styles.circleGroup}>
-              <View style={styles.стратегияРазвитияStack}>
-                <Text style={styles.стратегияРазвития}>Стратегия развития</Text>
+              <View style={styles.developementStrategyStack}>
+                <Text style={styles.developementStrategy}>
+                  Стратегия развития
+                </Text>
                 <ImageBackground
                     source={require("../assets/images/main_circle.png")}
                     resizeMode="contain"
@@ -136,7 +138,7 @@ function Screen4(props) {
                 </TouchableOpacity>
               </View>
             </View>
-            <View style={styles.group6}>
+            <View style={styles.bottomImages}>
               <Image
                   source={require("../assets/images/screen_4_back.png")}
                   resizeMode="contain"
@@ -159,17 +161,16 @@ const styles = StyleSheet.create({
     flex: 1,
     overflow: "scroll"
   },
-  group: {
-    height: 940,
-    overflow: "scroll"
+  mainGroup: {
+    height: 760,
   },
-  stage_layer: {
+  infoScreen: {
     width: 340,
-    height: 140,
-    marginTop: 60,
+    height: 160,
+    marginTop: 40,
     alignSelf: "center"
   },
-  group4: {
+  infoScreenIcons: {
     width: 310,
     height: 110,
     marginTop: -10,
@@ -207,12 +208,14 @@ const styles = StyleSheet.create({
   },
   button9Row: {
     height: 50,
-    flexDirection: "row"
+    flexDirection: "row",
+    marginTop: 10
   },
   stage_bar: {
     width: 310,
     height: 10,
-    marginTop: 40
+    marginTop: 25,
+    alignSelf: "center"
   },
   progressBar: {
     top: 12,
@@ -262,13 +265,13 @@ const styles = StyleSheet.create({
     color: "rgba(68,68,68,1)",
     fontSize: 20,
     textAlign: "center",
-    lineHeight: 5,
-    marginTop: 26,
-    marginLeft: 45
+    lineHeight: 0,
+    marginTop: 16,
+    alignSelf: "center"
   },
-  group2: {
-    width: 360,
-    height: 720,
+  gameScreen: {
+    width: 313,
+    height: 527,
     marginTop: 5,
     alignSelf: "center"
   },
@@ -276,9 +279,9 @@ const styles = StyleSheet.create({
     width: 340,
     height: 295,
     marginTop: 45,
-    marginLeft: 10
+    alignSelf: "center"
   },
-  стратегияРазвития: {
+  developementStrategy: {
     position: "absolute",
     fontFamily: "montserrat-700",
     color: "rgba(68,68,68,1)",
@@ -377,13 +380,13 @@ const styles = StyleSheet.create({
     width: 70,
     height: 70
   },
-  стратегияРазвитияStack: {
+  developementStrategyStack: {
     width: 340,
     flex: 1,
     marginBottom: -30,
     marginTop: -35
   },
-  group6: {
+  bottomImages: {
     width: 360,
     height: 160,
     flexDirection: "row",
