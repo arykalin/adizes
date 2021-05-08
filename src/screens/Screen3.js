@@ -125,31 +125,35 @@ function Screen3(props) {
                             </View>
                             <Modal onRequestClose={() => setShowBecoming(false)} transparent visible={showBecoming}>
                                 <View style={styles.popupDescription}>
-                                    <View style={styles.becomingTextStack}>
-                                        <Text style={styles.becomingText}>
-                                            На стадии Становления определяются направления деятельности
-                                            компании, ее цели и стратегия.{"\n"}Главная задача этапа —
-                                            определиться с ключевыми компетенциями и создать востребованный
-                                            рынком продукт,{"\n"}Это критичный период, поскольку на этой стадии
-                                            компания либо добьется успеха, либо потерпит крах и перестанет
-                                            существовать.{"\n"}Чаще всего причины кроются в неопытности
-                                            руководства
-                                        </Text>
-                                        <TouchableOpacity
-                                            onPress={() => setShowBecoming(false)}
-                                            style={styles.popupButtonClose}
-                                        >
-                                            <View style={styles.rect}>
-                                                <Text style={styles.close}>ЗАКРЫТЬ</Text>
-                                            </View>
-                                        </TouchableOpacity>
-                                    </View>
+                                    <Text style={styles.popupTextHeader}>
+                                        Этап I. Становление.
+                                    </Text>
+                                    <Text style={styles.popupText}>
+                                        На стадии Становления определяются направления деятельности
+                                        компании, ее цели и стратегия.{"\n"}Главная задача этапа —
+                                        определиться с ключевыми компетенциями и создать востребованный
+                                        рынком продукт,{"\n"}Это критичный период, поскольку на этой стадии
+                                        компания либо добьется успеха, либо потерпит крах и перестанет
+                                        существовать.{"\n"}Чаще всего причины кроются в неопытности
+                                        руководства
+                                    </Text>
+                                    <TouchableOpacity
+                                        style={styles.popupButtonClose}
+                                        onPress={() => setShowBecoming(false)}
+                                    >
+                                        <View style={styles.rect}>
+                                            <Text style={styles.close}>ЗАКРЫТЬ</Text>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
                             </Modal>
                             <Modal onRequestClose={() => setShowGrowing(false)} transparent visible={showGrowing}>
                                 <View style={styles.popupDescription}>
-                                    <View style={styles.becomingTextStack}>
-                                        <Text style={styles.becomingText}>
+                                    <View style={styles.popupTextStack}>
+                                        <Text style={styles.popupTextHeader}>
+                                            Этап I. Становление.
+                                        </Text>
+                                        <Text style={styles.popupText}>
                                             Стадия роста начинается в тот момент, когда компания расширяется,
                                             выбран свой сегмент, наработана клиентская база.Цель этапа -
                                             обеспечение стабильности и создание репутации компании
@@ -169,8 +173,8 @@ function Screen3(props) {
                             </Modal>
                             <Modal onRequestClose={() => setShowMaturity(false)} transparent visible={showMaturity}>
                                 <View style={styles.popupDescription}>
-                                    <View style={styles.becomingTextStack}>
-                                        <Text style={styles.becomingText}>
+                                    <View style={styles.popupTextStack}>
+                                        <Text style={styles.popupText}>
                                             Компания в период зрелости — один из ключевых игроков в выбранной нише.
                                             Продажи растут, хоть и не так динамично, как в период роста.
                                             Доля рынка либо продолжает понемногу расти, либо колеблется в установившихся
@@ -192,8 +196,8 @@ function Screen3(props) {
                             </Modal>
                             <Modal onRequestClose={() => setShowAging(false)} transparent visible={showAging}>
                                 <View style={styles.popupDescription}>
-                                    <View style={styles.becomingTextStack}>
-                                        <Text style={styles.becomingText}>
+                                    <View style={styles.popupTextStack}>
+                                        <Text style={styles.popupText}>
                                             На стадии Старения снижаются конкурентоспособность компании, ее продажи
                                             падают.
                                             Цель - борьба за выживание и стабильность.
@@ -215,8 +219,8 @@ function Screen3(props) {
                             <Modal onRequestClose={() => setShowResurection(false)} transparent
                                    visible={showResurection}>
                                 <View style={styles.popupDescription}>
-                                    <View style={styles.becomingTextStack}>
-                                        <Text style={styles.becomingText}>
+                                    <View style={styles.popupTextStack}>
+                                        <Text style={styles.popupText}>
                                             Стадия Возрождения возникает не во всех компаниях.
                                             Она происходит тогда, когда компания понимает, что теряет свою
                                             конкурентоспособность, и начинает бороться за свое существование.
@@ -236,8 +240,8 @@ function Screen3(props) {
                             </Modal>
                             <Modal onRequestClose={() => setShowDeath(false)} transparent visible={showDeath}>
                                 <View style={styles.popupDescription}>
-                                    <View style={styles.becomingTextStack}>
-                                        <Text style={styles.becomingText}>
+                                    <View style={styles.popupTextStack}>
+                                        <Text style={styles.popupText}>
                                             В случае, если компания не может совершить прорыв и выжимает
                                             последнее из когда-то успешных проектов, ее ждет крах..
                                             Для владельца это означает потерю контроля, компания банкротится,
@@ -468,13 +472,7 @@ const styles = StyleSheet.create({
         marginTop: 11,
         marginLeft: 34
     },
-    becomingTextStack: {
-        width: 1941,
-        height: 305,
-        marginTop: 20,
-        marginLeft: 10
-    },
-    progressStack: {
+    popupTextStack: {
         borderWidth: 1,
         borderColor: "#000000",
         // height: 305,
