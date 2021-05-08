@@ -10,7 +10,7 @@ function Screen2(props) {
           resizeMode="contain"
           style={styles.logoImage}
         ></Image>
-        <Text style={styles.loremIpsum}>
+        <Text style={styles.gameDescriptionText}>
           {"\t"}Бизнес игра SMART management - лучший способ понять, с какими вызовами
           вы, как руководитель компании, сталкиваетесь на разных этапах ее
           развития и какие стратегические и тактические решения должны быть
@@ -42,56 +42,61 @@ function Screen2(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(229,229,229,1)",
     overflow: "scroll",
     alignItems: 'flex-start',
-    borderWidth: 3,
-    borderColor: "#000000",
+    backgroundColor: "rgba(255,255,255,1)",
   },
   mainView: {
     flex: 1,
-    backgroundColor: "rgba(255,255,255,1)",
-    alignSelf: 'center',
-    borderWidth: 3,
-    borderColor: "#000000",
+    maxWidth: 400,
+    minHeight: 640,
+    maxHeight: 720,
+    alignSelf: "center",
+    // borderWidth: 3,
+    // borderColor: "#000000",
   },
   logoImage: {
-    flex: 1,
     width: 50,
     height: 50,
-    positionLeft: '5%',
-    borderWidth: 3,
-    borderColor: "#000000",
+    marginLeft: '3%',
+    marginTop: '3%',
+    // borderWidth: 3,
+    // borderColor: "#000000",
   },
-  loremIpsum: {
+  gameDescriptionText: {
+    flex: 1,
+    width: '90%',
+    height: '34%',
+    alignSelf: 'center',
+    marginHorizontal: '5%',
     fontFamily: "montserrat-regular",
     color: "rgba(68,68,68,1)",
     fontSize: 12,
     lineHeight: 14,
     textAlign: "justify",
-    marginTop: 16,
-    marginLeft: 18,
-    marginRight: 18,
-    borderWidth: 3,
-    borderColor: "#000000",
+    // borderWidth: 3,
+    // borderColor: "#000000",
   },
   sucessImage: {
-    height: 200,
-    borderWidth: 3,
-    borderColor: "#000000",
+    flex: 1,
+    width: '90%',
+    height: '30%',
+    alignSelf: 'center',
+    // borderWidth: 3,
+    // borderColor: "#000000",
   },
   nextButtonView: {
-    // width: 375,
-    // height: 160,
+    flex: 1,
+    width: 200,
+    height: 40,
+    alignSelf: 'center',
+    marginBottom: 10,
     backgroundColor: "rgba(255,255,255,1)",
-    marginTop: 65,
-    alignSelf: "center",
-    borderWidth: 3,
-    borderColor: "#000000",
+    // borderWidth: 3,
+    // borderColor: "#000000",
   },
   button: {
-    width: 220,
-    height: 40,
+    // flex: 1,
     borderRadius: 5,
     shadowColor: "rgba(0,0,0,1)",
     shadowOffset: {
@@ -102,10 +107,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 5,
     backgroundColor: "rgba(139,87,42,1)",
-    marginTop: 60,
-    alignSelf: "center"
   },
   nextButton: {
+    // flex: 1,
     backgroundColor: "#ff5c00",
     borderRadius: 5,
     shadowColor: "rgba(74,74,74,1)",
@@ -116,14 +120,13 @@ const styles = StyleSheet.create({
     elevation: 30,
     shadowOpacity: 1,
     shadowRadius: 10,
-    flex: 1
   },
   NextText: {
     fontFamily: "montserrat-600",
     color: "rgba(255,255,255,1)",
     textAlign: "center",
     fontSize: 30,
-    flex: 1
+    // flex: 1
   }
 });
 
