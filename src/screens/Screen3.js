@@ -501,10 +501,11 @@ const styles = StyleSheet.create({
     logo: {
         flex: 1,
         width: 50,
-        height: 20,
-        marginTop: -50,
-        borderWidth: 3,
-        borderColor: "#000000",
+        // height: 20,
+        positionLeft: '5%',
+        // positionBottom: '80%',
+        // borderWidth: 3,
+        // borderColor: "#000000",
     },
     mainDescriptionText: {
         fontFamily: "montserrat-regular",
