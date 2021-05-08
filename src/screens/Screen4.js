@@ -166,6 +166,12 @@ function Screen4(props) {
                                             style={styles.questionRectangle}
                                         ></TouchableOpacity>
                                         <TouchableOpacity
+                                            style={styles.questionRectangle}
+                                        ></TouchableOpacity>
+                                        <TouchableOpacity
+                                            style={styles.questionRectangle}
+                                        ></TouchableOpacity>
+                                        <TouchableOpacity
                                             onPress={() => setShowQuestion(false)}
                                             style={styles.backButton}>
                                             <Image
@@ -451,16 +457,25 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(255,255,255,1)"
     },
     questionsChoices: {
-        flex: 1
+        flex: 1,
+        paddingVertical: 10,
     },
     questionButton: {
-        width: 294,
-        height: 40
+        flex: 1,
+        width: '90%',
+        height: '90%',
+        alignSelf: 'center',
+        marginTop: 10,
     },
     questionRectangle: {
         backgroundColor: "rgba(101,101,101,1)",
-        alignSelf: "stretch",
-        height: 40
+        flex: 1,
+        // borderWidth: 3,
+        // borderColor: "red",
+        marginTop: 10,
+        // width: '90%',
+        // height: '90%',
+        // alignSelf: 'center',
     },
     backButton: {
         top: -25,
