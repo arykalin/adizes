@@ -1,6 +1,5 @@
 import React, {Component, useState} from "react";
 import { StyleSheet, View, Image, Text, TouchableOpacity, Modal, Button } from "react-native";
-import { Center } from "@builderx/utils";
 
 function Screen1(props) {
   return (
@@ -11,14 +10,15 @@ function Screen1(props) {
           resizeMode="contain"
           style={styles.logo}
         ></Image>
-        <Text style={styles.smartМенджмент}>SMART МЕНДЖМЕНТ</Text>
-        <View style={styles.бизнесИграПосмотриStack}>
-          <Center horizontal>
-            <Text style={styles.бизнесИграПосмотри}>
-              БИЗНЕС ИГРА{"\n"}ПОСМОТРИ НА СВОЙ{"\n"}БИЗНЕС В ПЕРСПЕКТИВЕ{"\n"}
+        <Text style={styles.smartOrangeText}>SMART МЕНДЖМЕНТ</Text>
+        <View style={styles.businessGameStack}>
+            <Text style={[styles.gameDescriptionText, {color: "rgba(255,78,0,1)"}]}>
+              БИЗНЕС ИГРА
+            </Text>
+            <Text style={styles.gameDescriptionText}>
+              ПОСМОТРИ НА СВОЙ{"\n"}БИЗНЕС В ПЕРСПЕКТИВЕ{"\n"}
               НЕСКОЛЬКИХ ЛЕТ!
             </Text>
-          </Center>
           <Image
             source={require("../assets/images/screen1_back.png")}
             resizeMode="contain"
@@ -61,16 +61,14 @@ const styles = StyleSheet.create({
     marginTop: 60,
     alignSelf: "center"
   },
-  smartМенджмент: {
+  smartOrangeText: {
     fontFamily: "montserrat-600",
     color: "rgba(255,78,0,1)",
     fontSize: 20,
     textAlign: "center",
     marginTop: 20
   },
-  бизнесИграПосмотри: {
-    top: 0,
-    position: "absolute",
+  gameDescriptionText: {
     fontFamily: "montserrat-600",
     color: "rgba(66,66,66,1)",
     textAlign: "center"
@@ -82,7 +80,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0
   },
-  бизнесИграПосмотриStack: {
+  businessGameStack: {
     height: 400,
     marginTop: 20
   },
