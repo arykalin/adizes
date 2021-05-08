@@ -165,7 +165,9 @@ function Screen4(props) {
                                         <TouchableOpacity
                                             style={styles.questionRectangle}
                                         ></TouchableOpacity>
-                                        <TouchableOpacity style={styles.backButton}>
+                                        <TouchableOpacity
+                                            onPress={() => setShowQuestion(false)}
+                                            style={styles.backButton}>
                                             <Image
                                                 source={require("../assets/images/Group_25.png")}
                                                 resizeMode="contain"
@@ -198,10 +200,12 @@ function Screen4(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        overflow: "scroll"
+        overflow: "scroll",
+        alignItems: 'flex-start',
     },
     mainGroup: {
         flex: 1,
+        alignSelf: 'center',
     },
     infoScreen: {
         width: 340,
