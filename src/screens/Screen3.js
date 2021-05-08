@@ -276,10 +276,12 @@ const styles = StyleSheet.create({
         flex: 1
     },
     background_imageStyle: {},
-    logo: {
-        width: 50,
-        height: 50,
-        marginTop: -50
+    progress: {
+        top: 74,
+        width: 292,
+        height: 372,
+        position: "absolute",
+        left: 899
     },
     progressLine: {
         width: 292,
@@ -396,19 +398,6 @@ const styles = StyleSheet.create({
         marginTop: 30,
         marginLeft: 82
     },
-    group7: {
-        width: 180,
-        height: 40,
-        marginTop: 260,
-        marginLeft: 50
-    },
-    group6Stack: {
-        top: 161,
-        left: 0,
-        width: 292,
-        height: 446,
-        position: "absolute"
-    },
     becomingText: {
         top: 0,
         position: "absolute",
@@ -446,50 +435,42 @@ const styles = StyleSheet.create({
         marginLeft: 34
     },
     becomingTextStack: {
-        width: 260,
-        height: 320,
+        width: 1941,
+        height: 305,
         marginTop: 20,
         marginLeft: 10
-    },
-    mainDescription: {
-        top: 0,
-        width: 292,
-        height: 220,
-        position: "absolute",
-        left: 235
-    },
-    mainDescriptionText: {
-        fontFamily: "montserrat-regular",
-        color: "#404040",
-        fontSize: 11,
-        flex: 1
-    },
-    group6StackStack: {
-        width: 292,
-        height: 607,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    progressStackStack: {
-        width: 762,
-        height: 607,
-        marginTop: 85,
-        marginLeft: 129
     },
     progressStack: {
         top: 161,
         left: 0,
-        width: 762,
+        width: 2091,
         height: 446,
         position: "absolute"
     },
-    progress: {
-        top: 74,
+    mainDescription: {
+        top: 0,
         width: 292,
-        height: 372,
+        height: 198,
         position: "absolute",
-        left: 235
+        left: 899
     },
+    logo: {
+        width: 50,
+        height: 50,
+        marginTop: -50
+    },
+    mainDescriptionText: {
+        fontFamily: "montserrat-regular",
+        color: "rgba(74,74,74,1)",
+        fontSize: 11,
+        flex: 1
+    },
+    progressStackStack: {
+        width: 2091,
+        height: 607,
+        marginTop: 85,
+        marginLeft: 355
+    }
 });
 
 export default Screen3;
