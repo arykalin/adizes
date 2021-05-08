@@ -4,11 +4,11 @@ import { StyleSheet, View, Image, Text, TouchableOpacity, Modal, Button } from "
 function Screen1(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.group}>
+      <View style={styles.mainView}>
         <Image
           source={require("../assets/images/smit_logo.png")}
           resizeMode="contain"
-          style={styles.logo}
+          style={styles.logoImage}
         ></Image>
         <Text style={styles.smartOrangeText}>SMART МЕНДЖМЕНТ</Text>
         <View style={styles.businessGameStack}>
@@ -41,25 +41,24 @@ function Screen1(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    overflow: "scroll"
+    overflow: "scroll",
+    alignItems: 'flex-start',
+    backgroundColor: "rgba(255,255,255,1)",
   },
-  group: {
-    shadowColor: "rgba(100,100,100,1)",
-    shadowOffset: {
-      width: 3,
-      height: 3
-    },
-    elevation: 5,
-    shadowOpacity: 1,
-    shadowRadius: 0,
-    height: 900,
-    overflow: "scroll"
+  mainView: {
+    flex: 1,
+    maxWidth: 400,
+    minHeight: 640,
+    maxHeight: 720,
+    alignSelf: "center",
   },
-  logo: {
-    width: 107,
-    height: 40,
-    marginTop: 60,
-    alignSelf: "center"
+  logoImage: {
+    width: 100,
+    height: 100,
+    marginLeft: '3%',
+    marginTop: '3%',
+    // borderWidth: 3,
+    // borderColor: "#000000",
   },
   smartOrangeText: {
     fontFamily: "montserrat-600",
