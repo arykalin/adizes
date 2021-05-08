@@ -25,11 +25,6 @@ function Screen3(props) {
               style={styles.background}
               imageStyle={styles.background_imageStyle}
           >
-            <Image
-                source={require("../assets/images/smit_logo.png")}
-                resizeMode="contain"
-                style={styles.logo}
-            ></Image>
             <View style={styles.progressStackStack}>
               <View style={styles.progressStack}>
                 <View style={styles.progress}>
@@ -237,6 +232,11 @@ function Screen3(props) {
                 </Modal>
               </View>
               <View style={styles.mainDescription}>
+                <Image
+                    source={require("../assets/images/smit_logo.png")}
+                    resizeMode="contain"
+                    style={styles.logo}
+                ></Image>
                 <Text style={styles.mainDescriptionText}>
                   На каждом этапе жизненного цикла, Вы, как руководитель,
                   столкнетесь с различными вызовами. В зависимости от выбранного
@@ -258,10 +258,13 @@ function Screen3(props) {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: "rgba(230, 230, 230,1)"
+  },
+  group2: {
+    flex: 1,
     backgroundColor: "rgba(232,232,232,1)",
-    overflow: "scroll",
-    width: 1020,
-    height: 852
+    overflow: "scroll"
   },
   background: {
     flex: 1
@@ -270,8 +273,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 50,
     height: 50,
-    marginTop: 35,
-    marginLeft: 23
+    marginTop: -50
   },
   progressLine: {
     width: 292,
@@ -448,7 +450,7 @@ const styles = StyleSheet.create({
     width: 292,
     height: 220,
     position: "absolute",
-    left: 0
+    left: 235
   },
   mainDescriptionText: {
     fontFamily: "montserrat-regular",
