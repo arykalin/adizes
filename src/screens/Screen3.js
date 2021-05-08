@@ -149,32 +149,32 @@ function Screen3(props) {
                             </Modal>
                             <Modal onRequestClose={() => setShowGrowing(false)} transparent visible={showGrowing}>
                                 <View style={styles.popupDescription}>
-                                    <View style={styles.popupTextStack}>
-                                        <Text style={styles.popupTextHeader}>
-                                            Этап I. Становление.
-                                        </Text>
-                                        <Text style={styles.popupText}>
-                                            Стадия роста начинается в тот момент, когда компания расширяется,
-                                            выбран свой сегмент, наработана клиентская база.Цель этапа -
-                                            обеспечение стабильности и создание репутации компании
-                                            на рынке, рост объема продаж и доли рынка.
-                                            Стадия роста подходит к концу, когда темпы продаж замедляются.
-                                        </Text>
-                                        <TouchableOpacity
-                                            onPress={() => setShowGrowing(false)}
-                                            style={styles.popupButtonClose}
-                                        >
-                                            <View style={styles.rect}>
-                                                <Text style={styles.close}>ЗАКРЫТЬ</Text>
-                                            </View>
-                                        </TouchableOpacity>
-                                    </View>
+                                    <Text style={styles.popupTextHeader}>
+                                        Этап II. Рост.
+                                    </Text>
+                                    <Text style={styles.popupText}>
+                                        Стадия роста начинается в тот момент, когда компания расширяется,
+                                        выбран свой сегмент, наработана клиентская база.Цель этапа -
+                                        обеспечение стабильности и создание репутации компании
+                                        на рынке, рост объема продаж и доли рынка.
+                                        Стадия роста подходит к концу, когда темпы продаж замедляются.
+                                    </Text>
+                                    <TouchableOpacity
+                                        onPress={() => setShowGrowing(false)}
+                                        style={styles.popupButtonClose}
+                                    >
+                                        <View style={styles.rect}>
+                                            <Text style={styles.close}>ЗАКРЫТЬ</Text>
+                                        </View>
+                                    </TouchableOpacity>
                                 </View>
                             </Modal>
                             <Modal onRequestClose={() => setShowMaturity(false)} transparent visible={showMaturity}>
                                 <View style={styles.popupDescription}>
-                                    <View style={styles.popupTextStack}>
-                                        <Text style={styles.popupText}>
+                                    <Text style={styles.popupTextHeader}>
+                                        Этап III. Зрелость.
+                                    </Text>
+                                    <Text style={styles.popupText}>
                                             Компания в период зрелости — один из ключевых игроков в выбранной нише.
                                             Продажи растут, хоть и не так динамично, как в период роста.
                                             Доля рынка либо продолжает понемногу расти, либо колеблется в установившихся
@@ -191,13 +191,14 @@ function Screen3(props) {
                                                 <Text style={styles.close}>ЗАКРЫТЬ</Text>
                                             </View>
                                         </TouchableOpacity>
-                                    </View>
                                 </View>
                             </Modal>
                             <Modal onRequestClose={() => setShowAging(false)} transparent visible={showAging}>
                                 <View style={styles.popupDescription}>
-                                    <View style={styles.popupTextStack}>
-                                        <Text style={styles.popupText}>
+                                    <Text style={styles.popupTextHeader}>
+                                        Этап IV. Стерение.
+                                    </Text>
+                                    <Text style={styles.popupText}>
                                             На стадии Старения снижаются конкурентоспособность компании, ее продажи
                                             падают.
                                             Цель - борьба за выживание и стабильность.
@@ -213,14 +214,15 @@ function Screen3(props) {
                                                 <Text style={styles.close}>ЗАКРЫТЬ</Text>
                                             </View>
                                         </TouchableOpacity>
-                                    </View>
                                 </View>
                             </Modal>
                             <Modal onRequestClose={() => setShowResurection(false)} transparent
                                    visible={showResurection}>
                                 <View style={styles.popupDescription}>
-                                    <View style={styles.popupTextStack}>
-                                        <Text style={styles.popupText}>
+                                    <Text style={styles.popupTextHeader}>
+                                        Этап V. Возрождение.
+                                    </Text>
+                                    <Text style={styles.popupText}>
                                             Стадия Возрождения возникает не во всех компаниях.
                                             Она происходит тогда, когда компания понимает, что теряет свою
                                             конкурентоспособность, и начинает бороться за свое существование.
@@ -235,13 +237,14 @@ function Screen3(props) {
                                                 <Text style={styles.close}>ЗАКРЫТЬ</Text>
                                             </View>
                                         </TouchableOpacity>
-                                    </View>
                                 </View>
                             </Modal>
                             <Modal onRequestClose={() => setShowDeath(false)} transparent visible={showDeath}>
                                 <View style={styles.popupDescription}>
-                                    <View style={styles.popupTextStack}>
-                                        <Text style={styles.popupText}>
+                                    <Text style={styles.popupTextHeader}>
+                                        Этап VI. Смерть.
+                                    </Text>
+                                    <Text style={styles.popupText}>
                                             В случае, если компания не может совершить прорыв и выжимает
                                             последнее из когда-то успешных проектов, ее ждет крах..
                                             Для владельца это означает потерю контроля, компания банкротится,
@@ -255,7 +258,6 @@ function Screen3(props) {
                                                 <Text style={styles.close}>ЗАКРЫТЬ</Text>
                                             </View>
                                         </TouchableOpacity>
-                                    </View>
                                 </View>
                             </Modal>
                         </View>
@@ -398,6 +400,14 @@ const styles = StyleSheet.create({
     },
     popupDescription: {
         flex: 1,
+        width: '90%',
+        height: 700,
+        alignSelf: 'center',
+        marginLeft: 0,
+        marginTop: 30,
+        marginBottom: 10,
+        // borderWidth: 1,
+        // borderColor: "red",
         backgroundColor: "rgba(255,255,255,1)",
         borderRadius: 10,
         shadowColor: "rgba(0,0,0,1)",
@@ -408,14 +418,6 @@ const styles = StyleSheet.create({
         elevation: 30,
         shadowOpacity: 1,
         shadowRadius: 10,
-        width: 280,
-        // height: 390,
-        alignSelf: 'center',
-        marginLeft: 0,
-        marginTop: 60,
-        // marginBottom: 40,
-        borderWidth: 1,
-        borderColor: "red",
     },
     popupTextHeader: {
         flex: 1,
@@ -426,8 +428,8 @@ const styles = StyleSheet.create({
         fontFamily: "montserrat-600",
         color: "#FF4E00",
         textAlign: "center",
-        borderWidth: 1,
-        borderColor: "blue",
+        // borderWidth: 1,
+        // borderColor: "blue",
     },
     popupText: {
         flex: 1,
@@ -439,8 +441,8 @@ const styles = StyleSheet.create({
         fontFamily: "montserrat-regular",
         color: "rgba(64,64,64,1)",
         // height: 320,
-        borderWidth: 1,
-        borderColor: "#000000",
+        // borderWidth: 1,
+        // borderColor: "#000000",
         flexWrap: 'wrap',
     },
     popupButtonClose: {
@@ -449,8 +451,8 @@ const styles = StyleSheet.create({
         height: 40,
         alignSelf: 'center',
         marginTop: '5%',
-        borderWidth: 5,
-        borderColor: "red",
+        // borderWidth: 5,
+        // borderColor: "red",
     },
     rect: {
         width: 140,
