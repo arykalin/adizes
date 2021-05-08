@@ -19,6 +19,7 @@ function Screen3(props) {
 
   return (
       <View style={styles.container}>
+        <View style={styles.mainView}>
           <ImageBackground
               source={require("../assets/images/Group_22.png")}
               resizeMode="contain"
@@ -252,6 +253,7 @@ function Screen3(props) {
               </View>
             </View>
           </ImageBackground>
+        </View>
       </View>
   );
 }
@@ -261,7 +263,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(230, 230, 230,1)"
   },
-  group2: {
+  mainView: {
     flex: 1,
     backgroundColor: "rgba(232,232,232,1)",
     overflow: "scroll"
