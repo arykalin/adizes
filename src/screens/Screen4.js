@@ -14,25 +14,25 @@ function Screen4(props) {
         <View style={styles.mainGroup}>
           <View style={styles.infoScreen}>
             <View style={styles.infoScreenIcons}>
-              <View style={styles.button9Row}>
-                <TouchableOpacity style={styles.button9}>
+              <View style={styles.moreInfoButtonRow}>
+                <TouchableOpacity style={styles.moreInfoButton}>
                   <Image
                       source={require("../assets/images/Group_29.png")}
                       resizeMode="contain"
-                      style={styles.moreInfo}
+                      style={styles.moreInfoImage}
                   ></Image>
-                  <Text style={styles.подробно}>Подробно</Text>
+                  <Text style={styles.moreInfoText}>Подробно</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => props.navigation.navigate("Screen1")}
-                    style={styles.button8}
+                    style={styles.showProgressButton}
                 >
                   <Image
                       source={require("../assets/images/Group_64.png")}
                       resizeMode="contain"
-                      style={styles.showProgress}
+                      style={styles.showProgressImage}
                   ></Image>
-                  <Text style={styles.прогресс}>Прогресс</Text>
+                  <Text style={styles.progressText}>Прогресс</Text>
                 </TouchableOpacity>
               </View>
               <View style={styles.stage_bar}>
@@ -68,72 +68,74 @@ function Screen4(props) {
                 </View>
               </View>
             </View>
-            <Text style={styles.этапIСтановление}>ЭТАП I. СТАНОВЛЕНИЕ</Text>
+            <View style={styles.stageName}>
+              <Text style={styles.stageNameText}>ЭТАП I. СТАНОВЛЕНИЕ</Text>
+            </View>
           </View>
           <View style={styles.gameScreen}>
             <View style={styles.circleGroup}>
-              <View style={styles.developementStrategyStack}>
-                <Text style={styles.developementStrategy}>
-                  Стратегия развития
-                </Text>
+              <View style={styles.stageTextStack}>
+                <View style={styles.stageText}>
+                  <Text style={styles.centeredText}>Стратегия развития</Text>
+                </View>
                 <ImageBackground
                     source={require("../assets/images/main_circle.png")}
                     resizeMode="contain"
                     style={styles.circle}
                     imageStyle={styles.circle_imageStyle}
                 >
-                  <View style={styles.button4Row}>
-                    <TouchableOpacity style={styles.button4}>
+                  <View style={styles.businessPrcocButtonRow}>
+                    <TouchableOpacity style={styles.businessPrcocButton}>
                       <Image
                           source={require("../assets/images/buisiness_proc.png")}
                           resizeMode="contain"
-                          style={styles.progress}
+                          style={styles.businecProcImage}
                       ></Image>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button2}>
+                    <TouchableOpacity style={styles.corpMngmtButton}>
                       <Image
                           source={require("../assets/images/corp_leadership.png")}
                           resizeMode="contain"
-                          style={styles.corp}
+                          style={styles.corpMngmtImage}
                       ></Image>
                     </TouchableOpacity>
                   </View>
-                  <View style={styles.buttonRow}>
-                    <TouchableOpacity style={styles.button}>
+                  <View style={styles.strategyButtonRow}>
+                    <TouchableOpacity style={styles.strategyButton}>
                       <Image
                           source={require("../assets/images/scheme.png")}
                           resizeMode="contain"
-                          style={styles.scheme}
+                          style={styles.strategyImage}
                       ></Image>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.button3}>
+                    <TouchableOpacity style={styles.financesButton}>
                       <Image
                           source={require("../assets/images/finances.png")}
                           resizeMode="contain"
-                          style={styles.finances}
+                          style={styles.financesImage}
                       ></Image>
                     </TouchableOpacity>
                   </View>
                 </ImageBackground>
-                <TouchableOpacity style={styles.button5}>
+                <TouchableOpacity style={styles.devStrategyButton}>
                   <Image
                       source={require("../assets/images/developement.png")}
                       resizeMode="contain"
-                      style={styles.developement}
+                      style={styles.devStrategyImage}
                   ></Image>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button6}>
+                <TouchableOpacity style={styles.orgStructureButton}>
                   <Image
                       source={require("../assets/images/Group.png")}
                       resizeMode="contain"
-                      style={styles.corp_leadership}
+                      style={styles.orgStructureImage}
                   ></Image>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button7}>
+                <TouchableOpacity style={styles.managementButton}>
                   <Image
                       source={require("../assets/images/leadership.png")}
                       resizeMode="contain"
-                      style={styles.image}
+                      style={styles.managementImage}
                   ></Image>
                 </TouchableOpacity>
               </View>
@@ -176,37 +178,37 @@ const styles = StyleSheet.create({
     marginTop: -10,
     alignSelf: "center"
   },
-  button9: {
+  moreInfoButton: {
     width: 50,
     height: 50,
     justifyContent: "space-between"
   },
-  moreInfo: {
+  moreInfoImage: {
     width: 50,
     height: 50
   },
-  подробно: {
+  moreInfoText: {
     fontFamily: "montserrat-700",
     color: "rgba(68,68,68,1)",
     alignSelf: "center"
   },
-  button8: {
+  showProgressButton: {
     width: 50,
     height: 50,
     justifyContent: "space-between",
     marginLeft: 210
   },
-  showProgress: {
+  showProgressImage: {
     width: 50,
     height: 50
   },
-  прогресс: {
+  progressText: {
     fontFamily: "montserrat-700",
     color: "rgba(68,68,68,1)",
     flex: 1,
     alignSelf: "center"
   },
-  button9Row: {
+  moreInfoButtonRow: {
     height: 50,
     flexDirection: "row",
     marginTop: 10
@@ -260,17 +262,22 @@ const styles = StyleSheet.create({
     height: 35,
     marginTop: -12
   },
-  этапIСтановление: {
+  stageName: {
+    width: 250,
+    height: 16,
+    marginTop: 16,
+    marginLeft: 45
+  },
+  stageNameText: {
     fontFamily: "montserrat-800",
     color: "rgba(68,68,68,1)",
     fontSize: 20,
     textAlign: "center",
     lineHeight: 0,
-    marginTop: 16,
-    alignSelf: "center"
+    height: 16
   },
   gameScreen: {
-    width: 313,
+    width: 689,
     height: 527,
     marginTop: 5,
     alignSelf: "center"
@@ -281,16 +288,19 @@ const styles = StyleSheet.create({
     marginTop: 45,
     alignSelf: "center"
   },
-  developementStrategy: {
-    position: "absolute",
-    fontFamily: "montserrat-700",
-    color: "rgba(68,68,68,1)",
+  stageText: {
+    top: 158,
+    left: 114,
     width: 112,
     height: 50,
+    position: "absolute"
+  },
+  centeredText: {
+    fontFamily: "montserrat-700",
+    color: "rgba(68,68,68,1)",
     textAlign: "center",
     fontSize: 20,
-    left: 114,
-    top: 158
+    flex: 1
   },
   circle: {
     top: 35,
@@ -300,87 +310,87 @@ const styles = StyleSheet.create({
     bottom: 30
   },
   circle_imageStyle: {},
-  button4: {
+  businessPrcocButton: {
     width: 70,
     height: 70
   },
-  progress: {
+  businecProcImage: {
     width: 70,
     height: 70
   },
-  button2: {
+  corpMngmtButton: {
     width: 70,
     height: 70,
     marginLeft: 160
   },
-  corp: {
+  corpMngmtImage: {
     width: 70,
     height: 70
   },
-  button4Row: {
+  businessPrcocButtonRow: {
     height: 70,
     flexDirection: "row",
     marginTop: 35,
     marginLeft: 20,
     marginRight: 20
   },
-  button: {
+  strategyButton: {
     width: 70,
     height: 70
   },
-  scheme: {
+  strategyImage: {
     width: 70,
     height: 70
   },
-  button3: {
+  financesButton: {
     width: 70,
     height: 70,
     marginLeft: 200,
     marginTop: 7
   },
-  finances: {
+  financesImage: {
     width: 70,
     height: 70
   },
-  buttonRow: {
+  strategyButtonRow: {
     height: 77,
     flexDirection: "row",
     marginTop: 43
   },
-  button5: {
+  devStrategyButton: {
     top: 290,
     left: 70,
     width: 70,
     height: 70,
     position: "absolute"
   },
-  developement: {
+  devStrategyImage: {
     width: 70,
     height: 70
   },
-  button6: {
+  orgStructureButton: {
     top: 0,
     left: 135,
     width: 70,
     height: 70,
     position: "absolute"
   },
-  corp_leadership: {
+  orgStructureImage: {
     width: 70,
     height: 70
   },
-  button7: {
+  managementButton: {
     top: 290,
     left: 210,
     width: 70,
     height: 70,
     position: "absolute"
   },
-  image: {
+  managementImage: {
     width: 70,
     height: 70
   },
-  developementStrategyStack: {
+  stageTextStack: {
     width: 340,
     flex: 1,
     marginBottom: -30,
