@@ -454,8 +454,8 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(255,255,255,1)",
     },
     backButton: {
-        borderWidth: 3,
-        borderColor: "red",
+        // borderWidth: 3,
+        // borderColor: "red",
         // flex: 1,
         width: 50,
         height: 50,
@@ -470,8 +470,8 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     questionRectangle: {
-        borderWidth: 3,
-        borderColor: "red",
+        // borderWidth: 3,
+        // borderColor: "red",
         backgroundColor: "rgba(101,101,101,1)",
         flex: 1,
         width: '90%',
