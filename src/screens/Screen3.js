@@ -19,7 +19,6 @@ function Screen3(props) {
 
   return (
       <View style={styles.container}>
-        <View style={styles.group2}>
           <ImageBackground
               source={require("../assets/images/Group_22.png")}
               resizeMode="contain"
@@ -253,7 +252,6 @@ function Screen3(props) {
               </View>
             </View>
           </ImageBackground>
-        </View>
       </View>
   );
 }
