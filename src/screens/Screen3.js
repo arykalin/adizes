@@ -27,6 +27,25 @@ function Screen3(props) {
                     imageStyle={styles.background_imageStyle}
                 >
                     <View style={styles.progressStackStack}>
+                        <View style={styles.mainDescription}>
+                            <Image
+                                source={require("../assets/images/smit_logo.png")}
+                                resizeMode="contain"
+                                style={styles.logo}
+                            ></Image>
+                            <Text style={styles.mainDescriptionText}>
+                                На каждом этапе жизненного цикла, Вы, как руководитель,
+                                столкнетесь с различными вызовами. В зависимости от выбранного
+                                вами управленческого решения и ответа на вопрос, вам будут
+                                начисляться баллы/проценты . Если вызов окажется для Вас
+                                сложным, Вы сможете познакомиться с информацией, которая будет
+                                Вам полезна в Вашей бизнес практике. Удачи!{"\n"}
+                                {"\n"}Жизненный цикл компании - это совокупность стадий
+                                развития, которые организация проходит за период своего
+                                существования.{"\n"}Выделяют основные 5 этапов жизненного цикла.
+                                Нажми на кружок с номером этапа и узнай о нем подробнее.
+                            </Text>
+                        </View>
                         <View style={styles.progressStack}>
                             <View style={styles.progress}>
                                 <View style={styles.progressLineStack}>
@@ -236,25 +255,6 @@ function Screen3(props) {
                                 </View>
                             </Modal>
                         </View>
-                        <View style={styles.mainDescription}>
-                            <Image
-                                source={require("../assets/images/smit_logo.png")}
-                                resizeMode="contain"
-                                style={styles.logo}
-                            ></Image>
-                            <Text style={styles.mainDescriptionText}>
-                                На каждом этапе жизненного цикла, Вы, как руководитель,
-                                столкнетесь с различными вызовами. В зависимости от выбранного
-                                вами управленческого решения и ответа на вопрос, вам будут
-                                начисляться баллы/проценты . Если вызов окажется для Вас
-                                сложным, Вы сможете познакомиться с информацией, которая будет
-                                Вам полезна в Вашей бизнес практике. Удачи!{"\n"}
-                                {"\n"}Жизненный цикл компании - это совокупность стадий
-                                развития, которые организация проходит за период своего
-                                существования.{"\n"}Выделяют основные 5 этапов жизненного цикла.
-                                Нажми на кружок с номером этапа и узнай о нем подробнее.
-                            </Text>
-                        </View>
                     </View>
                 </ImageBackground>
             </View>
@@ -265,23 +265,37 @@ function Screen3(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "rgba(230, 230, 230,1)"
+        backgroundColor: "rgba(230, 230, 230,1)",
+        overflow: "scroll",
+        alignItems: 'flex-start',
     },
     mainView: {
         flex: 1,
         backgroundColor: "rgba(232,232,232,1)",
-        overflow: "scroll"
+        justifyContent: 'center',
+        alignSelf: 'center',
     },
     background: {
-        flex: 1
+        flex: 1,
+        justifyContent: 'center',
+        alignSelf: 'center',
     },
     background_imageStyle: {},
     progress: {
         top: 74,
-        width: 292,
-        height: 372,
-        position: "absolute",
-        left: 899
+        // width: 292,
+        // height: 372,
+        // position: "absolute",
+        // left: 899,
+        justifyContent: 'center',
+        alignSelf: 'center',
+    },
+    progressStackStack: {
+        width: 2091,
+        height: 607,
+        justifyContent: 'center',
+        alignSelf: 'center',
+        alignItems: 'flex-start',
     },
     progressLine: {
         width: 292,
@@ -396,7 +410,9 @@ const styles = StyleSheet.create({
         width: 280,
         height: 390,
         marginTop: 30,
-        marginLeft: 82
+        marginLeft: 82,
+        justifyContent: 'center',
+        alignSelf: 'center',
     },
     becomingText: {
         top: 0,
@@ -442,17 +458,25 @@ const styles = StyleSheet.create({
     },
     progressStack: {
         top: 161,
-        left: 0,
+        flex: 1,
+        // left: 0,
         width: 2091,
         height: 446,
-        position: "absolute"
+        // position: "absolute"
+        justifyContent: 'center',
+        alignSelf: 'center',
+        flexGrow: 0,
     },
     mainDescription: {
         top: 0,
+        flex: 1,
         width: 292,
         height: 198,
-        position: "absolute",
-        left: 899
+        // position: "absolute",
+        // left: 899,
+        justifyContent: 'center',
+        alignSelf: 'center',
+
     },
     logo: {
         width: 50,
@@ -465,12 +489,6 @@ const styles = StyleSheet.create({
         fontSize: 11,
         flex: 1
     },
-    progressStackStack: {
-        width: 2091,
-        height: 607,
-        marginTop: 85,
-        marginLeft: 355
-    }
 });
 
 export default Screen3;
