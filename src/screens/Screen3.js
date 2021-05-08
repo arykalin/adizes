@@ -78,7 +78,9 @@ function Screen3(props) {
                               style={styles.i3}
                           ></Image>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.button7}>
+                        <TouchableOpacity
+                            onPress={() => setShowDeath(true)}
+                            style={styles.button7}>
                           <Image
                               source={require("../assets/images/6.png")}
                               resizeMode="contain"
@@ -163,7 +165,7 @@ function Screen3(props) {
                         контроля над соблюдением стандартов работы.
                     </Text>
                     <TouchableOpacity
-                        onPress={() => setShowGrowing(false)}
+                        onPress={() => setShowMaturity(false)}
                         style={styles.popupButtonClose}
                     >
                       <View style={styles.rect}>
@@ -183,7 +185,7 @@ function Screen3(props) {
                         и снова «возродиться», либо прекратить свою деятельность как самостоятельная структура.
                     </Text>
                     <TouchableOpacity
-                        onPress={() => setShowGrowing(false)}
+                        onPress={() => setShowAging(false)}
                         style={styles.popupButtonClose}
                     >
                       <View style={styles.rect}>
@@ -204,7 +206,7 @@ function Screen3(props) {
                         результата.Главная цель в этот период - оживление компании..
                     </Text>
                     <TouchableOpacity
-                        onPress={() => setShowGrowing(false)}
+                        onPress={() => setShowResurection(false)}
                         style={styles.popupButtonClose}
                     >
                       <View style={styles.rect}>
@@ -224,7 +226,7 @@ function Screen3(props) {
                         ее активы скупаются.
                     </Text>
                     <TouchableOpacity
-                        onPress={() => setShowGrowing(false)}
+                        onPress={() => setShowDeath(false)}
                         style={styles.popupButtonClose}
                     >
                       <View style={styles.rect}>
@@ -236,7 +238,7 @@ function Screen3(props) {
                 </Modal>
               </View>
               <View style={styles.mainDescription}>
-                <Text style={styles.lifecycle3}>
+                <Text style={styles.mainDescriptionText}>
                   На каждом этапе жизненного цикла, Вы, как руководитель,
                   столкнетесь с различными вызовами. В зависимости от выбранного
                   вами управленческого решения и ответа на вопрос, вам будут
@@ -396,7 +398,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 10,
     width: 280,
-    height: 360,
+    height: 390,
     marginTop: 30,
     marginLeft: 82
   },
@@ -423,7 +425,7 @@ const styles = StyleSheet.create({
     left: 0
   },
   popupButtonClose: {
-    top: 265,
+    top: 290,
     left: 60,
     width: 140,
     height: 40,
@@ -462,7 +464,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 0
   },
-  lifecycle3: {
+  mainDescriptionText: {
     fontFamily: "montserrat-regular",
     color: "#404040",
     fontSize: 11,
