@@ -5,11 +5,22 @@ import {
     TouchableOpacity,
     Image,
     Text,
-    ImageBackground, Modal
+    ImageBackground, Modal,
+    TouchableHighlight,
 } from "react-native";
 
 function Screen4(props) {
     const [showQuestion, setShowQuestion] = useState(false);
+
+    var [ isPress, setIsPress ] = React.useState(false);
+    var touchProps = {
+        activeOpacity: 1,
+        underlayColor: 'blue',                               // <-- "backgroundColor" will be always overwritten by "underlayColor"
+        style: isPress ? styles.btnPress : styles.btnNormal, // <-- but you can still apply other style changes
+        onHideUnderlay: () => setIsPress(false),
+        onShowUnderlay: () => setIsPress(true),
+        onPress: () => console.log('HELLO'),                 // <-- "onPress" is apparently required
+    };
 
     return (
         <View style={styles.container}>
@@ -19,11 +30,13 @@ function Screen4(props) {
                         <View style={styles.moreInfoButtonRow}>
                             <TouchableOpacity
                                 style={styles.moreInfoButton}>
-                                <Image
+                                <ImageBackground
                                     source={require("../assets/images/Group_29.png")}
                                     resizeMode="contain"
                                     style={styles.moreInfoImage}
-                                ></Image>
+                                >
+                                    <View style={styles.darkening} />
+                                </ImageBackground>
                                 <Text style={styles.moreInfoText}>Подробно</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
@@ -89,6 +102,10 @@ function Screen4(props) {
                                     imageStyle={styles.circle_imageStyle}
                                 >
                                     <View style={styles.businessPrcocButtonRow}>
+                                        <TouchableHighlight
+                                            activeOpacity={0.6}
+                                            underlayColor="#DDDDDD"
+                                            onPress={() => alert('Pressed!')}>
                                         <TouchableOpacity
                                             onPress={() => setShowQuestion(true)}
                                             style={styles.businessPrcocButton}>
@@ -98,6 +115,7 @@ function Screen4(props) {
                                                 style={styles.businecProcImage}
                                             ></Image>
                                         </TouchableOpacity>
+                                        </TouchableHighlight>
                                         <TouchableOpacity
                                             onPress={() => setShowQuestion(true)}
                                             style={styles.corpMngmtButton}>
@@ -158,30 +176,7 @@ function Screen4(props) {
                                 </TouchableOpacity>
                             </View>
                         </View>
-                        <Modal onRequestClose={() => setShowQuestion(false)} transparent visible={showQuestion}>
-                            <View style={styles.questionsGroup}>
-                                    <View style={styles.questionButton}>
-                                        <TouchableOpacity
-                                            onPress={() => setShowQuestion(false)}
-                                            style={styles.backButton}>
-                                            <Image
-                                                source={require("../assets/images/Group_25.png")}
-                                                resizeMode="contain"
-                                                style={styles.backButtonImage}
-                                            ></Image>
-                                        </TouchableOpacity>
-                                        <TouchableOpacity
-                                            style={styles.questionRectangle}
-                                        ></TouchableOpacity>
-                                        <TouchableOpacity
-                                            style={styles.questionRectangle}
-                                        ></TouchableOpacity>
-                                        <TouchableOpacity
-                                            style={styles.questionRectangle}
-                                        ></TouchableOpacity>
-                                    </View>
-                            </View>
-                        </Modal>
+
                     </View>
                     <View style={styles.bottomImages}>
                         <Image
@@ -197,19 +192,49 @@ function Screen4(props) {
                     </View>
                 </View>
             </View>
+            <Modal onRequestClose={() => setShowQuestion(false)} transparent visible={showQuestion}>
+                <View style={styles.questionsGroup}>
+                    <TouchableOpacity
+                        onPress={() => setShowQuestion(false)}
+                        style={styles.backButton}>
+                        <Image
+                            source={require("../assets/images/Group_25.png")}
+                            resizeMode="contain"
+                            style={styles.backButtonImage}
+                        ></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.questionRectangle}
+                    ></TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.questionRectangle}
+                    ></TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.questionRectangle}
+                    ></TouchableOpacity>
+                </View>
+            </Modal>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+    darkening: {
+        flex: 1,
+        backgroundColor: 'rgba(0,0,0,0.5)',
+    },
     container: {
         flex: 1,
         overflow: "scroll",
-        alignItems: 'flex-start',
+        // alignItems: 'flex-start',
     },
     mainGroup: {
         flex: 1,
         alignSelf: 'center',
+        // width: 500,
+        // height: 500,
+        // borderWidth: 5,
+        // borderColor: "green",
     },
     infoScreen: {
         width: 340,
@@ -443,12 +468,16 @@ const styles = StyleSheet.create({
     },
     questionsGroup: {
         flex: 1,
-        alignSelf: 'center',
         width: '90%',
-        height: '70%',
-        paddingVertical: 10,
-        marginTop: 30,
-        marginBottom: 10,
+        minHeight: 300,
+        maxWidth: 400,
+        alignSelf: 'center',
+        paddingBottom: 10,
+        marginTop: '35%',
+        marginBottom: '10%',
+        positionHorizontal: '5%',
+        flexGrow: 0,
+        flexShrink: 0,
         borderWidth: 3,
         borderColor: "rgba(254,164,38,1)",
         backgroundColor: "rgba(255,255,255,1)",
@@ -460,24 +489,18 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
         alignSelf: 'center',
-        marginTop: -50,
-    },
-    questionButton: {
-        flex: 1,
-        width: '90%',
-        height: '90%',
-        alignSelf: 'center',
-        marginTop: 10,
+        marginTop: -40,
     },
     questionRectangle: {
-        // borderWidth: 3,
-        // borderColor: "red",
-        backgroundColor: "rgba(101,101,101,1)",
         flex: 1,
         width: '90%',
-        height: '90%',
+        height: 40,
         alignSelf: 'center',
         marginTop: 10,
+        // borderWidth: 3,
+        // borderColor: "red",
+        borderRadius: 10,
+        backgroundColor: "rgba(101,101,101,1)",
     },
     backButtonImage: {
         width: 50,
