@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import {StyleSheet, View, Text, TouchableOpacity, Image, Modal} from "react-native";
 
+import stage1Questions from "../data/stage1"
+
 function QuestionComponent(props) {
-  return (
+    const questions = stage1Questions
+
+    return (
       <View style={styles.questionsGroup}>
         <TouchableOpacity
             onPress={() => setShowQuestion(false)}
@@ -17,15 +21,23 @@ function QuestionComponent(props) {
             style={styles.questionRectangle}
         >
           <Text style={styles.questionText}>
-            Подбор команды
+              {questions[0].questionTitle}
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
             style={styles.questionRectangle}
-        ></TouchableOpacity>
+        >
+            <Text style={styles.questionText}>
+                {questions[1].questionTitle}
+            </Text>
+        </TouchableOpacity>
         <TouchableOpacity
             style={styles.questionRectangle}
-        ></TouchableOpacity>
+        >
+            <Text style={styles.questionText}>
+                {questions[2].questionTitle}
+            </Text>
+        </TouchableOpacity>
       </View>
   );
 }
