@@ -10,6 +10,7 @@ import {
 } from "react-native";
 
 import QuestionsComponent from "../components/QuestionsComponent";
+
 function Screen4(props) {
     const [showQuestion, setShowQuestion] = useState(false);
 
