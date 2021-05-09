@@ -6,7 +6,6 @@ import AppLoading from "expo-app-loading";
 
 import * as Font from "expo-font";
 import DeathScreen from "./src/screens/DeathScreen";
-import Registration from "./src/screens/Registration";
 import ResurectionScreen from "./src/screens/ResurectionScreen";
 import Screen1 from "./src/screens/Screen1";
 import Screen2 from "./src/screens/Screen2";
@@ -16,7 +15,6 @@ import Screen4 from "./src/screens/Screen4";
 const DrawerNavigation = createDrawerNavigator({
   Screen1: Screen1,
   DeathScreen: DeathScreen,
-  Registration: Registration,
   ResurectionScreen: ResurectionScreen,
   Screen2: Screen2,
   Screen3: Screen3,
@@ -30,7 +28,6 @@ const StackNavigation = createStackNavigator(
     },
     Screen1: Screen1,
     DeathScreen: DeathScreen,
-    Registration: Registration,
     ResurectionScreen: ResurectionScreen,
     Screen2: Screen2,
     Screen3: Screen3,
