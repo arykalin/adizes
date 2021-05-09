@@ -205,7 +205,11 @@ function Screen4(props) {
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={styles.questionRectangle}
-                    ></TouchableOpacity>
+                    >
+                        <Text style={styles.questionText}>
+                            Подбор команды
+                        </Text>
+                    </TouchableOpacity>
                     <TouchableOpacity
                         style={styles.questionRectangle}
                     ></TouchableOpacity>
@@ -226,7 +230,7 @@ const styles = StyleSheet.create({
     container: {
         // flex: 1,
         overflow: "scroll",
-        minHeight: 800,
+        // minHeight: 800,
         // alignItems: 'flex-start',
         // borderWidth: 5,
         // borderColor: "green",
@@ -235,7 +239,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignSelf: 'center',
         // width: 500,
-        minHeight: 800,
+        // minHeight: 800,
         // borderWidth: 4,
         // borderColor: "blue",
     },
@@ -264,6 +268,16 @@ const styles = StyleSheet.create({
         fontFamily: "montserrat-700",
         color: "rgba(68,68,68,1)",
         alignSelf: "center"
+    },
+    questionText: {
+        fontFamily: "montserrat-700",
+        color: "white",
+        alignSelf: "center",
+        textAlign: "center",
+        fontSize: 20,
+        marginTop: 20,
+        flex: 1,
+        justifyContent: "center"
     },
     showProgressButton: {
         width: 50,
