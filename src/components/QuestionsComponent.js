@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import {StyleSheet, View, Text, TouchableOpacity, Image, Modal} from "react-native";
 
 import stage1Questions from "../data/stage1"
+import { useSelector } from "react-redux";
 
 function QuestionComponent(props) {
     const questions = stage1Questions
-
+    const showQuestion = useSelector(state => state.questionsModal)
     return (
       <View style={styles.questionsGroup}>
         <TouchableOpacity

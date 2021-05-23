@@ -2,16 +2,12 @@ import React, {Component, useState} from "react";
 import { StyleSheet, View, Image, Text, TouchableOpacity, Modal, Button } from "react-native";
 
 import {Provider} from 'react-redux';
-import Counter from '../state/Counter'
 import store from '../state/store'
 
 function Screen1(props) {
   return (
     <View style={styles.container}>
       <View style={styles.mainView}>
-        <Provider store={store}>
-          <Counter/>
-        </Provider>
         <Image
           source={require("../assets/images/smit_logo.png")}
           resizeMode="contain"
