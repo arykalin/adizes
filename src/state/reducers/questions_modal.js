@@ -1,13 +1,13 @@
 const initialState = {
-    showModal: false,
+    showQuestionModal: false,
 };
 export const modalReducer = (state = initialState, action) => {
     console.log(state)
     switch (action.type) {
         case 'SHOW_QUESTION_MODAL':
-            return {...state, showModal: true};
+            return {...state, showQuestionModal: true};
         case'HIDE_QUESTION_MODAL':
-            return {...state, showModal: false}
+            return {...state, showQuestionModal: false}
         default:
             return state;
     }
