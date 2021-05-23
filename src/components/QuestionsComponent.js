@@ -2,15 +2,17 @@ import React, { Component } from "react";
 import {StyleSheet, View, Text, TouchableOpacity, Image, Modal} from "react-native";
 
 import stage1Questions from "../data/stage1"
-import { useSelector } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {hideQuestionModal, showQuestionModal} from "../state/actions/questions_modal"
 
 function QuestionComponent(props) {
     const questions = stage1Questions
-    const showQuestion = useSelector(state => state.questionsModal)
+    const showQuestion = useSelector(state => state.modal.showQuestionModal)
+    const dispatch = useDispatch()
     return (
       <View style={styles.questionsGroup}>
         <TouchableOpacity
-            onPress={() => setShowQuestion(false)}
+            onPress={() => dispatch(hideQuestionModal())}
             style={styles.backButton}>
           <Image
               source={require("../assets/images/Group_25.png")}

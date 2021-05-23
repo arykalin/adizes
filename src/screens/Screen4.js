@@ -8,24 +8,18 @@ import {
     ImageBackground, Modal,
     TouchableHighlight,
 } from "react-native";
-
+import { useSelector, useDispatch } from "react-redux"
 import QuestionsComponent from "../components/QuestionsComponent";
+import { showQuestionModal } from "../state/actions/questions_modal"
+
 
 function Screen4(props) {
-    const [showQuestion, setShowQuestion] = useState(false);
-
-    var [ isPress, setIsPress ] = React.useState(false);
-    var touchProps = {
-        activeOpacity: 1,
-        underlayColor: 'blue',                               // <-- "backgroundColor" will be always overwritten by "underlayColor"
-        style: isPress ? styles.btnPress : styles.btnNormal, // <-- but you can still apply other style changes
-        onHideUnderlay: () => setIsPress(false),
-        onShowUnderlay: () => setIsPress(true),
-        onPress: () => console.log('HELLO'),                 // <-- "onPress" is apparently required
-    };
+    const showQuestion = useSelector(state => state.modal.showQuestionModal)
+    const dispatch = useDispatch()
 
     return (
         <View style={styles.container}>
+            <h1>Showquestion {showQuestion}</h1>
             <View style={styles.mainGroup}>
                 <View style={styles.infoScreen}>
                     <View style={styles.infoScreenIcons}>
@@ -109,7 +103,7 @@ function Screen4(props) {
                                             underlayColor="#DDDDDD"
                                             onPress={() => alert('Pressed!')}>
                                         <TouchableOpacity
-                                            onPress={() => setShowQuestion(true)}
+                                            onPress={() => dispatch(showQuestionModal())}
                                             style={styles.businessPrcocButton}>
                                             <Image
                                                 source={require("../assets/images/buisiness_proc.png")}
@@ -119,7 +113,7 @@ function Screen4(props) {
                                         </TouchableOpacity>
                                         </TouchableHighlight>
                                         <TouchableOpacity
-                                            onPress={() => setShowQuestion(true)}
+                                            onPress={() => dispatch(showQuestionModal())}
                                             style={styles.corpMngmtButton}>
                                             <Image
                                                 source={require("../assets/images/corp_leadership.png")}
@@ -130,7 +124,7 @@ function Screen4(props) {
                                     </View>
                                     <View style={styles.strategyButtonRow}>
                                         <TouchableOpacity
-                                            onPress={() => setShowQuestion(true)}
+                                            onPress={() => dispatch(showQuestionModal())}
                                             style={styles.strategyButton}>
                                             <Image
                                                 source={require("../assets/images/scheme.png")}
@@ -139,7 +133,7 @@ function Screen4(props) {
                                             ></Image>
                                         </TouchableOpacity>
                                         <TouchableOpacity
-                                            onPress={() => setShowQuestion(true)}
+                                            onPress={() => dispatch(showQuestionModal())}
                                             style={styles.financesButton}>
                                             <Image
                                                 source={require("../assets/images/finances.png")}
@@ -150,7 +144,7 @@ function Screen4(props) {
                                     </View>
                                 </ImageBackground>
                                 <TouchableOpacity
-                                    onPress={() => setShowQuestion(true)}
+                                    onPress={() => dispatch(showQuestionModal())}
                                     style={styles.devStrategyButton}>
                                     <Image
                                         source={require("../assets/images/developement.png")}
@@ -159,7 +153,7 @@ function Screen4(props) {
                                     ></Image>
                                 </TouchableOpacity>
                                 <TouchableOpacity
-                                    onPress={() => setShowQuestion(true)}
+                                    onPress={() => dispatch(showQuestionModal())}
                                     style={styles.orgStructureButton}>
                                     <Image
                                         source={require("../assets/images/Group.png")}
@@ -168,7 +162,7 @@ function Screen4(props) {
                                     ></Image>
                                 </TouchableOpacity>
                                 <TouchableOpacity
-                                    onPress={() => setShowQuestion(true)}
+                                    onPress={() => dispatch(showQuestionModal())}
                                     style={styles.managementButton}>
                                     <Image
                                         source={require("../assets/images/leadership.png")}
@@ -194,7 +188,7 @@ function Screen4(props) {
                     </View>
                 </View>
             </View>
-            <Modal onRequestClose={() => setShowQuestion(false)} transparent visible={showQuestion}>
+            <Modal onRequestClose={() => setShowQuestion(false)} transparent visible={ showQuestion }>
                 <QuestionsComponent></QuestionsComponent>
             </Modal>
         </View>
