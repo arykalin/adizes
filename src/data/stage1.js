@@ -1,3 +1,14 @@
+// empty
+const emptyQuestions = [
+    {
+        questionTitle: "empty",
+        question:
+            "empty question",
+        answers: [
+            {id: "1", text: "empty text"},
+        ]
+    },
+];
 // call 1
 const personalManagementQuestions = [
     {
@@ -80,6 +91,7 @@ const financeAndPlanningQuestions = [];
 const corporateGovernanceQuestions = [];
 
 const questions = {
+    emptyQuestions: emptyQuestions,
     personalManagementQuestions: personalManagementQuestions,
     developmentStrategyQuestions: developmentStrategyQuestions,
     organizationalStructureQuestions: organizationalStructureQuestions,

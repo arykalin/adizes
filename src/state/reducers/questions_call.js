@@ -8,7 +8,7 @@ const initialState = {
     // showS1financeAndPlanningQuestions: false,
     // showS1corporateGovernanceQuestions: false,
 };
-export const modalReducer = (state = initialState, action) => {
+export const callReducer = (state = initialState, action) => {
     console.log(state)
     switch (action.type) {
         case 'SHOW_QUESTION_MODAL':
@@ -20,4 +20,6 @@ export const modalReducer = (state = initialState, action) => {
     }
 }
 
-export default modalReducer
+export default callReducer
+
+
