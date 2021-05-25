@@ -1,57 +1,58 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import {StyleSheet, View, Text, TouchableOpacity, Image, Modal} from "react-native";
 
 import stage1Questions from "../data/stage1"
-import {useDispatch, useSelector} from "react-redux";
-import {hideQuestionModal, showQuestionModal} from "../state/actions/questions_modal"
+import {useDispatch} from "react-redux";
+import {hideQuestionModal} from "../state/actions/questions_modal"
+import { LogBox } from 'react-native';
 
 function QuestionComponent(props) {
     const questions = stage1Questions
-    const showQuestion = useSelector(state => state.modal.showQuestionModal)
     const dispatch = useDispatch()
     return (
-      <View style={styles.questionsGroup}>
-        <TouchableOpacity
-            onPress={() => dispatch(hideQuestionModal())}
-            style={styles.backButton}>
-          <Image
-              source={require("../assets/images/Group_25.png")}
-              resizeMode="contain"
-              style={styles.backButtonImage}
-          ></Image>
-        </TouchableOpacity>
-        <QuestionView props={questions[0].questionTitle} />
-        <TouchableOpacity
-            style={styles.questionRectangle}
-        >
-            <Text style={styles.questionText}>
-                {questions[1].questionTitle}
-            </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-            style={styles.questionRectangle}
-        >
-            <Text style={styles.questionText}>
-                {questions[2].questionTitle}
-            </Text>
-        </TouchableOpacity>
-      </View>
-  );
+        <View style={styles.questionsGroup}>
+            <TouchableOpacity
+                onPress={() => dispatch(hideQuestionModal())}
+                style={styles.backButton}>
+                <Image
+                    source={require("../assets/images/Group_25.png")}
+                    resizeMode="contain"
+                    style={styles.backButtonImage}
+                ></Image>
+            </TouchableOpacity>
+            <Questions questions={questions}/>
+        </View>
+    );
+}
+
+const Questions = ({questions}) => {
+    console.log("{questions}: ", {questions})
+    return (
+        <View>
+            {questions.map((question) => {
+                console.log("{question}: ", {question})
+                return (
+                    <QuestionView title={question.questionTitle}/>
+                )
+            })}
+        </View>
+    )
 }
 
 const QuestionView = ({title}) => {
-    return (
-        <TouchableOpacity
-            style={styles.questionRectangle}
-        >
-            <Text style={styles.questionText}>
-                {title}
-            </Text>
-        </TouchableOpacity>
-    )
+        return (
+            <TouchableOpacity
+                style={styles.questionRectangle}
+            >
+                <Text style={styles.questionText}>
+                    {title}
+                </Text>
+            </TouchableOpacity>
+        )
 }
+
 const styles = StyleSheet.create({
-  container: {},
+    container: {},
     backButtonImage: {
         width: 50,
         height: 50
