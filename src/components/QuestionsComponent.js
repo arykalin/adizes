@@ -20,13 +20,7 @@ function QuestionComponent(props) {
               style={styles.backButtonImage}
           ></Image>
         </TouchableOpacity>
-        <TouchableOpacity
-            style={styles.questionRectangle}
-        >
-          <Text style={styles.questionText}>
-              {questions[0].questionTitle}
-          </Text>
-        </TouchableOpacity>
+        <QuestionView props={questions[0].questionTitle} />
         <TouchableOpacity
             style={styles.questionRectangle}
         >
@@ -45,6 +39,17 @@ function QuestionComponent(props) {
   );
 }
 
+const QuestionView = ({title}) => {
+    return (
+        <TouchableOpacity
+            style={styles.questionRectangle}
+        >
+            <Text style={styles.questionText}>
+                {title}
+            </Text>
+        </TouchableOpacity>
+    )
+}
 const styles = StyleSheet.create({
   container: {},
     backButtonImage: {
