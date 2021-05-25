@@ -23,6 +23,16 @@ function Screen4(props) {
         dispatch(showQuestionModal())
     }
 
+    const onPress1 = () => {
+        setOnPressQuestions(stage1Questions.developmentStrategyQuestions)
+        dispatch(showQuestionModal())
+    }
+
+    const onPressBusinessProc = () => {
+        setOnPressQuestions(stage1Questions.businessProcessesQuestions)
+        dispatch(showQuestionModal())
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.mainGroup}>
@@ -108,7 +118,7 @@ function Screen4(props) {
                                             underlayColor="#DDDDDD"
                                             onPress={() => alert('Pressed!')}>
                                         <TouchableOpacity
-                                            onPress={onPress}
+                                            onPress={onPressBusinessProc}
                                             style={styles.businessProcButton}>
                                             <Image
                                                 source={require("../assets/images/buisiness_proc.png")}
@@ -118,7 +128,7 @@ function Screen4(props) {
                                         </TouchableOpacity>
                                         </TouchableHighlight>
                                         <TouchableOpacity
-                                            onPress={onPress}
+                                            onPress={onPress1}
                                             style={styles.corpMngmtButton}>
                                             <Image
                                                 source={require("../assets/images/corp_leadership.png")}
