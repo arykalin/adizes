@@ -11,7 +11,7 @@ import {
 import { useSelector, useDispatch } from "react-redux"
 import QuestionsComponent from "../components/QuestionsComponent";
 import { showQuestionModal } from "../state/actions/questions_modal"
-
+import stage1Questions from "../data/stage1"
 
 function Screen4(props) {
     const showQuestion = useSelector(state => state.modal.showQuestionModal)
@@ -19,7 +19,6 @@ function Screen4(props) {
 
     return (
         <View style={styles.container}>
-            <h1>Showquestion {showQuestion}</h1>
             <View style={styles.mainGroup}>
                 <View style={styles.infoScreen}>
                     <View style={styles.infoScreenIcons}>
@@ -97,14 +96,14 @@ function Screen4(props) {
                                     style={styles.circle}
                                     imageStyle={styles.circle_imageStyle}
                                 >
-                                    <View style={styles.businessPrcocButtonRow}>
+                                    <View style={styles.businessProcButtonRow}>
                                         <TouchableHighlight
                                             activeOpacity={0.6}
                                             underlayColor="#DDDDDD"
                                             onPress={() => alert('Pressed!')}>
                                         <TouchableOpacity
                                             onPress={() => dispatch(showQuestionModal())}
-                                            style={styles.businessPrcocButton}>
+                                            style={styles.businessProcButton}>
                                             <Image
                                                 source={require("../assets/images/buisiness_proc.png")}
                                                 resizeMode="contain"
@@ -188,8 +187,8 @@ function Screen4(props) {
                     </View>
                 </View>
             </View>
-            <Modal onRequestClose={() => setShowQuestion(false)} transparent visible={ showQuestion }>
-                <QuestionsComponent></QuestionsComponent>
+            <Modal transparent visible={ showQuestion }>
+                <QuestionsComponent questions={ stage1Questions.personalManagementQuestions }/>
             </Modal>
         </View>
     );
@@ -360,7 +359,7 @@ const styles = StyleSheet.create({
         bottom: 30
     },
     circle_imageStyle: {},
-    businessPrcocButton: {
+    businessProcButton: {
         width: 70,
         height: 70
     },
@@ -377,7 +376,7 @@ const styles = StyleSheet.create({
         width: 70,
         height: 70
     },
-    businessPrcocButtonRow: {
+    businessProcButtonRow: {
         height: 70,
         flexDirection: "row",
         marginTop: 35,

@@ -1,13 +1,10 @@
 import React, {Component} from "react";
 import {StyleSheet, View, Text, TouchableOpacity, Image, Modal} from "react-native";
 
-import stage1Questions from "../data/stage1"
 import {useDispatch} from "react-redux";
 import {hideQuestionModal} from "../state/actions/questions_modal"
-import { LogBox } from 'react-native';
 
-function QuestionComponent(props) {
-    const questions = stage1Questions
+function QuestionsComponent(props) {
     const dispatch = useDispatch()
     return (
         <View style={styles.questionsGroup}>
@@ -20,7 +17,7 @@ function QuestionComponent(props) {
                     style={styles.backButtonImage}
                 ></Image>
             </TouchableOpacity>
-            <Questions questions={questions}/>
+            <Questions questions={props.questions}/>
         </View>
     );
 }
@@ -106,4 +103,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default QuestionComponent;
+export default QuestionsComponent;

@@ -1,4 +1,5 @@
-const questions = [
+// call 1
+const personalManagementQuestions = [
     {
         questionTitle: "Подбор команды",
         question:
@@ -65,5 +66,27 @@ const questions = [
         ]
     }
 ];
+// call 2
+const developmentStrategyQuestions = [];
+// call 3
+const organizationalStructureQuestions = [];
+// call 4
+const businessProcessesQuestions = [];
+// call 5
+const corporateCultureQuestions = [];
+// call 6
+const financeAndPlanningQuestions = [];
+// call 7
+const corporateGovernanceQuestions = [];
+
+const questions = {
+    personalManagementQuestions: personalManagementQuestions,
+    developmentStrategyQuestions: developmentStrategyQuestions,
+    organizationalStructureQuestions: organizationalStructureQuestions,
+    businessProcessesQuestions: businessProcessesQuestions,
+    corporateCultureQuestions: corporateCultureQuestions,
+    financeAndPlanningQuestions: financeAndPlanningQuestions,
+    corporateGovernanceQuestions: corporateGovernanceQuestions,
+}
 
 export default questions;
