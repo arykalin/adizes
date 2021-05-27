@@ -16,21 +16,27 @@ import stage1Questions from "../data/stage1"
 function Screen4(props) {
     const showQuestion = useSelector(state => state.modal.showQuestionModal)
     const dispatch = useDispatch()
-    const [onPressQuestions, setOnPressQuestions] = useState(stage1Questions.emptyQuestions);
+    // const [onPressQuestions, setOnPressQuestions] = useState(stage1Questions.emptyQuestions);
 
     const onPress = () => {
-        setOnPressQuestions(stage1Questions.personalManagementQuestions)
-        dispatch(showQuestionModal())
+        // setOnPressQuestions(stage1Questions.personalManagementQuestions)
+        // dispatch(showQuestionModal(stage1Questions.personalManagementQuestions))
+        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.personalManagementQuestions})
+        dispatch({type: 'SHOW_QUESTION_MODAL'})
     }
 
     const onPress1 = () => {
-        setOnPressQuestions(stage1Questions.developmentStrategyQuestions)
-        dispatch(showQuestionModal())
+        // setOnPressQuestions(stage1Questions.developmentStrategyQuestions)
+        // dispatch(showQuestionModal(stage1Questions.developmentStrategyQuestions))
+        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.developmentStrategyQuestions})
+        dispatch({type: 'SHOW_QUESTION_MODAL'})
     }
 
     const onPressBusinessProc = () => {
-        setOnPressQuestions(stage1Questions.businessProcessesQuestions)
-        dispatch(showQuestionModal())
+        // setOnPressQuestions(stage1Questions.businessProcessesQuestions)
+        // dispatch(showQuestionModal(stage1Questions.businessProcessesQuestions))
+        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.businessProcessesQuestions})
+        dispatch({type: 'SHOW_QUESTION_MODAL'})
     }
 
     return (
@@ -204,7 +210,7 @@ function Screen4(props) {
                 </View>
             </View>
             <Modal transparent visible={ showQuestion }>
-                <QuestionsComponent questions={ onPressQuestions }/>
+                <QuestionsComponent/>
             </Modal>
         </View>
     );

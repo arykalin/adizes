@@ -1,5 +1,5 @@
 export const showQuestionModal =()=>({
-    type: 'SHOW_QUESTION_MODAL'
+    type: 'SHOW_QUESTION_MODAL',
 })
 
 export const hideQuestionModal =()=>({

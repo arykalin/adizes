@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {StyleSheet, View, Text, TouchableOpacity, Image, Modal} from "react-native";
 
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {hideQuestionModal} from "../state/actions/questions_modal"
 
 function QuestionsComponent(props) {
@@ -17,12 +17,13 @@ function QuestionsComponent(props) {
                     style={styles.backButtonImage}
                 ></Image>
             </TouchableOpacity>
-            <Questions questions={props.questions}/>
+            <Questions/>
         </View>
     );
 }
 
-const Questions = ({questions}) => {
+const Questions = () => {
+    const questions = useSelector(state => state.currentQuestionsList.list)
     console.log("{questions}: ", {questions})
     return (
         <View>
