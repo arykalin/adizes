@@ -16,26 +16,39 @@ import stage1Questions from "../data/stage1"
 function Screen4(props) {
     const showQuestion = useSelector(state => state.modal.showQuestionModal)
     const dispatch = useDispatch()
-    // const [onPressQuestions, setOnPressQuestions] = useState(stage1Questions.emptyQuestions);
 
-    const onPress = () => {
-        // setOnPressQuestions(stage1Questions.personalManagementQuestions)
-        // dispatch(showQuestionModal(stage1Questions.personalManagementQuestions))
+    const onPressPersonalManagementQuestions = () => {
         dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.personalManagementQuestions})
         dispatch({type: 'SHOW_QUESTION_MODAL'})
     }
 
-    const onPress1 = () => {
-        // setOnPressQuestions(stage1Questions.developmentStrategyQuestions)
-        // dispatch(showQuestionModal(stage1Questions.developmentStrategyQuestions))
+    const onPressDevelopmentStrategyQuestions = () => {
         dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.developmentStrategyQuestions})
         dispatch({type: 'SHOW_QUESTION_MODAL'})
     }
 
-    const onPressBusinessProc = () => {
-        // setOnPressQuestions(stage1Questions.businessProcessesQuestions)
-        // dispatch(showQuestionModal(stage1Questions.businessProcessesQuestions))
+    const onPressOrganizationalStructureQuestions = () => {
+        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.organizationalStructureQuestions})
+        dispatch({type: 'SHOW_QUESTION_MODAL'})
+    }
+
+    const onPressBusinessProcessesQuestions = () => {
         dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.businessProcessesQuestions})
+        dispatch({type: 'SHOW_QUESTION_MODAL'})
+    }
+
+    const onPressCorporateCultureQuestions = () => {
+        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.corporateCultureQuestions})
+        dispatch({type: 'SHOW_QUESTION_MODAL'})
+    }
+
+    const onPressFinanceAndPlanningQuestions = () => {
+        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.financeAndPlanningQuestions})
+        dispatch({type: 'SHOW_QUESTION_MODAL'})
+    }
+
+    const onPressCorporateGovernanceQuestions = () => {
+        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.corporateGovernanceQuestions})
         dispatch({type: 'SHOW_QUESTION_MODAL'})
     }
 
@@ -124,7 +137,7 @@ function Screen4(props) {
                                             underlayColor="#DDDDDD"
                                             onPress={() => alert('Pressed!')}>
                                         <TouchableOpacity
-                                            onPress={onPressBusinessProc}
+                                            onPress={onPressBusinessProcessesQuestions}
                                             style={styles.businessProcButton}>
                                             <Image
                                                 source={require("../assets/images/buisiness_proc.png")}
@@ -134,7 +147,7 @@ function Screen4(props) {
                                         </TouchableOpacity>
                                         </TouchableHighlight>
                                         <TouchableOpacity
-                                            onPress={onPress1}
+                                            onPress={onPressCorporateCultureQuestions}
                                             style={styles.corpMngmtButton}>
                                             <Image
                                                 source={require("../assets/images/corp_leadership.png")}
@@ -145,7 +158,7 @@ function Screen4(props) {
                                     </View>
                                     <View style={styles.strategyButtonRow}>
                                         <TouchableOpacity
-                                            onPress={onPress}
+                                            onPress={onPressOrganizationalStructureQuestions}
                                             style={styles.strategyButton}>
                                             <Image
                                                 source={require("../assets/images/scheme.png")}
@@ -154,7 +167,7 @@ function Screen4(props) {
                                             ></Image>
                                         </TouchableOpacity>
                                         <TouchableOpacity
-                                            onPress={onPress}
+                                            onPress={onPressFinanceAndPlanningQuestions}
                                             style={styles.financesButton}>
                                             <Image
                                                 source={require("../assets/images/finances.png")}
@@ -165,7 +178,7 @@ function Screen4(props) {
                                     </View>
                                 </ImageBackground>
                                 <TouchableOpacity
-                                    onPress={onPress}
+                                    onPress={onPressDevelopmentStrategyQuestions}
                                     style={styles.devStrategyButton}>
                                     <Image
                                         source={require("../assets/images/developement.png")}
@@ -174,7 +187,7 @@ function Screen4(props) {
                                     ></Image>
                                 </TouchableOpacity>
                                 <TouchableOpacity
-                                    onPress={onPress}
+                                    onPress={onPressPersonalManagementQuestions}
                                     style={styles.orgStructureButton}>
                                     <Image
                                         source={require("../assets/images/Group.png")}
@@ -183,7 +196,7 @@ function Screen4(props) {
                                     ></Image>
                                 </TouchableOpacity>
                                 <TouchableOpacity
-                                    onPress={onPress}
+                                    onPress={onPressCorporateGovernanceQuestions}
                                     style={styles.managementButton}>
                                     <Image
                                         source={require("../assets/images/leadership.png")}
