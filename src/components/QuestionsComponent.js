@@ -67,12 +67,12 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(101,101,101,1)",
     },
     questionText: {
-        fontFamily: "montserrat-700",
+        fontFamily: "montserrat-600",
         color: "white",
         alignSelf: "center",
         textAlign: "center",
         fontSize: 20,
-        marginTop: 20,
+        marginTop: 10,
         flex: 1,
         justifyContent: "center"
     },
@@ -94,9 +94,6 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(255,255,255,1)",
     },
     backButton: {
-        // borderWidth: 3,
-        // borderColor: "red",
-        // flex: 1,
         width: 50,
         height: 50,
         alignSelf: 'center',
