@@ -2,7 +2,7 @@ import stage1Questions from "../../data/stage1";
 
 const initialState = {
     list: stage1Questions.emptyQuestions,
-    currentCall: "",
+    currentCall: "Выберите вызов",
 };
 
 export const currentQuestionsListReducer = (state = initialState, action) => {

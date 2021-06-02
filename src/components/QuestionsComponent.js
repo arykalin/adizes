@@ -40,6 +40,7 @@ const Questions = () => {
 const QuestionView = ({title}) => {
         return (
             <TouchableOpacity
+                // onPress={() => props.navigation.navigate("Screen3")}
                 style={styles.questionRectangle}
             >
                 <Text style={styles.questionText}>
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         // borderWidth: 3,
         // borderColor: "red",
-        borderRadius: 10,
+        borderRadius: 5,
         backgroundColor: "rgba(101,101,101,1)",
     },
     questionText: {
@@ -79,12 +80,13 @@ const styles = StyleSheet.create({
     questionsGroup: {
         flex: 1,
         width: '90%',
-        minHeight: 300,
-        maxWidth: 400,
+        height: '80%',
+        minHeight: 400,
+        maxWidth: 360,
         alignSelf: 'center',
         justifyContent: 'center',
         paddingBottom: 10,
-        marginTop: '35%',
+        marginTop: '25%',
         marginBottom: '10%',
         positionHorizontal: '5%',
         flexGrow: 0,
