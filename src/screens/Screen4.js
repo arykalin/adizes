@@ -18,40 +18,61 @@ function Screen4(props) {
     const dispatch = useDispatch()
 
     const onPressPersonalManagementQuestions = () => {
-        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.personalManagementQuestions})
+        dispatch({type: 'SET_QUESTION_LIST',
+            list: stage1Questions.personalManagementQuestions,
+            currentCall: "Управление персоналом",
+        })
         dispatch({type: 'SHOW_QUESTION_MODAL'})
     }
 
     const onPressDevelopmentStrategyQuestions = () => {
-        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.developmentStrategyQuestions})
+        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.developmentStrategyQuestions,
+            currentCall: "Стратегия развития",
+        })
         dispatch({type: 'SHOW_QUESTION_MODAL'})
     }
 
     const onPressOrganizationalStructureQuestions = () => {
-        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.organizationalStructureQuestions})
+        dispatch({type: 'SET_QUESTION_LIST',
+            list: stage1Questions.organizationalStructureQuestions,
+            currentCall: "Создание оргструктуры",
+        })
         dispatch({type: 'SHOW_QUESTION_MODAL'})
     }
 
     const onPressBusinessProcessesQuestions = () => {
-        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.businessProcessesQuestions})
+        dispatch({type: 'SET_QUESTION_LIST',
+            list: stage1Questions.businessProcessesQuestions,
+            currentCall: "Бизнес процессы",
+        })
         dispatch({type: 'SHOW_QUESTION_MODAL'})
     }
 
     const onPressCorporateCultureQuestions = () => {
-        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.corporateCultureQuestions})
+        dispatch({type: 'SET_QUESTION_LIST',
+            list: stage1Questions.corporateCultureQuestions,
+            currentCall: "Формирование корпоративной культуры",
+        })
         dispatch({type: 'SHOW_QUESTION_MODAL'})
     }
 
     const onPressFinanceAndPlanningQuestions = () => {
-        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.financeAndPlanningQuestions})
+        dispatch({type: 'SET_QUESTION_LIST',
+            list: stage1Questions.financeAndPlanningQuestions,
+            currentCall: "Финансы и планирование",
+        })
         dispatch({type: 'SHOW_QUESTION_MODAL'})
     }
 
     const onPressCorporateGovernanceQuestions = () => {
-        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.corporateGovernanceQuestions})
+        dispatch({type: 'SET_QUESTION_LIST',
+            list: stage1Questions.corporateGovernanceQuestions,
+            currentCall: "Корпоративное управление",
+        })
         dispatch({type: 'SHOW_QUESTION_MODAL'})
     }
 
+    const stageText = useSelector(state => state.currentQuestionsList.currentCall);
     return (
         <View style={styles.container}>
             <View style={styles.mainGroup}>
@@ -123,7 +144,7 @@ function Screen4(props) {
                         <View style={styles.circleGroup}>
                             <View style={styles.stageTextStack}>
                                 <View style={styles.stageText}>
-                                    <Text style={styles.centeredText}>Стратегия развития</Text>
+                                    <Text style={styles.centeredText}>{stageText}</Text>
                                 </View>
                                 <ImageBackground
                                     source={require("../assets/images/main_circle.png")}
@@ -360,7 +381,7 @@ const styles = StyleSheet.create({
         height: 16
     },
     gameScreen: {
-        width: 689,
+        width: 360,
         height: 527,
         marginTop: 5,
         alignSelf: "center"
@@ -484,7 +505,7 @@ const styles = StyleSheet.create({
         width: 340,
         height: 345,
         marginTop: -5,
-        marginLeft: 174
+        alignSelf: "center"
     },
     bottomImages: {
         width: 360,
