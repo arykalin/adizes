@@ -2,14 +2,15 @@ import React, {Component} from "react";
 import {StyleSheet, View, Text, TouchableOpacity, Image, Modal} from "react-native";
 
 import {useDispatch, useSelector} from "react-redux";
-import {hideQuestionModal} from "../state/actions/questions_modal"
+import {hideCallModal} from "../state/actions/questions_modal"
+import stage1Questions from "../data/stage1";
 
 function QuestionsComponent(props) {
     const dispatch = useDispatch()
     return (
         <View style={styles.questionsGroup}>
             <TouchableOpacity
-                onPress={() => dispatch(hideQuestionModal())}
+                onPress={() => dispatch(hideCallModal())}
                 style={styles.backButton}>
                 <Image
                     source={require("../assets/images/Group_25.png")}
@@ -24,27 +25,35 @@ function QuestionsComponent(props) {
 
 const Questions = () => {
     const questions = useSelector(state => state.currentQuestionsList.list)
+    const showQuestion = useSelector(state => state.modal.showQuestionModal)
     console.log("{questions}: ", {questions})
     return (
         <View>
             {questions.map((question) => {
                 console.log("{question}: ", {question})
                 return (
-                    <QuestionView title={question.questionTitle}/>
+                    <QuestionView question={question}/>
                 )
             })}
+            <Modal transparent visible={ showQuestion }>
+                <Text>Hello World!</Text>
+            </Modal>
         </View>
     )
 }
 
-const QuestionView = ({title}) => {
+const QuestionView = ({question}) => {
+    const dispatch = useDispatch()
+    const onPress = () => {
+        dispatch({type: 'SHOW_QUESTION_MODAL'})
+    }
         return (
             <TouchableOpacity
-                // onPress={() => props.navigation.navigate("Screen3")}
+                onPress={() => onPress()}
                 style={styles.questionRectangle}
             >
                 <Text style={styles.questionText}>
-                    {title}
+                    {question.questionTitle}
                 </Text>
             </TouchableOpacity>
         )

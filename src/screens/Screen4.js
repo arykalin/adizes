@@ -10,11 +10,11 @@ import {
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux"
 import QuestionsComponent from "../components/QuestionsComponent";
-import { showQuestionModal } from "../state/actions/questions_modal"
+import { showCallModal } from "../state/actions/questions_modal"
 import stage1Questions from "../data/stage1"
 
 function Screen4(props) {
-    const showQuestion = useSelector(state => state.modal.showQuestionModal)
+    const showCall = useSelector(state => state.modal.showCallModal)
     const dispatch = useDispatch()
 
     const onPressPersonalManagementQuestions = () => {
@@ -22,14 +22,14 @@ function Screen4(props) {
             list: stage1Questions.personalManagementQuestions,
             currentCall: "Управление персоналом",
         })
-        dispatch({type: 'SHOW_QUESTION_MODAL'})
+        dispatch({type: 'SHOW_CALL_MODAL'})
     }
 
     const onPressDevelopmentStrategyQuestions = () => {
         dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.developmentStrategyQuestions,
             currentCall: "Стратегия развития",
         })
-        dispatch({type: 'SHOW_QUESTION_MODAL'})
+        dispatch({type: 'SHOW_CALL_MODAL'})
     }
 
     const onPressOrganizationalStructureQuestions = () => {
@@ -37,7 +37,7 @@ function Screen4(props) {
             list: stage1Questions.organizationalStructureQuestions,
             currentCall: "Создание оргструктуры",
         })
-        dispatch({type: 'SHOW_QUESTION_MODAL'})
+        dispatch({type: 'SHOW_CALL_MODAL'})
     }
 
     const onPressBusinessProcessesQuestions = () => {
@@ -45,7 +45,7 @@ function Screen4(props) {
             list: stage1Questions.businessProcessesQuestions,
             currentCall: "Бизнес процессы",
         })
-        dispatch({type: 'SHOW_QUESTION_MODAL'})
+        dispatch({type: 'SHOW_CALL_MODAL'})
     }
 
     const onPressCorporateCultureQuestions = () => {
@@ -53,7 +53,7 @@ function Screen4(props) {
             list: stage1Questions.corporateCultureQuestions,
             currentCall: "Формирование корпоративной культуры",
         })
-        dispatch({type: 'SHOW_QUESTION_MODAL'})
+        dispatch({type: 'SHOW_CALL_MODAL'})
     }
 
     const onPressFinanceAndPlanningQuestions = () => {
@@ -61,7 +61,7 @@ function Screen4(props) {
             list: stage1Questions.financeAndPlanningQuestions,
             currentCall: "Финансы и планирование",
         })
-        dispatch({type: 'SHOW_QUESTION_MODAL'})
+        dispatch({type: 'SHOW_CALL_MODAL'})
     }
 
     const onPressCorporateGovernanceQuestions = () => {
@@ -69,7 +69,7 @@ function Screen4(props) {
             list: stage1Questions.corporateGovernanceQuestions,
             currentCall: "Корпоративное управление",
         })
-        dispatch({type: 'SHOW_QUESTION_MODAL'})
+        dispatch({type: 'SHOW_CALL_MODAL'})
     }
 
     const stageText = useSelector(state => state.currentQuestionsList.currentCall);
@@ -243,7 +243,11 @@ function Screen4(props) {
                     </View>
                 </View>
             </View>
-            <Modal transparent visible={ showQuestion }>
+            <Modal
+                animationType="slide"
+                transparent={false}
+                visible={ showCall }
+            >
                 <QuestionsComponent/>
             </Modal>
         </View>
