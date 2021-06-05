@@ -60,8 +60,6 @@ const QuestionView = ({question}) => {
     console.log("called QuestionView for ", {question})
     const dispatch = useDispatch()
     const onPress = () => {
-        const idx = getIndex(question.questionTitle, questions)
-        console.log("question index is: ", idx)
         console.log("question title is: ", question.questionTitle)
         dispatch(showQuestionModal())
         dispatch(setCurrentQuestion(question.questionTitle))
@@ -78,9 +76,6 @@ const QuestionView = ({question}) => {
         )
 }
 
-function getIndex(questionTitle, questions) {
-    return questions.findIndex(obj => obj.questionTitle === questionTitle);
-}
 const styles = StyleSheet.create({
     container: {},
     backButtonImage: {

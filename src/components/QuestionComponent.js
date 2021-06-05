@@ -13,6 +13,7 @@ function QuestionComponent(props) {
         dispatch(hideQuestionModal())
     }
     const questions = useSelector(state => state.currentQuestionsList.list)
+    const currentQuestion = useSelector(state => state.currentQuestion)
 
     const renderItem = ({ item }) => {
         console.log("{question in render item}: ", {item})
@@ -20,13 +21,17 @@ function QuestionComponent(props) {
             <QuestionRow question={item}/>
         )
     };
+    console.log("question id is: ", currentQuestion.currentQuestionId)
+    const idx = getIndex(currentQuestion.currentQuestionId, questions)
+    console.log("question index is: ", idx)
+
     return (
         <View style={styles.container}>
             <View style={styles.rect}>
                 <Text style={styles.turnNumberText}>Ход1.</Text>
-                <Text style={styles.turnName}>{questions[0].questionTitle}</Text>
+                <Text style={styles.turnName}>{questions[idx].questionTitle}</Text>
                 <FlatList
-                    data={questions[0].answers}
+                    data={questions[idx].answers}
                     renderItem={renderItem}
                     keyExtractor={item => item.text}
                     // extraData={selectedId}
@@ -63,6 +68,9 @@ const QuestionRow = ({question}) => {
     )
 }
 
+function getIndex(questionTitle, questions) {
+    return questions.findIndex(obj => obj.questionTitle === questionTitle);
+}
 
 const styles = StyleSheet.create({
     container: {
