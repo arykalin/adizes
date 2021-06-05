@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {StyleSheet, View, Text, TouchableOpacity, Image, Modal} from "react-native";
+import {StyleSheet, View, Text, TouchableOpacity, Image, FlatList, Modal} from "react-native";
 
 import {useDispatch, useSelector} from "react-redux";
 import {hideCallModal} from "../state/actions/questions_modal"
@@ -28,15 +28,24 @@ const Questions = () => {
     const questions = useSelector(state => state.currentQuestionsList.list)
     const showQuestion = useSelector(state => state.modal.showQuestionModal)
     console.log("{questions}: ", {questions})
+
+    const renderItem = ({ item }) => {
+        console.log("{question in render item}: ", {item})
+        return (
+            <QuestionView question={item}/>
+        )
+    };
+
     return (
         <View>
         <View>
-            {questions.map((question) => {
-                console.log("{question}: ", {question})
-                return (
-                    <QuestionView question={question}/>
-                )
-            })}
+            <FlatList
+                data={questions}
+                renderItem={renderItem}
+                keyExtractor={item => item.questionTitle}
+                // extraData={selectedId}
+            >
+            </FlatList>
         </View>
             <Modal transparent visible={ showQuestion }>
                 <QuestionComponent/>
@@ -46,6 +55,7 @@ const Questions = () => {
 }
 
 const QuestionView = ({question}) => {
+    console.log("called QuestionView for ", {question})
     const dispatch = useDispatch()
     const onPress = () => {
         dispatch({type: 'SHOW_QUESTION_MODAL'})
