@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux"
 import CallComponent from "../components/CallComponent";
-import { showCallModal } from "../state/actions/questions_modal"
 import stage1Questions from "../data/stage1"
 
 function Screen4(props) {

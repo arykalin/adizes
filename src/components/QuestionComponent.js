@@ -4,19 +4,40 @@ import {useDispatch, useSelector} from "react-redux";
 import React from "react";
 import { useState } from 'react';
 import {hideQuestionModal} from "../state/actions/questions_modal";
-import stage1Questions from "../data/stage1";
-
 
 function QuestionComponent(props) {
     console.log("called QuestionComponent")
+
+    const currentQuestion = useSelector(state => state.currentQuestion)
+    const answers = useSelector(state => state.answers)
+    const questions = useSelector(state => state.currentQuestionsList.list)
+    const idx = getIndex(currentQuestion.currentQuestionId, questions)
+    console.log("question id is: ", currentQuestion.currentQuestionId)
+    console.log("question index is: ", idx)
+
     const dispatch = useDispatch()
+
+    const calcAnswers = () => {
+        let correct = 0
+        let wrong = 0
+        console.log("calculate answers", {answers: answers})
+        for (const answer of answers.answers) {
+            if ( answer.checked === false) {
+                continue
+            }
+            if (answer.correct === true) {
+                correct++
+            } else {
+                wrong++
+            }
+            console.log("answers calc:", {correct: correct, wrong: wrong})
+        }
+    }
     const onPress = () => {
-        console.log("calculate answers")
         dispatch(hideQuestionModal())
+        calcAnswers()
         dispatch({type: 'CLEANUP_ANSWERS'})
     }
-    const questions = useSelector(state => state.currentQuestionsList.list)
-    const currentQuestion = useSelector(state => state.currentQuestion)
 
     const renderItem = ({ item }) => {
         console.log("{question in render item}: ", {item})
@@ -24,14 +45,12 @@ function QuestionComponent(props) {
             <QuestionRow question={item}/>
         )
     };
-    console.log("question id is: ", currentQuestion.currentQuestionId)
-    const idx = getIndex(currentQuestion.currentQuestionId, questions)
-    console.log("question index is: ", idx)
+
 
     return (
         <View style={styles.container}>
             <View style={styles.rect}>
-                <Text style={styles.turnNumberText}>Ход1.</Text>
+                <Text style={styles.turnNumberText}>Ход {idx}.</Text>
                 <Text style={styles.turnName}>{questions[idx].questionTitle}</Text>
                 <FlatList
                     data={questions[idx].answers}

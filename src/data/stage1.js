@@ -12,6 +12,11 @@ const emptyQuestions = [
 // call 1 Управление персоналом
 const personalManagementQuestions = [
     {
+        stageNum: 1,
+        stageTitle: "СТАНОВЛЕНИЕ",
+        questionTitle: ""
+    },
+    {
         questionTitle: "Подбор команды",
         question:
             "какими качествами  и навыками должна обладать команда?",

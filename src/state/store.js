@@ -4,12 +4,14 @@ import {currentQuestionsListReducer} from './reducers/current_questions_list'
 import { applyMiddleware, createStore, combineReducers} from 'redux';
 import currentQuestionReducer from "./reducers/current_question";
 import currentAnswerReducer from "./reducers/answers";
+import {progressReducer} from "./reducers/progress";
 
 const rootReducer = combineReducers({
     modal: modalReducer,
     currentQuestionsList: currentQuestionsListReducer,
     currentQuestion: currentQuestionReducer,
     answers: currentAnswerReducer,
+    progress: progressReducer,
 });
 
 export default createStore(rootReducer,applyMiddleware(thunk)

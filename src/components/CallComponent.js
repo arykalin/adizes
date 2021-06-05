@@ -56,7 +56,6 @@ const Questions = () => {
 }
 
 const QuestionView = ({question}) => {
-    const questions = useSelector(state => state.currentQuestionsList.list)
     console.log("called QuestionView for ", {question})
     const dispatch = useDispatch()
     const onPress = () => {
