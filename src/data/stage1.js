@@ -2,6 +2,8 @@
 const personalManagementQuestions = [
     {
         questionTitle: "Подбор команды",
+        correct: 0,
+        wrong: 0,
         question:
             "какими качествами  и навыками должна обладать команда?",
         answers: [
@@ -26,6 +28,8 @@ const personalManagementQuestions = [
     },
     {
         questionTitle: "Мотивация персонала",
+        correct: 0,
+        wrong: 0,
         question: 'нет возможности предложить высокую заработную плату и привлечь высококлассных специалистов, как мотивировать персонал?',
         answers: [
             {id: 1, text: "Не надо никого премировать, потому что нет прибыли"},
@@ -47,6 +51,8 @@ const personalManagementQuestions = [
     },
     {
         questionTitle: "Обучение персонала",
+        correct: 0,
+        wrong: 0,
         question: "Обучение персонала?",
         answers: [
             {id: 1, text: "Нет времени думать об обучении, надо работать 24/7"},
@@ -71,6 +77,8 @@ const developmentStrategyQuestions = [
     {
         turn: 1,
         questionTitle: "Миссия, видение и стратегия",
+        correct: 0,
+        wrong: 0,
         question: "Миссия, видение и стратегия",
         answers: [
             {id: 1, text: "Ход 1. Миссия. Видение и стратегия"},
@@ -86,6 +94,8 @@ const developmentStrategyQuestions = [
     {
         turn: 2,
         questionTitle: "Какую бизнес модель выбрать",
+        correct: 0,
+        wrong: 0,
         question: "Какую бизнес модель выбрать",
         answers: [
             {id: 1, text: "Нам не нужны никакие бизнес модели – это все никому не нужная теория",},
@@ -100,6 +110,8 @@ const developmentStrategyQuestions = [
     {
         turn: 3,
         questionTitle: "Анализ рынка",
+        correct: 0,
+        wrong: 0,
         question:
             "empty question",
         answers: [
@@ -115,6 +127,8 @@ const developmentStrategyQuestions = [
     {
         turn: 4,
         questionTitle: "Продукт и его продвижение",
+        correct: 0,
+        wrong: 0,
         question:
             "Продукт и его продвижение",
         answers: [
@@ -130,6 +144,8 @@ const developmentStrategyQuestions = [
     {
         turn: 5,
         questionTitle: "Маркетинг",
+        correct: 0,
+        wrong: 0,
         question:
             "Маркетинг",
         answers: [
@@ -148,6 +164,8 @@ const organizationalStructureQuestions = [
     {
         turn: 1,
         questionTitle: "Выбор организационной структуры",
+        correct: 0,
+        wrong: 0,
         question:
             "Выбор организационной структуры",
         answers: [
@@ -164,6 +182,8 @@ const organizationalStructureQuestions = [
     {
         turn: 2,
         questionTitle: "Распредление полнеомочий и найм персонала",
+        correct: 0,
+        wrong: 0,
         question:
             "Распредление полнеомочий и найм персонала",
         answers: [
@@ -179,6 +199,8 @@ const organizationalStructureQuestions = [
     {
         turn: 3,
         questionTitle: "Оформление трудовых отношений",
+        correct: 0,
+        wrong: 0,
         question:
             "Оформление трудовых отношений",
         answers: [
@@ -197,6 +219,8 @@ const businessProcessesQuestions = [
     {
         turn: 1,
         questionTitle: "Формализация бизнес процессов",
+        correct: 0,
+        wrong: 0,
         question:
             "Формализация бизнес процессов",
         answers: [
@@ -212,6 +236,8 @@ const businessProcessesQuestions = [
     {
         turn: 2,
         questionTitle: "Управление бизнес процессами",
+        correct: 0,
+        wrong: 0,
         question:
             "Управление бизнес процессами",
         answers: [
@@ -227,6 +253,8 @@ const businessProcessesQuestions = [
     {
         turn: 3,
         questionTitle: "Что входит в управление бизнес процессами?",
+        correct: 0,
+        wrong: 0,
         question:
             "Что входит в управление бизнес процессами?",
         answers: [
@@ -242,6 +270,8 @@ const businessProcessesQuestions = [
     {
         turn: 4,
         questionTitle: "Какие виды бизнес процессов необходимо внедрять на этом этапе",
+        correct: 0,
+        wrong: 0,
         question:
             "Какие виды бизнес процессов необходимо внедрять на этом этапе",
         answers: [
@@ -260,6 +290,8 @@ const corporateCultureQuestions = [
     {
         turn: 1,
         questionTitle: "Стиль управления",
+        correct: 0,
+        wrong: 0,
         question:
             "Стиль управления – какие стили управления наиболее эффективны на данном этапе?",
         answers: [
@@ -274,6 +306,8 @@ const corporateCultureQuestions = [
     {
         turn: 2,
         questionTitle: "Процесс принятия решений",
+        correct: 0,
+        wrong: 0,
         question:
             "Процесс принятия решений",
         answers: [
@@ -289,6 +323,8 @@ const corporateCultureQuestions = [
     {
         turn: 3,
         questionTitle: "Выработка  ценностей",
+        correct: 0,
+        wrong: 0,
         question:
             "Выработка  ценностей",
         answers: [
@@ -304,6 +340,8 @@ const corporateCultureQuestions = [
     {
         turn: 4,
         questionTitle: "Формирование культуры",
+        correct: 0,
+        wrong: 0,
         question:
             "Формирование культуры с чего начать?",
         answers: [
@@ -322,6 +360,8 @@ const financeAndPlanningQuestions = [
     {
         turn: 1,
         questionTitle: "Организация финансового учета",
+        correct: 0,
+        wrong: 0,
         question:
             "Организация финансового учета",
         answers: [
@@ -337,6 +377,8 @@ const financeAndPlanningQuestions = [
     {
         turn: 2,
         questionTitle: "Планирование",
+        correct: 0,
+        wrong: 0,
         question:
             "Планирование",
         answers: [
@@ -352,6 +394,8 @@ const financeAndPlanningQuestions = [
     {
         turn: 3,
         questionTitle: "Нужен ли нам контроль?",
+        correct: 0,
+        wrong: 0,
         question:
             "Нужен ли нам контроль?",
         answers: [
@@ -371,6 +415,8 @@ const corporateGovernanceQuestions = [
     {
         turn: 1,
         questionTitle: "Совет директоров",
+        correct: 0,
+        wrong: 0,
         question:
             "Совет директоров",
         answers: [
@@ -386,6 +432,8 @@ const corporateGovernanceQuestions = [
     {
         turn: 2,
         questionTitle: "Управление рисками",
+        correct: 0,
+        wrong: 0,
         question:
             "Управление рисками",
         answers: [

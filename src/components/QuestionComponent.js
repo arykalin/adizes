@@ -41,6 +41,9 @@ function QuestionComponent(props) {
                 type: 'CALC_ANSWERS',
                 correct: correct,
                 wrong: wrong,
+                currentStage: currentStage,
+                currentCall: currentCall,
+                currentQuestion: currentQuestion.currentQuestionId
             })
         }
     }
