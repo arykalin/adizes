@@ -12,66 +12,69 @@ import { useSelector, useDispatch } from "react-redux"
 import CallComponent from "../components/CallComponent";
 import stage1Questions from "../data/stage1"
 
+import * as stageConstants from "../data/stages"
+
 function Screen4(props) {
     const showCall = useSelector(state => state.modal.showCallModal)
     const dispatch = useDispatch()
 
     const onPressPersonalManagementQuestions = () => {
-        dispatch({type: 'SET_QUESTION_LIST',
-            list: stage1Questions.personalManagementQuestions,
+        dispatch({type: 'SET_CURRENT_CALL_TITLE',
+            title: stageConstants.PersonalManagementQuestions,
             currentCall: "Управление персоналом",
         })
         dispatch({type: 'SHOW_CALL_MODAL'})
     }
 
     const onPressDevelopmentStrategyQuestions = () => {
-        dispatch({type: 'SET_QUESTION_LIST', list: stage1Questions.developmentStrategyQuestions,
+        dispatch({type: 'SET_CURRENT_CALL_TITLE',
+            title: stageConstants.DevelopmentStrategyQuestions,
             currentCall: "Стратегия развития",
         })
         dispatch({type: 'SHOW_CALL_MODAL'})
     }
 
     const onPressOrganizationalStructureQuestions = () => {
-        dispatch({type: 'SET_QUESTION_LIST',
-            list: stage1Questions.organizationalStructureQuestions,
+        dispatch({type: 'SET_CURRENT_CALL_TITLE',
+            title: stageConstants.OrganizationalStructureQuestions,
             currentCall: "Создание оргструктуры",
         })
         dispatch({type: 'SHOW_CALL_MODAL'})
     }
 
     const onPressBusinessProcessesQuestions = () => {
-        dispatch({type: 'SET_QUESTION_LIST',
-            list: stage1Questions.businessProcessesQuestions,
+        dispatch({type: 'SET_CURRENT_CALL_TITLE',
+            title: stageConstants.BusinessProcessesQuestions,
             currentCall: "Бизнес процессы",
         })
         dispatch({type: 'SHOW_CALL_MODAL'})
     }
 
     const onPressCorporateCultureQuestions = () => {
-        dispatch({type: 'SET_QUESTION_LIST',
-            list: stage1Questions.corporateCultureQuestions,
+        dispatch({type: 'SET_CURRENT_CALL_TITLE',
+            title: stageConstants.CorporateCultureQuestions,
             currentCall: "Формирование корпоративной культуры",
         })
         dispatch({type: 'SHOW_CALL_MODAL'})
     }
 
     const onPressFinanceAndPlanningQuestions = () => {
-        dispatch({type: 'SET_QUESTION_LIST',
-            list: stage1Questions.financeAndPlanningQuestions,
+        dispatch({type: 'SET_CURRENT_CALL_TITLE',
+            title: stageConstants.FinanceAndPlanningQuestions,
             currentCall: "Финансы и планирование",
         })
         dispatch({type: 'SHOW_CALL_MODAL'})
     }
 
     const onPressCorporateGovernanceQuestions = () => {
-        dispatch({type: 'SET_QUESTION_LIST',
-            list: stage1Questions.corporateGovernanceQuestions,
+        dispatch({type: 'SET_CURRENT_CALL_TITLE',
+            title: stageConstants.CorporateGovernanceQuestions,
             currentCall: "Корпоративное управление",
         })
         dispatch({type: 'SHOW_CALL_MODAL'})
     }
 
-    const stageText = useSelector(state => state.currentQuestionsList.currentCall);
+    const stageText = useSelector(state => state.currentCall.currentCall);
     return (
         <View style={styles.container}>
             <View style={styles.mainGroup}>

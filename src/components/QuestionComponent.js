@@ -9,8 +9,14 @@ function QuestionComponent(props) {
     console.log("called QuestionComponent")
 
     const currentQuestion = useSelector(state => state.currentQuestion)
+
     const answers = useSelector(state => state.answers)
-    const questions = useSelector(state => state.currentQuestionsList.list)
+
+    const stages = useSelector(state => state.progress.allStages)
+    const currentStage = useSelector(state => state.currentStage.title)
+    const currentCall = useSelector(state => state.currentCall.title)
+    const questions = stages[currentStage].questions[currentCall]
+
     const idx = getIndex(currentQuestion.currentQuestionId, questions)
     console.log("question id is: ", currentQuestion.currentQuestionId)
     console.log("question index is: ", idx)
@@ -31,6 +37,11 @@ function QuestionComponent(props) {
                 wrong++
             }
             console.log("answers calc:", {correct: correct, wrong: wrong})
+            dispatch({
+                type: 'CALC_ANSWERS',
+                correct: correct,
+                wrong: wrong,
+            })
         }
     }
     const onPress = () => {

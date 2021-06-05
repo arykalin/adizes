@@ -1,40 +1,8 @@
 import {useSelector} from "react-redux";
-
-const answer = {
-    correct: 0,
-    incorrect: 0,
-}
-
-const turns = {
-    'turn0': {answer}
-}
-
-const call = {
-    'call0': turns,
-}
-
-const stageProgress = {
-    'call0': {call}
-}
-
-const stage = {
-    name: "",
-    num: 0,
-    progress: stageProgress,
-}
-
-const progress = {
-    stages: {
-        'stage1': {stage},
-        'stage2': {stage},
-        'stage3': {stage},
-        'stage4': {stage},
-    },
-}
-
+import allStages from "../../data/stages";
 
 const initialState = {
-    progress: progress,
+    allStages,
 };
 
 export const progressReducer = (state = initialState, action) => {
@@ -50,10 +18,22 @@ export const progressReducer = (state = initialState, action) => {
         }
         return progress
     }
+    const calcAnswers = (action) => {
+        console.log("state.progress:", {progress: state.progress})
+        state.progress['stage1']['call0']['turn0']['answer0'].correct = action.correct
+        state.progress['stage1']['call0']['turn0']['answer0'].wrong = action.wrong
+        state.progress.set('stage2', { call0: { turn0: { answer0: { correct: action.correct}}}})
+        state.progress.set('stage2', { call0: { turn0: { answer0: { correct: action.wrong}}}})
+        return state.progress
+    }
+
     switch(action.type) {
         case 'INIT': return {
             progress: initProgress(action),
         };
+        case 'CALC_ANSWERS': return {
+            progress: calcAnswers(action)
+        }
         default: return state;
     }
 }

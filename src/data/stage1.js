@@ -1,21 +1,5 @@
-// empty
-const emptyQuestions = [
-    {
-        questionTitle: "empty",
-        question:
-            "empty question",
-        answers: [
-            {id: 1, text: "empty text"},
-        ]
-    },
-];
 // call 1 Управление персоналом
 const personalManagementQuestions = [
-    {
-        stageNum: 1,
-        stageTitle: "СТАНОВЛЕНИЕ",
-        questionTitle: ""
-    },
     {
         questionTitle: "Подбор команды",
         question:
@@ -416,15 +400,18 @@ const corporateGovernanceQuestions = [
     },
 ];
 
-const questions = {
-    emptyQuestions: emptyQuestions,
-    personalManagementQuestions: personalManagementQuestions,
-    developmentStrategyQuestions: developmentStrategyQuestions,
-    organizationalStructureQuestions: organizationalStructureQuestions,
-    businessProcessesQuestions: businessProcessesQuestions,
-    corporateCultureQuestions: corporateCultureQuestions,
-    financeAndPlanningQuestions: financeAndPlanningQuestions,
-    corporateGovernanceQuestions: corporateGovernanceQuestions,
+const calls = {
+    'personalManagementQuestions': personalManagementQuestions,
+    'developmentStrategyQuestions': developmentStrategyQuestions,
+    'organizationalStructureQuestions': organizationalStructureQuestions,
+    'businessProcessesQuestions': businessProcessesQuestions,
+    'corporateCultureQuestions': corporateCultureQuestions,
+    'financeAndPlanningQuestions': financeAndPlanningQuestions,
+    'corporateGovernanceQuestions': corporateGovernanceQuestions,
 }
 
-export default questions;
+
+
+
+
+export default calls;
