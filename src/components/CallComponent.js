@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {StyleSheet, View, Text, TouchableOpacity, Image, FlatList, Modal} from "react-native";
 
 import {useDispatch, useSelector} from "react-redux";
-import {hideCallModal} from "../state/actions/questions_modal"
+import {hideCallModal, showQuestionModal} from "../state/actions/questions_modal"
 import QuestionComponent from "./QuestionComponent";
 
 
@@ -58,7 +58,7 @@ const QuestionView = ({question}) => {
     console.log("called QuestionView for ", {question})
     const dispatch = useDispatch()
     const onPress = () => {
-        dispatch({type: 'SHOW_QUESTION_MODAL'})
+        dispatch(showQuestionModal())
     }
         return (
             <TouchableOpacity

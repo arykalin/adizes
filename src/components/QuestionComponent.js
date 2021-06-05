@@ -1,13 +1,17 @@
 import Checkbox from 'expo-checkbox';
-import {StyleSheet, View, Text, FlatList} from "react-native";
+import {StyleSheet, View, Text, FlatList, TouchableOpacity} from "react-native";
 import {useDispatch, useSelector} from "react-redux";
 import React from "react";
 import { useState } from 'react';
+import {hideQuestionModal} from "../state/actions/questions_modal";
 
 
 function QuestionComponent(props) {
     console.log("called QuestionComponent")
     const dispatch = useDispatch()
+    const onPress = () => {
+        dispatch(hideQuestionModal())
+    }
     const questions = useSelector(state => state.currentQuestionsList.list)
 
     const renderItem = ({ item }) => {
@@ -20,7 +24,7 @@ function QuestionComponent(props) {
         <View style={styles.container}>
             <View style={styles.rect}>
                 <Text style={styles.turnNumberText}>Ход1.</Text>
-                <Text style={styles.turnName}>{questions.questionTitle}</Text>
+                <Text style={styles.turnName}>{questions[0].questionTitle}</Text>
                 <FlatList
                     data={questions[0].answers}
                     renderItem={renderItem}
@@ -28,6 +32,14 @@ function QuestionComponent(props) {
                     // extraData={selectedId}
                 >
                 </FlatList>
+                <TouchableOpacity
+                    onPress={() => onPress()}
+                    style={styles.popupButtonClose}
+                >
+                    <View style={styles.rect}>
+                        <Text style={styles.close}>ОТВЕТИТЬ</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -61,12 +73,13 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     rect: {
+        flex: 1,
         backgroundColor: "#E6E6E6",
         borderWidth: 3,
         borderColor: "rgba(254,164,38,1)",
-        flex: 1
     },
     turnNumberText: {
+        flex: 1,
         fontFamily: "montserrat-700",
         color: '#FF4E00',
         marginTop: 24,
@@ -78,10 +91,13 @@ const styles = StyleSheet.create({
         marginLeft: 69
     },
     checkbox: {
+        flex: 1,
         height: 20,
-        width: 20
+        width: 20,
+        maxWidth: 20,
     },
     questionText: {
+        flex: 1,
         fontFamily: "montserrat-regular",
         color: "#121212",
         marginLeft: 14,
