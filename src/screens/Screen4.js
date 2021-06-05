@@ -9,7 +9,7 @@ import {
     TouchableHighlight,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux"
-import QuestionsComponent from "../components/QuestionsComponent";
+import CallComponent from "../components/CallComponent";
 import { showCallModal } from "../state/actions/questions_modal"
 import stage1Questions from "../data/stage1"
 
@@ -248,7 +248,7 @@ function Screen4(props) {
                 transparent={false}
                 visible={ showCall }
             >
-                <QuestionsComponent/>
+                <CallComponent/>
             </Modal>
         </View>
     );

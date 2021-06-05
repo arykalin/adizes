@@ -3,20 +3,21 @@ import {StyleSheet, View, Text, TouchableOpacity, Image, Modal} from "react-nati
 
 import {useDispatch, useSelector} from "react-redux";
 import {hideCallModal} from "../state/actions/questions_modal"
-import stage1Questions from "../data/stage1";
+import QuestionComponent from "./QuestionComponent";
 
-function QuestionsComponent(props) {
+
+function CallComponent(props) {
     const dispatch = useDispatch()
     return (
-        <View style={styles.questionsGroup}>
+        <View style={styles.callGroup}>
             <TouchableOpacity
                 onPress={() => dispatch(hideCallModal())}
                 style={styles.backButton}>
                 <Image
-                    source={require("../assets/images/Group_25.png")}
-                    resizeMode="contain"
-                    style={styles.backButtonImage}
-                ></Image>
+    source={require("../assets/images/Group_25.png")}
+    resizeMode="contain"
+    style={styles.backButtonImage}
+    />
             </TouchableOpacity>
             <Questions/>
         </View>
@@ -29,14 +30,16 @@ const Questions = () => {
     console.log("{questions}: ", {questions})
     return (
         <View>
+        <View>
             {questions.map((question) => {
                 console.log("{question}: ", {question})
                 return (
                     <QuestionView question={question}/>
                 )
             })}
+        </View>
             <Modal transparent visible={ showQuestion }>
-                <Text>Hello World!</Text>
+                <QuestionComponent/>
             </Modal>
         </View>
     )
@@ -86,7 +89,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center"
     },
-    questionsGroup: {
+    callGroup: {
         flex: 1,
         width: '90%',
         height: '80%',
@@ -112,4 +115,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default QuestionsComponent;
+export default CallComponent;
