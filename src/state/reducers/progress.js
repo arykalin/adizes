@@ -18,6 +18,7 @@ export const progressReducer = (state = initialState, action) => {
         const idx = getIndex(action.currentQuestion, questions)
         state.allStages[action.currentStage].questions[action.currentCall][idx].correct = action.correct
         state.allStages[action.currentStage].questions[action.currentCall][idx].wrong = action.wrong
+        state.allStages[action.currentStage].questions[action.currentCall][idx].answered = true
         return state.allStages
     }
 

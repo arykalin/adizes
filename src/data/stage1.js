@@ -2,6 +2,7 @@
 const personalManagementQuestions = [
     {
         questionTitle: "Подбор команды",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -28,6 +29,7 @@ const personalManagementQuestions = [
     },
     {
         questionTitle: "Мотивация персонала",
+        answered: false,
         correct: 0,
         wrong: 0,
         question: 'нет возможности предложить высокую заработную плату и привлечь высококлассных специалистов, как мотивировать персонал?',
@@ -51,6 +53,7 @@ const personalManagementQuestions = [
     },
     {
         questionTitle: "Обучение персонала",
+        answered: false,
         correct: 0,
         wrong: 0,
         question: "Обучение персонала?",
@@ -77,6 +80,7 @@ const developmentStrategyQuestions = [
     {
         turn: 1,
         questionTitle: "Миссия, видение и стратегия",
+        answered: false,
         correct: 0,
         wrong: 0,
         question: "Миссия, видение и стратегия",
@@ -94,6 +98,7 @@ const developmentStrategyQuestions = [
     {
         turn: 2,
         questionTitle: "Какую бизнес модель выбрать",
+        answered: false,
         correct: 0,
         wrong: 0,
         question: "Какую бизнес модель выбрать",
@@ -110,6 +115,7 @@ const developmentStrategyQuestions = [
     {
         turn: 3,
         questionTitle: "Анализ рынка",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -127,6 +133,7 @@ const developmentStrategyQuestions = [
     {
         turn: 4,
         questionTitle: "Продукт и его продвижение",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -144,6 +151,7 @@ const developmentStrategyQuestions = [
     {
         turn: 5,
         questionTitle: "Маркетинг",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -164,6 +172,7 @@ const organizationalStructureQuestions = [
     {
         turn: 1,
         questionTitle: "Выбор организационной структуры",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -182,6 +191,7 @@ const organizationalStructureQuestions = [
     {
         turn: 2,
         questionTitle: "Распредление полнеомочий и найм персонала",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -199,6 +209,7 @@ const organizationalStructureQuestions = [
     {
         turn: 3,
         questionTitle: "Оформление трудовых отношений",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -219,6 +230,7 @@ const businessProcessesQuestions = [
     {
         turn: 1,
         questionTitle: "Формализация бизнес процессов",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -236,6 +248,7 @@ const businessProcessesQuestions = [
     {
         turn: 2,
         questionTitle: "Управление бизнес процессами",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -253,6 +266,7 @@ const businessProcessesQuestions = [
     {
         turn: 3,
         questionTitle: "Что входит в управление бизнес процессами?",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -270,6 +284,7 @@ const businessProcessesQuestions = [
     {
         turn: 4,
         questionTitle: "Какие виды бизнес процессов необходимо внедрять на этом этапе",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -290,6 +305,7 @@ const corporateCultureQuestions = [
     {
         turn: 1,
         questionTitle: "Стиль управления",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -306,6 +322,7 @@ const corporateCultureQuestions = [
     {
         turn: 2,
         questionTitle: "Процесс принятия решений",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -323,6 +340,7 @@ const corporateCultureQuestions = [
     {
         turn: 3,
         questionTitle: "Выработка  ценностей",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -340,6 +358,7 @@ const corporateCultureQuestions = [
     {
         turn: 4,
         questionTitle: "Формирование культуры",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -360,6 +379,7 @@ const financeAndPlanningQuestions = [
     {
         turn: 1,
         questionTitle: "Организация финансового учета",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -377,6 +397,7 @@ const financeAndPlanningQuestions = [
     {
         turn: 2,
         questionTitle: "Планирование",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -394,6 +415,7 @@ const financeAndPlanningQuestions = [
     {
         turn: 3,
         questionTitle: "Нужен ли нам контроль?",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -415,6 +437,7 @@ const corporateGovernanceQuestions = [
     {
         turn: 1,
         questionTitle: "Совет директоров",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
@@ -432,6 +455,7 @@ const corporateGovernanceQuestions = [
     {
         turn: 2,
         questionTitle: "Управление рисками",
+        answered: false,
         correct: 0,
         wrong: 0,
         question:
