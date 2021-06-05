@@ -13,6 +13,7 @@ function QuestionComponent(props) {
     const onPress = () => {
         console.log("calculate answers")
         dispatch(hideQuestionModal())
+        dispatch({type: 'CLEANUP_ANSWERS'})
     }
     const questions = useSelector(state => state.currentQuestionsList.list)
     const currentQuestion = useSelector(state => state.currentQuestion)

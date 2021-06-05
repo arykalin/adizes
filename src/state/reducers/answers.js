@@ -82,6 +82,15 @@ export const currentAnswerReducer = (state = initialState, action) => {
         state.answers[action.id].text = action.text
         return state.answers
     }
+    const cleanupAnswers = (action) => {
+        for (const answer of state.answers) {
+            answer.id = 0
+            answer.correct = false
+            answer.checked = false
+            answer.text = ""
+        }
+        return state.answers
+    }
     switch(action.type) {
         case 'SET_ANSWER': return {
             answers: setAnswer(action),
@@ -89,6 +98,9 @@ export const currentAnswerReducer = (state = initialState, action) => {
         case 'UNSET_ANSWER': return {
             answers: unsetAnswer(action),
         };
+        case 'CLEANUP_ANSWERS': return {
+            answers: cleanupAnswers(action)
+        }
         default: return state;
     }
 }
