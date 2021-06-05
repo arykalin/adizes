@@ -4,6 +4,7 @@ import {StyleSheet, View, Text, TouchableOpacity, Image, FlatList, Modal} from "
 import {useDispatch, useSelector} from "react-redux";
 import {hideCallModal, showQuestionModal} from "../state/actions/questions_modal"
 import QuestionComponent from "./QuestionComponent";
+import {setCurrentQuestion} from "../state/actions/question_set";
 
 
 function CallComponent(props) {
@@ -30,7 +31,7 @@ const Questions = () => {
     console.log("{questions}: ", {questions})
 
     const renderItem = ({ item }) => {
-        console.log("{question in render item}: ", {item})
+        console.log("question in render item: ", {item})
         return (
             <QuestionView question={item}/>
         )
@@ -55,10 +56,15 @@ const Questions = () => {
 }
 
 const QuestionView = ({question}) => {
+    const questions = useSelector(state => state.currentQuestionsList.list)
     console.log("called QuestionView for ", {question})
     const dispatch = useDispatch()
     const onPress = () => {
+        const idx = getIndex(question.questionTitle, questions)
+        console.log("question index is: ", idx)
+        console.log("question title is: ", question.questionTitle)
         dispatch(showQuestionModal())
+        dispatch(setCurrentQuestion(question.questionTitle))
     }
         return (
             <TouchableOpacity
@@ -72,6 +78,9 @@ const QuestionView = ({question}) => {
         )
 }
 
+function getIndex(questionTitle, questions) {
+    return questions.findIndex(obj => obj.questionTitle === questionTitle);
+}
 const styles = StyleSheet.create({
     container: {},
     backButtonImage: {
