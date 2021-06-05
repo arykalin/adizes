@@ -4,12 +4,14 @@ import {useDispatch, useSelector} from "react-redux";
 import React from "react";
 import { useState } from 'react';
 import {hideQuestionModal} from "../state/actions/questions_modal";
+import stage1Questions from "../data/stage1";
 
 
 function QuestionComponent(props) {
     console.log("called QuestionComponent")
     const dispatch = useDispatch()
     const onPress = () => {
+        console.log("calculate answers")
         dispatch(hideQuestionModal())
     }
     const questions = useSelector(state => state.currentQuestionsList.list)
@@ -51,15 +53,37 @@ function QuestionComponent(props) {
 }
 
 const QuestionRow = ({question}) => {
-    console.log("called QuestionRow for ", {question})
+    console.log("called QuestionRow for ", {question_text:question.text, correct: question.correct})
+    const dispatch = useDispatch()
     const [isChecked, setChecked] = useState(false);
+    const handleOnChange = () => {
+        setChecked(!isChecked);
+        console.log("called handleOnChange for ", {question_text:question.text, correct: question.correct, checked: isChecked})
+        if (isChecked === false) {
+            dispatch({type: 'SET_ANSWER',
+                id: question.id,
+                correct: question.correct,
+                answered: true,
+                text: question.text,
+            })
+        } else {
+            dispatch({type: 'UNSET_ANSWER',
+                id: question.id,
+                correct: question.correct,
+                answered: true,
+                text: question.text,
+            })
+        }
+
+    };
+
     return (
         <View>
             <View style={styles.checkboxRow}>
                 <Checkbox
                     style={styles.checkbox}
                     value={isChecked}
-                    onValueChange={setChecked}
+                    onValueChange={handleOnChange}
                     color={isChecked ? '#FF4E00' : '#FEA426'}
                 />
                 <Text style={styles.questionText}>{question.text}</Text>

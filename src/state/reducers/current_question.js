@@ -1,5 +1,3 @@
-import stage1Questions from "../../data/stage1";
-
 const initialState = {
     currentQuestionId: "init",
 };

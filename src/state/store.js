@@ -3,11 +3,13 @@ import {modalReducer} from './reducers/questions_modal';
 import {currentQuestionsListReducer} from './reducers/current_questions_list'
 import { applyMiddleware, createStore, combineReducers} from 'redux';
 import currentQuestionReducer from "./reducers/current_question";
+import currentAnswerReducer from "./reducers/answers";
 
 const rootReducer = combineReducers({
     modal: modalReducer,
     currentQuestionsList: currentQuestionsListReducer,
     currentQuestion: currentQuestionReducer,
+    answers: currentAnswerReducer,
 });
 
 export default createStore(rootReducer,applyMiddleware(thunk)
