@@ -136,6 +136,7 @@ const styles = StyleSheet.create({
         // width: '90%',
         // height: 40,
         alignSelf: 'center',
+        overflow: "scroll",
         marginTop: 10,
     },
     rect: {

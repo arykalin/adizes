@@ -80,7 +80,10 @@ const QuestionView = ({question}) => {
 }
 
 const styles = StyleSheet.create({
-    container: {},
+    container: {
+        overflow: "scroll",
+        flex: 1,
+    },
     backButtonImage: {
         width: 50,
         height: 50
