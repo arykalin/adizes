@@ -1,19 +1,20 @@
 import {useDispatch, useSelector} from "react-redux";
-import {Modal, StyleSheet, View, Text, TouchableOpacity} from "react-native";
+import {StyleSheet, View, Text, TouchableOpacity} from "react-native";
 import React from "react";
-import {hideQuestionModal} from "../state/actions/questions_modal";
+import {hideAnswerModal} from "../state/actions/questions_modal";
 
 
 function AnswerComponent(props) {
+    const showProps = useSelector(state => state.modal.showAnswerModalProps)
     const dispatch = useDispatch()
     const onPress = () => {
-        dispatch(hideQuestionModal())
+        dispatch(hideAnswerModal())
     }
     return (
         <View style={styles.rect}>
-            <Text>msg={props.message}</Text>
-            <Text>correct={props.correct}</Text>
-            <Text>wrong={props.wrong}</Text>
+            <Text>msg={showProps.answerMessage}</Text>
+            <Text>correct={showProps.correct}</Text>
+            <Text>wrong={showProps.wrong}</Text>
             <TouchableOpacity
                 onPress={() => onPress()}
                 style={styles.popupButtonClose}

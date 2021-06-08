@@ -255,7 +255,7 @@ function Screen4(props) {
                 <CallComponent/>
             </Modal>
             <Modal transparent visible={showAnswer}>
-                <AnswerComponent message={answerMessage} correct={correct} wrong={wrong}/>
+                <AnswerComponent/>
             </Modal>
         </View>
     );

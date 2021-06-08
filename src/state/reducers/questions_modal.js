@@ -23,7 +23,12 @@ export const modalReducer = (state = initialState, action) => {
                     answerMessage: action.answerMessage,
                 }};
         case'HIDE_ANSWER_MODAL':
-            return {...state, showAnswerModal: false,}
+            return {...state, showAnswerModal: false,
+                showAnswerModalProps: {
+                    correct: 0,
+                    wrong: 0,
+                    answerMessage: "",
+                }};
         default:
             return state;
     }
