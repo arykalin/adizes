@@ -13,9 +13,11 @@ import CallComponent from "../components/CallComponent";
 import stage1Questions from "../data/stage1"
 
 import * as stageConstants from "../data/stages"
+import AnswerComponent from "../components/AnswerComponent";
 
 function Screen4(props) {
     const showCall = useSelector(state => state.modal.showCallModal)
+    const showAnswer = useSelector(state => state.modal.showAnswerModal)
     const dispatch = useDispatch()
 
     const onPressPersonalManagementQuestions = () => {
@@ -251,6 +253,9 @@ function Screen4(props) {
                 visible={ showCall }
             >
                 <CallComponent/>
+            </Modal>
+            <Modal transparent visible={showAnswer}>
+                <AnswerComponent message={answerMessage} correct={correct} wrong={wrong}/>
             </Modal>
         </View>
     );

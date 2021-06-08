@@ -13,7 +13,6 @@ function QuestionComponent(props) {
     let answerMessage  = ""
 
     const currentQuestion = useSelector(state => state.currentQuestion)
-    const showAnswer = useSelector(state => state.modal.showAnswerModal)
 
     const answers = useSelector(state => state.answers)
 
@@ -69,7 +68,7 @@ function QuestionComponent(props) {
         dispatch(hideQuestionModal())
         calcAnswers()
         dispatch({type: 'CLEANUP_ANSWERS'})
-        dispatch(showAnswerModal())
+        dispatch(showAnswerModal(answerMessage, correct, wrong))
     }
 
     const renderItem = ({item}) => {
@@ -101,9 +100,6 @@ function QuestionComponent(props) {
                     </View>
                 </TouchableOpacity>
             </View>
-            <Modal transparent visible={showAnswer}>
-                <AnswerComponent message={answerMessage} correct={correct} wrong={wrong}/>
-            </Modal>
         </View>
     )
 }

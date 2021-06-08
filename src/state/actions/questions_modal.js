@@ -14,8 +14,11 @@ export const hideQuestionModal =()=>({
     type: 'HIDE_QUESTION_MODAL'
 })
 
-export const showAnswerModal =()=>({
+export const showAnswerModal =(answerMessage, correct, wrong)=>({
     type: 'SHOW_ANSWER_MODAL',
+    answerMessage: answerMessage,
+    correct: correct,
+    wrong: wrong,
 })
 
 export const hideAnswerModal =()=>({
