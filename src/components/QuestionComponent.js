@@ -1,14 +1,19 @@
 import Checkbox from 'expo-checkbox';
-import {StyleSheet, View, Text, FlatList, TouchableOpacity} from "react-native";
+import {StyleSheet, View, Text, FlatList, TouchableOpacity, Modal} from "react-native";
 import {useDispatch, useSelector} from "react-redux";
 import React from "react";
-import { useState } from 'react';
-import {hideQuestionModal} from "../state/actions/questions_modal";
+import {useState} from 'react';
+import {hideQuestionModal, showAnswerModal} from "../state/actions/questions_modal";
+import AnswerComponent from './AnswerComponent';
 
 function QuestionComponent(props) {
     console.log("called QuestionComponent")
+    let correct = 0
+    let wrong = 0
+    let answerMessage  = ""
 
     const currentQuestion = useSelector(state => state.currentQuestion)
+    const showAnswer = useSelector(state => state.modal.showAnswerModal)
 
     const answers = useSelector(state => state.answers)
 
@@ -24,11 +29,9 @@ function QuestionComponent(props) {
     const dispatch = useDispatch()
 
     const calcAnswers = () => {
-        let correct = 0
-        let wrong = 0
         console.log("calculate answers", {answers: answers})
         for (const answer of answers.answers) {
-            if ( answer.checked === false) {
+            if (answer.checked === false) {
                 continue
             }
             if (answer.correct === true) {
@@ -36,24 +39,40 @@ function QuestionComponent(props) {
             } else {
                 wrong++
             }
-            console.log("answers calc:", {correct: correct, wrong: wrong})
-            dispatch({
-                type: 'CALC_ANSWERS',
-                correct: correct,
-                wrong: wrong,
-                currentStage: currentStage,
-                currentCall: currentCall,
-                currentQuestion: currentQuestion.currentQuestionId
-            })
         }
+        console.log("answers calc:", {correct: correct, wrong: wrong})
+        let ball = correct - wrong
+        if (wrong > correct) {
+            ball = 0;
+        }
+        if (ball / 7 * 100 < 33) {
+            console.log("Плохой результат");
+            answerMessage = "Плохой результат"
+        } else if (ball / 7 * 100 > 33 && ball / 7 * 100 < 66) {
+            console.log("Средний результат");
+            answerMessage = "Средний результат"
+        } else if (ball / 7 * 100 >= 66) {
+            console.log("Хороший результат");
+            answerMessage = "Хороший результат"
+        }
+        dispatch({
+            type: 'CALC_ANSWERS',
+            correct: correct,
+            wrong: wrong,
+            currentStage: currentStage,
+            currentCall: currentCall,
+            currentQuestion: currentQuestion.currentQuestionId,
+            ball: ball,
+        })
     }
     const onPress = () => {
         dispatch(hideQuestionModal())
         calcAnswers()
         dispatch({type: 'CLEANUP_ANSWERS'})
+        dispatch(showAnswerModal())
     }
 
-    const renderItem = ({ item }) => {
+    const renderItem = ({item}) => {
         console.log("{question in render item}: ", {item})
         return (
             <QuestionRow question={item}/>
@@ -82,26 +101,35 @@ function QuestionComponent(props) {
                     </View>
                 </TouchableOpacity>
             </View>
+            <Modal transparent visible={showAnswer}>
+                <AnswerComponent message={answerMessage} correct={correct} wrong={wrong}/>
+            </Modal>
         </View>
     )
 }
 
 const QuestionRow = ({question}) => {
-    console.log("called QuestionRow for ", {question_text:question.text, correct: question.correct})
+    console.log("called QuestionRow for ", {question_text: question.text, correct: question.correct})
     const dispatch = useDispatch()
     const [isChecked, setChecked] = useState(false);
     const handleOnChange = () => {
         setChecked(!isChecked);
-        console.log("called handleOnChange for ", {question_text:question.text, correct: question.correct, checked: isChecked})
+        console.log("called handleOnChange for ", {
+            question_text: question.text,
+            correct: question.correct,
+            checked: isChecked
+        })
         if (isChecked === false) {
-            dispatch({type: 'SET_ANSWER',
+            dispatch({
+                type: 'SET_ANSWER',
                 id: question.id,
                 correct: question.correct,
                 answered: true,
                 text: question.text,
             })
         } else {
-            dispatch({type: 'UNSET_ANSWER',
+            dispatch({
+                type: 'UNSET_ANSWER',
                 id: question.id,
                 correct: question.correct,
                 answered: true,
