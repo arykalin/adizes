@@ -17,6 +17,7 @@ import AnswerComponent from "../components/AnswerComponent";
 import InfoComponent from "../components/InfoComponent";
 import {hideInfoModal, showInfoModal, showProgressModal} from "../state/actions/questions_modal";
 import ProgressComponent from "../components/ProgressComponent";
+import allStages from "../data/stages";
 
 function Screen4(props) {
     const showCall = useSelector(state => state.modal.showCallModal)
@@ -24,6 +25,7 @@ function Screen4(props) {
     const showInfo = useSelector(state => state.modal.showInfoModal)
     const showProgress = useSelector(state => state.modal.showProgressModal)
     const dispatch = useDispatch()
+    const currentStage = useSelector(state => state.currentStage)
 
     const onPressPersonalManagementQuestions = () => {
         dispatch({type: 'SET_CURRENT_CALL_TITLE',
@@ -146,7 +148,7 @@ function Screen4(props) {
                         </View>
                     </View>
                     <View style={styles.stageName}>
-                        <Text style={styles.stageNameText}>ЭТАП I. СТАНОВЛЕНИЕ</Text>
+                        <Text style={styles.stageNameText}>{allStages[currentStage.title].name}</Text>
                     </View>
                 </View>
                 <View style={styles.gameScreen}>

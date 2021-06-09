@@ -33,7 +33,7 @@ function Screen1(props) {
           onPress={() => props.navigation.navigate("Screen2")}
           style={ButtonStyle}
         >
-          <ButtonComponent text="ИГАТЬ"/>
+          <ButtonComponent text="ИГРАТЬ"/>
         </TouchableOpacity>
       </View>
     </View>
