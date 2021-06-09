@@ -156,11 +156,12 @@ function getIndex(questionTitle, questions) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        flexGrow: 1,
         // width: '90%',
         // height: 40,
+        minWidth: 300,
         alignSelf: 'center',
         overflow: "scroll",
-        marginTop: 10,
     },
     rect: {
         flex: 1,
@@ -176,9 +177,9 @@ const styles = StyleSheet.create({
         marginLeft: 25
     },
     turnName: {
-        fontFamily: "montserrat-regular",
+        fontFamily: "montserrat-700",
         color: "#121212",
-        marginLeft: 69
+        alignSelf: 'center',
     },
     checkbox: {
         flex: 1,
