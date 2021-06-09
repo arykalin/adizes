@@ -6,12 +6,14 @@ import {hideInfoModal} from "../state/actions/questions_modal";
 
 function InfoComponent(props) {
     const currentStage = useSelector(state => state.currentStage)
-    const show = useSelector(state => state.progress.allStages[currentStage])
+    const allStages = useSelector(state => state.progress.allStages)
+    const show = allStages[currentStage.title]
+    console.log("show is", {show: show, allStages: allStages, currentStage: currentStage})
     const dispatch = useDispatch()
     return (
         <View style={styles.rect}>
-            <Text>msg={show.name}</Text>
-            <Text>correct={show.text}</Text>
+            <Text>{show.name}</Text>
+            <Text>{show.text}</Text>
             <TouchableOpacity
                 onPress={() => dispatch(hideInfoModal())}
                 style={styles.popupButtonClose}
