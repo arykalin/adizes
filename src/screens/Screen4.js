@@ -14,10 +14,13 @@ import stage1Questions from "../data/stage1"
 
 import * as stageConstants from "../data/stages"
 import AnswerComponent from "../components/AnswerComponent";
+import InfoComponent from "../components/InfoComponent";
+import {hideInfoModal, showInfoModal} from "../state/actions/questions_modal";
 
 function Screen4(props) {
     const showCall = useSelector(state => state.modal.showCallModal)
     const showAnswer = useSelector(state => state.modal.showAnswerModal)
+    const showInfo = useSelector(state => state.modal.showInfoModal)
     const dispatch = useDispatch()
 
     const onPressPersonalManagementQuestions = () => {
@@ -84,6 +87,7 @@ function Screen4(props) {
                     <View style={styles.infoScreenIcons}>
                         <View style={styles.moreInfoButtonRow}>
                             <TouchableOpacity
+                                onPress={() => dispatch(showInfoModal())}
                                 style={styles.moreInfoButton}>
                                 <ImageBackground
                                     source={require("../assets/images/Group_29.png")}
@@ -256,6 +260,9 @@ function Screen4(props) {
             </Modal>
             <Modal transparent visible={showAnswer}>
                 <AnswerComponent/>
+            </Modal>
+            <Modal transparent visible={showInfo}>
+                <InfoComponent/>
             </Modal>
         </View>
     );
