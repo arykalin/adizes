@@ -15,12 +15,14 @@ import stage1Questions from "../data/stage1"
 import * as stageConstants from "../data/stages"
 import AnswerComponent from "../components/AnswerComponent";
 import InfoComponent from "../components/InfoComponent";
-import {hideInfoModal, showInfoModal} from "../state/actions/questions_modal";
+import {hideInfoModal, showInfoModal, showProgressModal} from "../state/actions/questions_modal";
+import ProgressComponent from "../components/ProgressComponent";
 
 function Screen4(props) {
     const showCall = useSelector(state => state.modal.showCallModal)
     const showAnswer = useSelector(state => state.modal.showAnswerModal)
     const showInfo = useSelector(state => state.modal.showInfoModal)
+    const showProgress = useSelector(state => state.modal.showProgressModal)
     const dispatch = useDispatch()
 
     const onPressPersonalManagementQuestions = () => {
@@ -99,7 +101,7 @@ function Screen4(props) {
                                 <Text style={styles.moreInfoText}>Подробно</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
-                                onPress={() => props.navigation.navigate("Screen1")}
+                                onPress={() => dispatch(showProgressModal())}
                                 style={styles.showProgressButton}
                             >
                                 <Image
@@ -263,6 +265,9 @@ function Screen4(props) {
             </Modal>
             <Modal transparent visible={showInfo}>
                 <InfoComponent/>
+            </Modal>
+            <Modal transparent visible={showProgress}>
+                <ProgressComponent/>
             </Modal>
         </View>
     );

@@ -4,6 +4,7 @@ const initialState = {
     showAnswerModal: false,
     showAnswerModalProps: {},
     showInfoModal: false,
+    showProgressModal: false,
 };
 export const modalReducer = (state = initialState, action) => {
     console.log("action:", action)
@@ -38,6 +39,10 @@ export const modalReducer = (state = initialState, action) => {
             return {...state, showInfoModal: true}
         case 'HIDE_INFO_MODAL':
             return {...state, showInfoModal: false}
+        case 'SHOW_PROGRESS_MODAL':
+            return {...state, showProgressModal: true}
+        case 'HIDE_PROGRESS_MODAL':
+            return {...state, showProgressModal: false}
         default:
             return state;
     }

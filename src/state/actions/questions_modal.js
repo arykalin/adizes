@@ -32,3 +32,11 @@ export const hideInfoModal =()=>({
 export const showInfoModal =()=>({
     type: 'SHOW_INFO_MODAL'
 })
+
+export const hideProgressModal =()=>({
+    type: 'HIDE_PROGRESS_MODAL'
+})
+
+export const showProgressModal =()=>({
+    type: 'SHOW_PROGRESS_MODAL'
+})
