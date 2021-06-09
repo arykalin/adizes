@@ -2,6 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {StyleSheet, View, Text, TouchableOpacity} from "react-native";
 import React from "react";
 import {hideInfoModal} from "../state/actions/questions_modal";
+import ButtonComponent, {ButtonStyle} from "./ButtonComponent";
 
 
 function InfoComponent(props) {
@@ -16,11 +17,9 @@ function InfoComponent(props) {
             <Text>{show.text}</Text>
             <TouchableOpacity
                 onPress={() => dispatch(hideInfoModal())}
-                style={styles.popupButtonClose}
+                style={ButtonStyle}
             >
-                <View style={styles.rect}>
-                    <Text style={styles.close}>Закрыть</Text>
-                </View>
+                <ButtonComponent text="Закрыть"/>
             </TouchableOpacity>
         </View>
     )

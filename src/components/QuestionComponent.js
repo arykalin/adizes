@@ -5,6 +5,7 @@ import React from "react";
 import {useState} from 'react';
 import {hideQuestionModal, showAnswerModal} from "../state/actions/questions_modal";
 import AnswerComponent from './AnswerComponent';
+import ButtonComponent, {ButtonStyle} from "./ButtonComponent";
 
 function QuestionComponent(props) {
     console.log("called QuestionComponent")
@@ -93,11 +94,9 @@ function QuestionComponent(props) {
                 </FlatList>
                 <TouchableOpacity
                     onPress={() => onPress()}
-                    style={styles.popupButtonClose}
+                    style={ButtonStyle}
                 >
-                    <View style={styles.rect}>
-                        <Text style={styles.close}>ОТВЕТИТЬ</Text>
-                    </View>
+                    <ButtonComponent text="Ответить"/>
                 </TouchableOpacity>
             </View>
         </View>

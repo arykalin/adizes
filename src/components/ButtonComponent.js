@@ -14,6 +14,7 @@ export const ButtonStyle = {
     width: 200,
     height: 60,
     borderRadius: 10,
+    marginVertical: 10,
     alignSelf: "center"
 }
 
@@ -37,8 +38,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 30,
         flex: 1,
-        marginBottom: 10,
-        marginTop: 10,
+        marginVertical: 10,
         marginLeft: 15
     }
 })
