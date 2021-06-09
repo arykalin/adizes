@@ -96,7 +96,7 @@ function Screen4(props) {
                                     resizeMode="contain"
                                     style={styles.moreInfoImage}
                                 >
-                                    <View style={styles.darkening} />
+                                    <View/>
                                 </ImageBackground>
                                 <Text style={styles.moreInfoText}>Подробно</Text>
                             </TouchableOpacity>
@@ -274,10 +274,6 @@ function Screen4(props) {
 }
 
 const styles = StyleSheet.create({
-    darkening: {
-        flex: 1,
-        backgroundColor: 'rgba(0,0,0,0.5)',
-    },
     container: {
         flex: 1,
         overflow: "scroll",

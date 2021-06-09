@@ -200,7 +200,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         marginTop: 31,
         marginLeft: 19,
-        marginRight: 276
     }
 });
 
