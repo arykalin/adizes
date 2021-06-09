@@ -1,5 +1,7 @@
 import stage1Questions from "./stage1"
 import stage2Questions from "./stage2"
+import stage3Questions from "./stage3"
+import stage4Questions from "./stage4"
 
 export const PersonalManagementQuestions = 'personalManagementQuestions'
 export const DevelopmentStrategyQuestions = 'developmentStrategyQuestions'
@@ -16,8 +18,20 @@ const allStages = {
         questions: stage1Questions,
     },
     stage2: {
+        name: "Этап II",
+        text: "",
         questions: stage2Questions,
-    }
+    },
+    stage3: {
+        name: "Этап III",
+        text: "",
+        questions: stage3Questions,
+    },
+    stage4: {
+        name: "Этап IV",
+        text: "",
+        questions: stage4Questions,
+    },
 }
 
 export default allStages
