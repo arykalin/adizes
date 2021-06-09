@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
+import ButtonComponent, {ButtonStyle} from "../components/ButtonComponent";
 
 function Screen2(props) {
   return (
@@ -26,12 +27,10 @@ function Screen2(props) {
         ></Image>
         <View style={styles.nextButtonView}>
           <TouchableOpacity
-            onPress={() => props.navigation.navigate("Screen3")}
-            style={styles.button}
+              onPress={() => props.navigation.navigate("Screen3")}
+              style={ButtonStyle}
           >
-            <View style={styles.nextButton}>
-              <Text style={styles.NextText}>Далее</Text>
-            </View>
+            <ButtonComponent text="Далее"/>
           </TouchableOpacity>
         </View>
       </View>
@@ -96,23 +95,15 @@ const styles = StyleSheet.create({
     // borderColor: "#000000",
   },
   button: {
-    // flex: 1,
-    borderRadius: 5,
-    shadowColor: "rgba(0,0,0,1)",
-    shadowOffset: {
-      width: 3,
-      height: 3
-    },
-    elevation: 15,
-    shadowOpacity: 1,
-    shadowRadius: 5,
-    backgroundColor: "rgba(139,87,42,1)",
+    width: 200,
+    height: 60,
+    borderRadius: 10,
+    alignSelf: "center"
   },
   nextButton: {
-    // flex: 1,
-    backgroundColor: "#ff5c00",
-    borderRadius: 5,
-    shadowColor: "rgba(74,74,74,1)",
+    backgroundColor: "rgba(255,110,4,1)",
+    borderRadius: 10,
+    shadowColor: "rgba(78,78,78,1)",
     shadowOffset: {
       width: 3,
       height: 3
@@ -120,13 +111,17 @@ const styles = StyleSheet.create({
     elevation: 30,
     shadowOpacity: 1,
     shadowRadius: 10,
+    flex: 1
   },
   NextText: {
-    fontFamily: "montserrat-600",
+    fontFamily: "montserrat-700",
     color: "rgba(255,255,255,1)",
     textAlign: "center",
     fontSize: 30,
-    // flex: 1
+    flex: 1,
+    marginBottom: 10,
+    marginTop: 10,
+    marginLeft: 15
   }
 });
 

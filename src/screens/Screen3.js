@@ -8,6 +8,7 @@ import {
     Text,
     Modal,
 } from "react-native";
+import ButtonComponent, {ButtonStyle} from "../components/ButtonComponent";
 
 function Screen3(props) {
     const [showBecoming, setShowBecoming] = useState(false);
@@ -117,9 +118,9 @@ function Screen3(props) {
                                 <TouchableOpacity style={styles.button8}>
                                     <TouchableOpacity
                                         onPress={() => props.navigation.navigate("Screen4")}
-                                        style={styles.button}
+                                        style={ButtonStyle}
                                     >
-                                        <Text style={styles.next}>ДАЛЕЕ</Text>
+                                        <ButtonComponent text="Далее"/>
                                     </TouchableOpacity>
                                 </TouchableOpacity>
                             </View>
@@ -376,7 +377,7 @@ const styles = StyleSheet.create({
         alignSelf: "center"
     },
     button: {
-        backgroundColor: "#ff4d00",
+        backgroundColor: "rgba(255,110,4,1)",
         borderRadius: 10,
         shadowColor: "rgba(0,0,0,1)",
         shadowOffset: {
