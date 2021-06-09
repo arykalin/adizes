@@ -19,17 +19,17 @@ const allStages = {
     },
     stage2: {
         name: "Этап II",
-        text: "",
+        text: "рыба рыба рыба",
         questions: stage2Questions,
     },
     stage3: {
         name: "Этап III",
-        text: "",
+        text: "рыба рыба рыба",
         questions: stage3Questions,
     },
     stage4: {
         name: "Этап IV",
-        text: "",
+        text: "рыба рыба рыба",
         questions: stage4Questions,
     },
 }
