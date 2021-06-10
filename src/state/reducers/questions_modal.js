@@ -23,6 +23,7 @@ export const modalReducer = (state = initialState, action) => {
                 showAnswerModalProps: {
                     correct: action.correct,
                     wrong: action.wrong,
+                    total: action.total,
                     answerMessage: action.answerMessage,
                 }
             };

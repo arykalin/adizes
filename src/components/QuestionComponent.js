@@ -41,17 +41,18 @@ function QuestionComponent(props) {
             }
         }
         console.log("answers calc:", {correct: correct, wrong: wrong})
+        let total = correct + wrong
         let ball = correct - wrong
         if (wrong > correct) {
             ball = 0;
         }
-        if (ball / 7 * 100 < 33) {
+        if (ball / total * 100 < 33) {
             console.log("Плохой результат");
             answerMessage = "Плохой результат"
-        } else if (ball / 7 * 100 > 33 && ball / 7 * 100 < 66) {
+        } else if (ball / total * 100 > 33 && ball / 7 * 100 < 66) {
             console.log("Средний результат");
             answerMessage = "Средний результат"
-        } else if (ball / 7 * 100 >= 66) {
+        } else if (ball / total * 100 >= 66) {
             console.log("Хороший результат");
             answerMessage = "Хороший результат"
         }
@@ -88,7 +89,7 @@ function QuestionComponent(props) {
                 <FlatList
                     data={questions[idx].answers}
                     renderItem={renderItem}
-                    keyExtractor={item => item.text}
+                    keyExtractor={item => item}
                     // extraData={selectedId}
                 >
                 </FlatList>
@@ -104,7 +105,7 @@ function QuestionComponent(props) {
 }
 
 const QuestionRow = ({question}) => {
-    console.log("called QuestionRow for ", {question_text: question.text, correct: question.correct})
+    console.log("called QuestionRow for ", {question: question})
     const dispatch = useDispatch()
     const [isChecked, setChecked] = useState(false);
     const handleOnChange = () => {
@@ -133,7 +134,10 @@ const QuestionRow = ({question}) => {
         }
 
     };
-
+    let correct = "wrong"
+    if (question.correct === true) {
+        correct = "correct"
+    }
     return (
         <View>
             <View style={styles.checkboxRow}>
@@ -143,7 +147,7 @@ const QuestionRow = ({question}) => {
                     onValueChange={handleOnChange}
                     color={isChecked ? '#FF4E00' : '#FEA426'}
                 />
-                <Text style={styles.questionText}>{question.text}</Text>
+                <Text style={styles.questionText}>{question.text} {correct}</Text>
             </View>
         </View>
     )

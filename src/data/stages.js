@@ -11,6 +11,15 @@ export const CorporateCultureQuestions = 'corporateCultureQuestions'
 export const FinanceAndPlanningQuestions = 'financeAndPlanningQuestions'
 export const CorporateGovernanceQuestions = 'corporateGovernanceQuestions'
 
+export const AllQuestionTitles = [
+    PersonalManagementQuestions,
+    DevelopmentStrategyQuestions,
+    OrganizationalStructureQuestions,
+    BusinessProcessesQuestions,
+    CorporateCultureQuestions,
+    FinanceAndPlanningQuestions,
+    CorporateGovernanceQuestions,
+]
 const allStages = {
     stage1: {
         name: "Этап I: Становление",

@@ -16,6 +16,7 @@ function AnswerComponent(props) {
             <Text>msg={showProps.answerMessage}</Text>
             <Text>correct={showProps.correct}</Text>
             <Text>wrong={showProps.wrong}</Text>
+            <Text>total={showProps.total}</Text>
             <TouchableOpacity
                 onPress={() => onPress()}
                 style={ButtonStyle}
