@@ -1,37 +1,15 @@
 import {useDispatch, useSelector} from "react-redux";
-import {StyleSheet, View, Text, TouchableOpacity} from "react-native";
+import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import React from "react";
 import {hideProgressModal} from "../state/actions/questions_modal";
 import ButtonComponent, {ButtonStyle} from "./ButtonComponent";
-import {AllQuestionTitles, PersonalManagementQuestions} from "../data/stages";
+import {CalculateProgress} from "../utility/progress";
 
 
 function ProgressComponent(props) {
     const currentStage = useSelector(state => state.currentStage)
     const allStages = useSelector(state => state.progress.allStages)
-
-    const currentStageQuestions = allStages[currentStage.title].questions
-    console.log("currentStageQuestions", currentStageQuestions)
-    let answered = 0
-    let unanswered = 0
-    let correct = 0
-    let wrong = 0
-    let total = 0
-    for (const allQuestionTitle of AllQuestionTitles) {
-        for (const question of currentStageQuestions[allQuestionTitle]) {
-
-            console.log("calculating question", question)
-            if (question.answered === true) {
-                answered++
-            } else {
-                unanswered++
-            }
-            correct = correct + question.correct
-            wrong = wrong + question.wrong
-            total++
-
-        }
-    }
+    let {answered, unanswered, correct, wrong, total} = CalculateProgress(currentStage, allStages);
 
     const dispatch = useDispatch()
     return (

@@ -3,13 +3,19 @@ import {StyleSheet, View, Text, TouchableOpacity} from "react-native";
 import React from "react";
 import {hideAnswerModal} from "../state/actions/questions_modal";
 import ButtonComponent, {ButtonStyle} from "./ButtonComponent";
+import {CheckStage} from "../utility/progress";
+import {setCurrentStage} from "../state/actions/stage_set";
 
 
 function AnswerComponent(props) {
+    const currentStage = useSelector(state => state.currentStage)
+    const allStages = useSelector(state => state.progress.allStages)
     const showProps = useSelector(state => state.modal.showAnswerModalProps)
     const dispatch = useDispatch()
     const onPress = () => {
         dispatch(hideAnswerModal())
+        let stage = CheckStage(currentStage, allStages)
+        dispatch(setCurrentStage(stage))
     }
     return (
         <View style={styles.rect}>

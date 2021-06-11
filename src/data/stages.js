@@ -11,6 +11,11 @@ export const CorporateCultureQuestions = 'corporateCultureQuestions'
 export const FinanceAndPlanningQuestions = 'financeAndPlanningQuestions'
 export const CorporateGovernanceQuestions = 'corporateGovernanceQuestions'
 
+export const Stage1 = 'stage1'
+export const Stage2 = 'stage2'
+export const Stage3 = 'stage3'
+export const Stage4 = 'stage4'
+
 export const AllQuestionTitles = [
     PersonalManagementQuestions,
     DevelopmentStrategyQuestions,
