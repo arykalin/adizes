@@ -1,4 +1,4 @@
-import React, {Component, useState} from "react";
+import React from "react";
 import {
     StyleSheet,
     View,
@@ -10,14 +10,14 @@ import {
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux"
 import CallComponent from "../components/CallComponent";
-import stage1Questions from "../data/stage1"
 
 import * as stageConstants from "../data/stages"
 import AnswerComponent from "../components/AnswerComponent";
 import InfoComponent from "../components/InfoComponent";
-import {hideInfoModal, showInfoModal, showProgressModal} from "../state/actions/questions_modal";
+import {showInfoModal, showProgressModal} from "../state/actions/questions_modal";
 import ProgressComponent from "../components/ProgressComponent";
 import allStages from "../data/stages";
+import StageIconsComponent from "../components/StageIconsComponent";
 
 function Screen4(props) {
     const showCall = useSelector(state => state.modal.showCallModal)
@@ -27,252 +27,233 @@ function Screen4(props) {
     const dispatch = useDispatch()
     const currentStage = useSelector(state => state.currentStage)
 
-    const onPressPersonalManagementQuestions = () => {
-        dispatch({type: 'SET_CURRENT_CALL_TITLE',
-            title: stageConstants.PersonalManagementQuestions,
-            currentCall: "Управление персоналом",
-        })
-        dispatch({type: 'SHOW_CALL_MODAL'})
-    }
+        const onPressPersonalManagementQuestions = () => {
+            dispatch({
+                type: 'SET_CURRENT_CALL_TITLE',
+                title: stageConstants.PersonalManagementQuestions,
+                currentCall: "Управление персоналом",
+            })
+            dispatch({type: 'SHOW_CALL_MODAL'})
+        }
 
-    const onPressDevelopmentStrategyQuestions = () => {
-        dispatch({type: 'SET_CURRENT_CALL_TITLE',
-            title: stageConstants.DevelopmentStrategyQuestions,
-            currentCall: "Стратегия развития",
-        })
-        dispatch({type: 'SHOW_CALL_MODAL'})
-    }
+        const onPressDevelopmentStrategyQuestions = () => {
+            dispatch({
+                type: 'SET_CURRENT_CALL_TITLE',
+                title: stageConstants.DevelopmentStrategyQuestions,
+                currentCall: "Стратегия развития",
+            })
+            dispatch({type: 'SHOW_CALL_MODAL'})
+        }
 
-    const onPressOrganizationalStructureQuestions = () => {
-        dispatch({type: 'SET_CURRENT_CALL_TITLE',
-            title: stageConstants.OrganizationalStructureQuestions,
-            currentCall: "Создание оргструктуры",
-        })
-        dispatch({type: 'SHOW_CALL_MODAL'})
-    }
+        const onPressOrganizationalStructureQuestions = () => {
+            dispatch({
+                type: 'SET_CURRENT_CALL_TITLE',
+                title: stageConstants.OrganizationalStructureQuestions,
+                currentCall: "Создание оргструктуры",
+            })
+            dispatch({type: 'SHOW_CALL_MODAL'})
+        }
 
-    const onPressBusinessProcessesQuestions = () => {
-        dispatch({type: 'SET_CURRENT_CALL_TITLE',
-            title: stageConstants.BusinessProcessesQuestions,
-            currentCall: "Бизнес процессы",
-        })
-        dispatch({type: 'SHOW_CALL_MODAL'})
-    }
+        const onPressBusinessProcessesQuestions = () => {
+            dispatch({
+                type: 'SET_CURRENT_CALL_TITLE',
+                title: stageConstants.BusinessProcessesQuestions,
+                currentCall: "Бизнес процессы",
+            })
+            dispatch({type: 'SHOW_CALL_MODAL'})
+        }
 
-    const onPressCorporateCultureQuestions = () => {
-        dispatch({type: 'SET_CURRENT_CALL_TITLE',
-            title: stageConstants.CorporateCultureQuestions,
-            currentCall: "Формирование корпоративной культуры",
-        })
-        dispatch({type: 'SHOW_CALL_MODAL'})
-    }
+        const onPressCorporateCultureQuestions = () => {
+            dispatch({
+                type: 'SET_CURRENT_CALL_TITLE',
+                title: stageConstants.CorporateCultureQuestions,
+                currentCall: "Формирование корпоративной культуры",
+            })
+            dispatch({type: 'SHOW_CALL_MODAL'})
+        }
 
-    const onPressFinanceAndPlanningQuestions = () => {
-        dispatch({type: 'SET_CURRENT_CALL_TITLE',
-            title: stageConstants.FinanceAndPlanningQuestions,
-            currentCall: "Финансы и планирование",
-        })
-        dispatch({type: 'SHOW_CALL_MODAL'})
-    }
+        const onPressFinanceAndPlanningQuestions = () => {
+            dispatch({
+                type: 'SET_CURRENT_CALL_TITLE',
+                title: stageConstants.FinanceAndPlanningQuestions,
+                currentCall: "Финансы и планирование",
+            })
+            dispatch({type: 'SHOW_CALL_MODAL'})
+        }
 
-    const onPressCorporateGovernanceQuestions = () => {
-        dispatch({type: 'SET_CURRENT_CALL_TITLE',
-            title: stageConstants.CorporateGovernanceQuestions,
-            currentCall: "Корпоративное управление",
-        })
-        dispatch({type: 'SHOW_CALL_MODAL'})
-    }
+        const onPressCorporateGovernanceQuestions = () => {
+            dispatch({
+                type: 'SET_CURRENT_CALL_TITLE',
+                title: stageConstants.CorporateGovernanceQuestions,
+                currentCall: "Корпоративное управление",
+            })
+            dispatch({type: 'SHOW_CALL_MODAL'})
+        }
 
-    const stageText = useSelector(state => state.currentCall.currentCall);
-    return (
-        <View style={styles.container}>
-            <View style={styles.mainGroup}>
-                <View style={styles.infoScreen}>
-                    <View style={styles.infoScreenIcons}>
-                        <View style={styles.moreInfoButtonRow}>
-                            <TouchableOpacity
-                                onPress={() => dispatch(showInfoModal())}
-                                style={styles.moreInfoButton}>
-                                <ImageBackground
-                                    source={require("../assets/images/Group_29.png")}
-                                    resizeMode="contain"
-                                    style={styles.moreInfoImage}
+        const stageText = useSelector(state => state.currentCall.currentCall);
+        return (
+            <View style={styles.container}>
+                <View style={styles.mainGroup}>
+                    <View style={styles.infoScreen}>
+                        <View style={styles.infoScreenIcons}>
+                            <View style={styles.moreInfoButtonRow}>
+                                <TouchableOpacity
+                                    onPress={() => dispatch(showInfoModal())}
+                                    style={styles.moreInfoButton}>
+                                    <ImageBackground
+                                        source={require("../assets/images/Group_29.png")}
+                                        resizeMode="contain"
+                                        style={styles.moreInfoImage}
+                                    >
+                                        <View/>
+                                    </ImageBackground>
+                                    <Text style={styles.moreInfoText}>Подробно</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    onPress={() => dispatch(showProgressModal())}
+                                    style={styles.showProgressButton}
                                 >
-                                    <View/>
-                                </ImageBackground>
-                                <Text style={styles.moreInfoText}>Подробно</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity
-                                onPress={() => dispatch(showProgressModal())}
-                                style={styles.showProgressButton}
-                            >
-                                <Image
-                                    source={require("../assets/images/Group_64.png")}
-                                    resizeMode="contain"
-                                    style={styles.showProgressImage}
-                                ></Image>
-                                <Text style={styles.progressText}>Прогресс</Text>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.stage_bar}>
-                            <View style={styles.progressBarStack}>
-                                <View style={styles.progressBar}></View>
-                                <View style={styles.group5}>
                                     <Image
-                                        source={require("../assets/images/circle_colored_icon.png")}
+                                        source={require("../assets/images/Group_64.png")}
                                         resizeMode="contain"
-                                        style={styles.stage1}
+                                        style={styles.showProgressImage}
                                     ></Image>
-                                    <Image
-                                        source={require("../assets/images/circli_grey_icon.png")}
-                                        resizeMode="contain"
-                                        style={styles.stage2}
-                                    ></Image>
-                                    <Image
-                                        source={require("../assets/images/circli_grey_icon.png")}
-                                        resizeMode="contain"
-                                        style={styles.stage3}
-                                    ></Image>
-                                    <Image
-                                        source={require("../assets/images/circli_grey_icon.png")}
-                                        resizeMode="contain"
-                                        style={styles.stage4}
-                                    ></Image>
-                                    <Image
-                                        source={require("../assets/images/circli_grey_icon.png")}
-                                        resizeMode="contain"
-                                        style={styles.stage5}
-                                    ></Image>
+                                    <Text style={styles.progressText}>Прогресс</Text>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.stage_bar}>
+                                <View style={styles.progressBarStack}>
+                                    <View style={styles.progressBar}></View>
+                                    <StageIconsComponent currentStage={currentStage}/>
                                 </View>
                             </View>
                         </View>
-                    </View>
-                    <View style={styles.stageName}>
-                        <Text style={styles.stageNameText}>{allStages[currentStage.title].name}</Text>
-                    </View>
-                </View>
-                <View style={styles.gameScreen}>
-                    <View style={styles.circleGroupStack}>
-                        <View style={styles.circleGroup}>
-                            <View style={styles.stageTextStack}>
-                                <View style={styles.stageText}>
-                                    <Text style={styles.centeredText}>{stageText}</Text>
-                                </View>
-                                <ImageBackground
-                                    source={require("../assets/images/main_circle.png")}
-                                    resizeMode="contain"
-                                    style={styles.circle}
-                                    imageStyle={styles.circle_imageStyle}
-                                >
-                                    <View style={styles.businessProcButtonRow}>
-                                        <TouchableHighlight
-                                            activeOpacity={0.6}
-                                            underlayColor="#DDDDDD"
-                                            onPress={() => alert('Pressed!')}>
-                                        <TouchableOpacity
-                                            onPress={onPressBusinessProcessesQuestions}
-                                            style={styles.businessProcButton}>
-                                            <Image
-                                                source={require("../assets/images/buisiness_proc.png")}
-                                                resizeMode="contain"
-                                                style={styles.businecProcImage}
-                                            ></Image>
-                                        </TouchableOpacity>
-                                        </TouchableHighlight>
-                                        <TouchableOpacity
-                                            onPress={onPressCorporateCultureQuestions}
-                                            style={styles.corpMngmtButton}>
-                                            <Image
-                                                source={require("../assets/images/corp_leadership.png")}
-                                                resizeMode="contain"
-                                                style={styles.corpMngmtImage}
-                                            ></Image>
-                                        </TouchableOpacity>
-                                    </View>
-                                    <View style={styles.strategyButtonRow}>
-                                        <TouchableOpacity
-                                            onPress={onPressOrganizationalStructureQuestions}
-                                            style={styles.strategyButton}>
-                                            <Image
-                                                source={require("../assets/images/scheme.png")}
-                                                resizeMode="contain"
-                                                style={styles.strategyImage}
-                                            ></Image>
-                                        </TouchableOpacity>
-                                        <TouchableOpacity
-                                            onPress={onPressFinanceAndPlanningQuestions}
-                                            style={styles.financesButton}>
-                                            <Image
-                                                source={require("../assets/images/finances.png")}
-                                                resizeMode="contain"
-                                                style={styles.financesImage}
-                                            ></Image>
-                                        </TouchableOpacity>
-                                    </View>
-                                </ImageBackground>
-                                <TouchableOpacity
-                                    onPress={onPressDevelopmentStrategyQuestions}
-                                    style={styles.devStrategyButton}>
-                                    <Image
-                                        source={require("../assets/images/developement.png")}
-                                        resizeMode="contain"
-                                        style={styles.devStrategyImage}
-                                    ></Image>
-                                </TouchableOpacity>
-                                <TouchableOpacity
-                                    onPress={onPressPersonalManagementQuestions}
-                                    style={styles.orgStructureButton}>
-                                    <Image
-                                        source={require("../assets/images/Group.png")}
-                                        resizeMode="contain"
-                                        style={styles.orgStructureImage}
-                                    ></Image>
-                                </TouchableOpacity>
-                                <TouchableOpacity
-                                    onPress={onPressCorporateGovernanceQuestions}
-                                    style={styles.managementButton}>
-                                    <Image
-                                        source={require("../assets/images/leadership.png")}
-                                        resizeMode="contain"
-                                        style={styles.managementImage}
-                                    ></Image>
-                                </TouchableOpacity>
-                            </View>
+                        <View style={styles.stageName}>
+                            <Text style={styles.stageNameText}>{allStages[currentStage.title].name}</Text>
                         </View>
-
                     </View>
-                    <View style={styles.bottomImages}>
-                        <Image
-                            source={require("../assets/images/screen_4_back.png")}
-                            resizeMode="contain"
-                            style={styles.back_left}
-                        ></Image>
-                        <Image
-                            source={require("../assets/images/pic_right.png")}
-                            resizeMode="contain"
-                            style={styles.back_right}
-                        ></Image>
+                    <View style={styles.gameScreen}>
+                        <View style={styles.circleGroupStack}>
+                            <View style={styles.circleGroup}>
+                                <View style={styles.stageTextStack}>
+                                    <View style={styles.stageText}>
+                                        <Text style={styles.centeredText}>{stageText}</Text>
+                                    </View>
+                                    <ImageBackground
+                                        source={require("../assets/images/main_circle.png")}
+                                        resizeMode="contain"
+                                        style={styles.circle}
+                                        imageStyle={styles.circle_imageStyle}
+                                    >
+                                        <View style={styles.businessProcButtonRow}>
+                                            <TouchableHighlight
+                                                activeOpacity={0.6}
+                                                underlayColor="#DDDDDD"
+                                                onPress={() => alert('Pressed!')}>
+                                                <TouchableOpacity
+                                                    onPress={onPressBusinessProcessesQuestions}
+                                                    style={styles.businessProcButton}>
+                                                    <Image
+                                                        source={require("../assets/images/buisiness_proc.png")}
+                                                        resizeMode="contain"
+                                                        style={styles.businecProcImage}
+                                                    ></Image>
+                                                </TouchableOpacity>
+                                            </TouchableHighlight>
+                                            <TouchableOpacity
+                                                onPress={onPressCorporateCultureQuestions}
+                                                style={styles.corpMngmtButton}>
+                                                <Image
+                                                    source={require("../assets/images/corp_leadership.png")}
+                                                    resizeMode="contain"
+                                                    style={styles.corpMngmtImage}
+                                                ></Image>
+                                            </TouchableOpacity>
+                                        </View>
+                                        <View style={styles.strategyButtonRow}>
+                                            <TouchableOpacity
+                                                onPress={onPressOrganizationalStructureQuestions}
+                                                style={styles.strategyButton}>
+                                                <Image
+                                                    source={require("../assets/images/scheme.png")}
+                                                    resizeMode="contain"
+                                                    style={styles.strategyImage}
+                                                ></Image>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity
+                                                onPress={onPressFinanceAndPlanningQuestions}
+                                                style={styles.financesButton}>
+                                                <Image
+                                                    source={require("../assets/images/finances.png")}
+                                                    resizeMode="contain"
+                                                    style={styles.financesImage}
+                                                ></Image>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </ImageBackground>
+                                    <TouchableOpacity
+                                        onPress={onPressDevelopmentStrategyQuestions}
+                                        style={styles.devStrategyButton}>
+                                        <Image
+                                            source={require("../assets/images/developement.png")}
+                                            resizeMode="contain"
+                                            style={styles.devStrategyImage}
+                                        ></Image>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity
+                                        onPress={onPressPersonalManagementQuestions}
+                                        style={styles.orgStructureButton}>
+                                        <Image
+                                            source={require("../assets/images/Group.png")}
+                                            resizeMode="contain"
+                                            style={styles.orgStructureImage}
+                                        ></Image>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity
+                                        onPress={onPressCorporateGovernanceQuestions}
+                                        style={styles.managementButton}>
+                                        <Image
+                                            source={require("../assets/images/leadership.png")}
+                                            resizeMode="contain"
+                                            style={styles.managementImage}
+                                        ></Image>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+
+                        </View>
+                        <View style={styles.bottomImages}>
+                            <Image
+                                source={require("../assets/images/screen_4_back.png")}
+                                resizeMode="contain"
+                                style={styles.back_left}
+                            ></Image>
+                            <Image
+                                source={require("../assets/images/pic_right.png")}
+                                resizeMode="contain"
+                                style={styles.back_right}
+                            ></Image>
+                        </View>
                     </View>
                 </View>
+                <Modal
+                    animationType="slide"
+                    transparent={false}
+                    visible={showCall}
+                >
+                    <CallComponent/>
+                </Modal>
+                <Modal transparent visible={showAnswer}>
+                    <AnswerComponent/>
+                </Modal>
+                <Modal transparent visible={showInfo}>
+                    <InfoComponent/>
+                </Modal>
+                <Modal transparent visible={showProgress}>
+                    <ProgressComponent/>
+                </Modal>
             </View>
-            <Modal
-                animationType="slide"
-                transparent={false}
-                visible={ showCall }
-            >
-                <CallComponent/>
-            </Modal>
-            <Modal transparent visible={showAnswer}>
-                <AnswerComponent/>
-            </Modal>
-            <Modal transparent visible={showInfo}>
-                <InfoComponent/>
-            </Modal>
-            <Modal transparent visible={showProgress}>
-                <ProgressComponent/>
-            </Modal>
-        </View>
-    );
+        );
 }
 
 const styles = StyleSheet.create({
@@ -351,7 +332,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         width: 310
     },
-    group5: {
+    stageIcons: {
         width: 276,
         height: 35,
         position: "absolute",
@@ -359,26 +340,6 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         left: 17,
         top: 0
-    },
-    stage1: {
-        width: 35,
-        height: 35
-    },
-    stage2: {
-        width: 35,
-        height: 35
-    },
-    stage3: {
-        width: 35,
-        height: 35
-    },
-    stage4: {
-        width: 35,
-        height: 35
-    },
-    stage5: {
-        width: 35,
-        height: 35
     },
     progressBarStack: {
         width: 310,
