@@ -63,14 +63,20 @@ const QuestionView = ({question}) => {
     console.log("called QuestionView for ", {question})
     const dispatch = useDispatch()
     const onPress = () => {
-        console.log("question title is: ", question.questionTitle)
-        dispatch(showQuestionModal())
-        dispatch(setCurrentQuestion(question.questionTitle))
+        if (question.answered === false) {
+            console.log("question title is: ", question.questionTitle)
+            dispatch(showQuestionModal())
+            dispatch(setCurrentQuestion(question.questionTitle))
+        }
+    }
+    let questionColor =  "rgba(101,101,101,1)"
+    if (question.answered === true) {
+        questionColor =  "rgba(80,80,80,1)"
     }
         return (
             <TouchableOpacity
                 onPress={() => onPress()}
-                style={styles.questionRectangle}
+                style={[styles.questionRectangle, {backgroundColor: questionColor}]}
             >
                 <Text style={styles.questionText}>
                     {question.questionTitle}
@@ -94,10 +100,7 @@ const styles = StyleSheet.create({
         height: 40,
         alignSelf: 'center',
         marginTop: 10,
-        // borderWidth: 3,
-        // borderColor: "red",
         borderRadius: 5,
-        backgroundColor: "rgba(101,101,101,1)",
     },
     questionText: {
         fontFamily: "montserrat-600",
@@ -105,7 +108,7 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         textAlign: "center",
         fontSize: 20,
-        marginTop: 10,
+        marginVertical: 10,
         flex: 1,
         justifyContent: "center"
     },
