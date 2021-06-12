@@ -375,7 +375,7 @@ const corporateCultureCall = [
     },
 ];
 // call 6 Финансы и планирование
-const financeAndPlanningQuestions = [
+const financeAndPlanningCall = [
     {
         turn: 1,
         callTitle: "Организация финансового учета",
@@ -433,7 +433,7 @@ const financeAndPlanningQuestions = [
     },
 ];
 // call 7 Корпоративное управление
-const corporateGovernanceQuestions = [
+const corporateGovernanceCall = [
     {
         turn: 1,
         callTitle: "Совет директоров",
@@ -478,8 +478,8 @@ const calls = {
     'organizationalStructureCall': organizationalStructureCall,
     'businessProcessesCall': businessProcessesCall,
     'corporateCultureCall': corporateCultureCall,
-    'financeAndPlanningQuestions': financeAndPlanningQuestions,
-    'corporateGovernanceQuestions': corporateGovernanceQuestions,
+    'financeAndPlanningCall': financeAndPlanningCall,
+    'corporateGovernanceCall': corporateGovernanceCall,
 }
 
 

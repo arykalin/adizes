@@ -313,7 +313,7 @@ const businessProcessesCall = [
 ]
 
 // call 5 Организационный дизайн
-const corporateGovernanceQuestions = [
+const corporateGovernanceCall = [
     {
         callTitle: "Модель управления нужна для",
         answered: false,
@@ -441,7 +441,7 @@ const corporateCultureCall = [
 ]
 
 // call 7 Финансы и планирование
-const financeAndPlanningQuestions = [
+const financeAndPlanningCall = [
     {
         callTitle: "Фокус внимания на данном этапе",
         answered: false,
@@ -503,8 +503,8 @@ const calls = {
     'organizationalStructureCall': organizationalStructureCall,
     'businessProcessesCall': businessProcessesCall,
     'corporateCultureCall': corporateCultureCall,
-    'financeAndPlanningQuestions': financeAndPlanningQuestions,
-    'corporateGovernanceQuestions': corporateGovernanceQuestions,
+    'financeAndPlanningCall': financeAndPlanningCall,
+    'corporateGovernanceCall': corporateGovernanceCall,
 }
 
 export default calls;
