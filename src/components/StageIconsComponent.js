@@ -1,9 +1,4 @@
-import {useDispatch, useSelector} from "react-redux";
-import {hideAnswerModal} from "../state/actions/questions_modal";
-import {CheckStage} from "../utility/progress";
-import {setCurrentStage} from "../state/actions/stage_set";
-import {Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
-import ButtonComponent, {ButtonStyle} from "./ButtonComponent";
+import {Image, StyleSheet, View} from "react-native";
 import React from "react";
 import {Stage1, Stage2, Stage3, Stage4} from "../data/stages";
 
@@ -33,27 +28,27 @@ function StageIconsComponent(props) {
             <Image
                 source={stage1Icon}
                 resizeMode="contain"
-                style={styles.stage1}
+                style={styles.stageIcon}
             />
             <Image
                 source={stage2Icon}
                 resizeMode="contain"
-                style={styles.stage2}
+                style={styles.stageIcon}
             />
             <Image
                 source={stage3Icon}
                 resizeMode="contain"
-                style={styles.stage3}
+                style={styles.stageIcon}
             />
             <Image
                 source={stage4Icon}
                 resizeMode="contain"
-                style={styles.stage4}
+                style={styles.stageIcon}
             />
             <Image
                 source={stage5Icon}
                 resizeMode="contain"
-                style={styles.stage5}
+                style={styles.stageIcon}
             />
         </View>
     )
@@ -69,23 +64,7 @@ const styles = StyleSheet.create({
         left: 17,
         top: 0
     },
-    stage1: {
-        width: 35,
-        height: 35
-    },
-    stage2: {
-        width: 35,
-        height: 35
-    },
-    stage3: {
-        width: 35,
-        height: 35
-    },
-    stage4: {
-        width: 35,
-        height: 35
-    },
-    stage5: {
+    stageIcon: {
         width: 35,
         height: 35
     },
