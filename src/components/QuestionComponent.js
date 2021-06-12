@@ -11,7 +11,9 @@ function QuestionComponent(props) {
     console.log("called QuestionComponent")
     let correct = 0
     let wrong = 0
+    let total = 0
     let answerMessage  = ""
+    let image = require("../assets/images/comment.png")
 
     const currentQuestion = useSelector(state => state.currentQuestion)
 
@@ -30,6 +32,9 @@ function QuestionComponent(props) {
 
     const calcAnswers = () => {
         console.log("calculate answers", {answers: answers})
+        const badResultImage = require("../assets/images/bad_answer_result.png")
+        const averageResultImage = require("../assets/images/average_answer_result.png")
+        const goodResultImage = require("../assets/images/good_answer_result.png")
         for (const answer of answers.answers) {
             if (answer.checked === false) {
                 continue
@@ -41,7 +46,7 @@ function QuestionComponent(props) {
             }
         }
         console.log("answers calc:", {correct: correct, wrong: wrong})
-        let total = correct + wrong
+        total = correct + wrong
         let ball = correct - wrong
         if (wrong > correct) {
             ball = 0;
@@ -49,12 +54,19 @@ function QuestionComponent(props) {
         if (ball / total * 100 < 33) {
             console.log("Плохой результат");
             answerMessage = "Плохой результат"
+            image = badResultImage
         } else if (ball / total * 100 > 33 && ball / 7 * 100 < 66) {
             console.log("Средний результат");
             answerMessage = "Средний результат"
+            image = averageResultImage
         } else if (ball / total * 100 >= 66) {
             console.log("Хороший результат");
             answerMessage = "Хороший результат"
+            image = goodResultImage
+        } else {
+            console.log("Непонятный результат");
+            answerMessage = "Непонятный результат"
+            image = averageResultImage
         }
         dispatch({
             type: 'CALC_ANSWERS',
@@ -70,7 +82,7 @@ function QuestionComponent(props) {
         dispatch(hideQuestionModal())
         calcAnswers()
         dispatch({type: 'CLEANUP_ANSWERS'})
-        dispatch(showAnswerModal(answerMessage, correct, wrong))
+        dispatch(showAnswerModal(answerMessage, correct, wrong, total, image))
     }
 
     const renderItem = ({item}) => {

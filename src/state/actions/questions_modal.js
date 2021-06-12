@@ -14,11 +14,13 @@ export const hideQuestionModal =()=>({
     type: 'HIDE_QUESTION_MODAL'
 })
 
-export const showAnswerModal =(answerMessage, correct, wrong)=>({
+export const showAnswerModal =(answerMessage, correct, wrong, total, image)=>({
     type: 'SHOW_ANSWER_MODAL',
     answerMessage: answerMessage,
     correct: correct,
     wrong: wrong,
+    total: total,
+    image: image,
 })
 
 export const hideAnswerModal =()=>({

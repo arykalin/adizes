@@ -25,6 +25,7 @@ export const modalReducer = (state = initialState, action) => {
                     wrong: action.wrong,
                     total: action.total,
                     answerMessage: action.answerMessage,
+                    image: action.image,
                 }
             };
         case 'HIDE_ANSWER_MODAL':
