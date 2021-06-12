@@ -9,7 +9,7 @@ import {CalculateProgress} from "../utility/progress";
 function ProgressComponent(props) {
     const currentStage = useSelector(state => state.currentStage)
     const allStages = useSelector(state => state.progress.allStages)
-    let {answered, unanswered, correct, wrong, total} = CalculateProgress(currentStage, allStages);
+    let progress = CalculateProgress(currentStage, allStages);
 
     const dispatch = useDispatch()
     return (
@@ -17,11 +17,11 @@ function ProgressComponent(props) {
             <Text style={styles.infoText}>Прогресс</Text>
             <View style={{flex: 1, marginVertical: 20}}>
                 <Text style={styles.descriptionText}>
-                    answered = {answered}{"\n"}
-                    unanswered = {unanswered}{"\n"}
-                    correct = {correct}{"\n"}
-                    wrong = {wrong}{"\n"}
-                    total = {total}{"\n"}
+                    answered = {progress.allCalls.answered}{"\n"}
+                    unanswered = {progress.allCalls.unanswered}{"\n"}
+                    correct = {progress.allCalls.correct}{"\n"}
+                    wrong = {progress.allCalls.wrong}{"\n"}
+                    total = {progress.allCalls.total}{"\n"}
                 </Text>
             </View>
             <TouchableOpacity

@@ -4,34 +4,52 @@ import {showInfoModal} from "../state/actions/questions_modal";
 import {setCurrentStage} from "../state/actions/stage_set";
 
 export function CalculateProgress(currentStage, allStages) {
-    const currentStageQuestions = allStages[currentStage.title].questions
-    console.log("currentStageQuestions", currentStageQuestions)
-    let answered = 0
-    let unanswered = 0
-    let correct = 0
-    let wrong = 0
-    let total = 0
-    for (const allQuestionTitle of AllQuestionTitles) {
-        for (const question of currentStageQuestions[allQuestionTitle]) {
+    const currentStageCalls = allStages[currentStage.title].questions
+    console.log("currentStageCalls", currentStageCalls)
+    let progress = {
+        allCalls: {
+            answered : 0,
+            unanswered : 0,
+            correct : 0,
+            wrong : 0,
+            total : 0,
+        },
+    }
 
-            console.log("calculating question", question)
+    for (const callTitle of AllQuestionTitles) {
+        progress[callTitle] = {
+            answered : 0,
+            unanswered : 0,
+            correct : 0,
+            wrong : 0,
+            total : 0,
+        }
+        for (const question of currentStageCalls[callTitle]) {
+            console.log("calculating question title:", question.questionTitle)
             if (question.answered === true) {
-                answered++
+                progress.allCalls.answered++
+                progress[callTitle].answered++
             } else {
-                unanswered++
+                progress.allCalls.unanswered++
+                progress[callTitle].unanswered++
             }
-            correct = correct + question.correct
-            wrong = wrong + question.wrong
-            total++
+            progress.allCalls.correct = progress.allCalls.correct + question.correct
+            progress[callTitle].correct = progress[callTitle].correct + question.correct
+
+            progress.allCalls.wrong = progress.allCalls.wrong + question.wrong
+            progress[callTitle].wrong = progress[callTitle].wrong + question.wrong
+
+            progress.allCalls.total++
+            progress[callTitle].total++
 
         }
     }
-    return {answered, unanswered, correct, wrong, total};
+    return progress;
 }
 
 export function CheckStage(currentStage, allStages) {
-    let {answered, unanswered, correct, wrong, total} = CalculateProgress(currentStage, allStages);
-    if (unanswered === 0) {
+    let progress = CalculateProgress(currentStage, allStages);
+    if (progress.allCalls.unanswered === 0) {
         return SetNextStage(currentStage)
     }
     return currentStage

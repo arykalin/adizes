@@ -15,8 +15,8 @@ function AnswerComponent(props) {
     const onPress = () => {
         dispatch(hideAnswerModal())
         let stage = CheckStage(currentStage, allStages)
-        console.log("setting stage:", stage)
-        dispatch(setCurrentStage(stage))
+        console.log("setting stage:", stage.title)
+        dispatch(setCurrentStage(stage.title))
     }
     return (
         <View style={styles.rect}>

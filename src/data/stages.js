@@ -16,6 +16,7 @@ export const Stage2 = 'stage2'
 export const Stage3 = 'stage3'
 export const Stage4 = 'stage4'
 
+// This is calls, not questions
 export const AllQuestionTitles = [
     PersonalManagementQuestions,
     DevelopmentStrategyQuestions,
