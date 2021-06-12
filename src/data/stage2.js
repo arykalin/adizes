@@ -1,7 +1,7 @@
 // call 1 Управление персоналом
-const personalManagementQuestions = [
+const personalManagementCall = [
     {
-        questionTitle: "Подбор команды",
+        callTitle: "Подбор команды",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -34,7 +34,7 @@ const personalManagementQuestions = [
         ]
     },
     {
-        questionTitle: "Мотивация персонала",
+        callTitle: "Мотивация персонала",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -50,7 +50,7 @@ const personalManagementQuestions = [
         ]
     },
     {
-        questionTitle: "Система оценки персонала",
+        callTitle: "Система оценки персонала",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -66,7 +66,7 @@ const personalManagementQuestions = [
         ]
     },
     {
-        questionTitle: "Обучение персонала",
+        callTitle: "Обучение персонала",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -85,9 +85,9 @@ const personalManagementQuestions = [
 ];
 
 // call 2 Организация управленческого цикла
-const developmentStrategyQuestions = [
+const developmentStrategyCall = [
     {
-        questionTitle: "Что такое цикл менеджмента и что он в себя включает?",
+        callTitle: "Что такое цикл менеджмента и что он в себя включает?",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -104,7 +104,7 @@ const developmentStrategyQuestions = [
         ]
     },
     {
-        questionTitle: "К какой стадии управленческого цикла относятся к планированию?",
+        callTitle: "К какой стадии управленческого цикла относятся к планированию?",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -118,7 +118,7 @@ const developmentStrategyQuestions = [
         ]
     },
     {
-        questionTitle: "К какой стадии управленческого цикла относится организации и координации?",
+        callTitle: "К какой стадии управленческого цикла относится организации и координации?",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -132,7 +132,7 @@ const developmentStrategyQuestions = [
         ]
     },
     {
-        questionTitle: "Какие функции менеджмента важны на этапе роста?",
+        callTitle: "Какие функции менеджмента важны на этапе роста?",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -152,9 +152,9 @@ const developmentStrategyQuestions = [
 ]
 
 // call 3 Стратегия развития
-const organizationalStructureQuestions = [
+const organizationalStructureCall = [
     {
-        questionTitle: "Стратегия и цели",
+        callTitle: "Стратегия и цели",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -171,7 +171,7 @@ const organizationalStructureQuestions = [
         ]
     },
     {
-        questionTitle: "Выберете стратегии роста для данного этапа развития компании",
+        callTitle: "Выберете стратегии роста для данного этапа развития компании",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -188,7 +188,7 @@ const organizationalStructureQuestions = [
         ]
     },
     {
-        questionTitle: "Какая из стратегий является наиболее рискованной для быстрого роста",
+        callTitle: "Какая из стратегий является наиболее рискованной для быстрого роста",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -205,7 +205,7 @@ const organizationalStructureQuestions = [
         ]
     },
     {
-        questionTitle: "Продуктовая линейка",
+        callTitle: "Продуктовая линейка",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -222,7 +222,7 @@ const organizationalStructureQuestions = [
         ]
     },
     {
-        questionTitle: "Ценообразование",
+        callTitle: "Ценообразование",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -241,9 +241,9 @@ const organizationalStructureQuestions = [
 ]
 
 // call 4 Внедрение систем и процессного управления
-const businessProcessesQuestions = [
+const businessProcessesCall = [
     {
-        questionTitle: "Внедрение систем учета",
+        callTitle: "Внедрение систем учета",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -260,7 +260,7 @@ const businessProcessesQuestions = [
         ]
     },
     {
-        questionTitle: "Выстраивание процессного управления позволяет",
+        callTitle: "Выстраивание процессного управления позволяет",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -277,7 +277,7 @@ const businessProcessesQuestions = [
         ]
     },
     {
-        questionTitle: "С чего начать создание процессного управления?",
+        callTitle: "С чего начать создание процессного управления?",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -294,7 +294,7 @@ const businessProcessesQuestions = [
         ]
     },
     {
-        questionTitle: "Ключевые требования к эффективному бизнес процессу",
+        callTitle: "Ключевые требования к эффективному бизнес процессу",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -315,7 +315,7 @@ const businessProcessesQuestions = [
 // call 5 Организационный дизайн
 const corporateGovernanceQuestions = [
     {
-        questionTitle: "Модель управления нужна для",
+        callTitle: "Модель управления нужна для",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -332,7 +332,7 @@ const corporateGovernanceQuestions = [
         ]
     },
     {
-        questionTitle: "Для развития бизнеса из регионального в федеральный, какая структура наиболее эффективна",
+        callTitle: "Для развития бизнеса из регионального в федеральный, какая структура наиболее эффективна",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -348,7 +348,7 @@ const corporateGovernanceQuestions = [
         ]
     },
     {
-        questionTitle: "Как понять, что ваша структура оптимальна?",
+        callTitle: "Как понять, что ваша структура оптимальна?",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -367,9 +367,9 @@ const corporateGovernanceQuestions = [
 ]
 
 // call 6 Корпоративная культура
-const corporateCultureQuestions = [
+const corporateCultureCall = [
     {
-        questionTitle: "Стиль управления – какие стили управления наиболее эффективны на данном этапе?",
+        callTitle: "Стиль управления – какие стили управления наиболее эффективны на данном этапе?",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -386,7 +386,7 @@ const corporateCultureQuestions = [
         ]
     },
     {
-        questionTitle: "Каковы основные характеристики демократического стиля управления",
+        callTitle: "Каковы основные характеристики демократического стиля управления",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -404,7 +404,7 @@ const corporateCultureQuestions = [
         ]
     },
     {
-        questionTitle: "Какие шаги необходимо предпринять, чтобы избежать «ловушки руководителя»",
+        callTitle: "Какие шаги необходимо предпринять, чтобы избежать «ловушки руководителя»",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -421,7 +421,7 @@ const corporateCultureQuestions = [
         ]
     },
     {
-        questionTitle: "Какие функции относятся к корпоративной культуре",
+        callTitle: "Какие функции относятся к корпоративной культуре",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -443,7 +443,7 @@ const corporateCultureQuestions = [
 // call 7 Финансы и планирование
 const financeAndPlanningQuestions = [
     {
-        questionTitle: "Фокус внимания на данном этапе",
+        callTitle: "Фокус внимания на данном этапе",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -460,7 +460,7 @@ const financeAndPlanningQuestions = [
         ]
     },
     {
-        questionTitle: "Управление затратами – что необходимо предпринять",
+        callTitle: "Управление затратами – что необходимо предпринять",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -477,7 +477,7 @@ const financeAndPlanningQuestions = [
         ]
     },
     {
-        questionTitle: "Что дает внедрение системы бюджетного планирования в компании",
+        callTitle: "Что дает внедрение системы бюджетного планирования в компании",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -498,11 +498,11 @@ const financeAndPlanningQuestions = [
 
 
 const calls = {
-    'personalManagementQuestions': personalManagementQuestions,
-    'developmentStrategyQuestions': developmentStrategyQuestions,
-    'organizationalStructureQuestions': organizationalStructureQuestions,
-    'businessProcessesQuestions': businessProcessesQuestions,
-    'corporateCultureQuestions': corporateCultureQuestions,
+    'personalManagementCall': personalManagementCall,
+    'developmentStrategyCall': developmentStrategyCall,
+    'organizationalStructureCall': organizationalStructureCall,
+    'businessProcessesCall': businessProcessesCall,
+    'corporateCultureCall': corporateCultureCall,
     'financeAndPlanningQuestions': financeAndPlanningQuestions,
     'corporateGovernanceQuestions': corporateGovernanceQuestions,
 }

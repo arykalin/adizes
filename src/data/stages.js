@@ -3,28 +3,29 @@ import stage2Questions from "./stage2"
 import stage3Questions from "./stage3"
 import stage4Questions from "./stage4"
 
-export const PersonalManagementQuestions = 'personalManagementQuestions'
-export const DevelopmentStrategyQuestions = 'developmentStrategyQuestions'
-export const OrganizationalStructureQuestions = 'organizationalStructureQuestions'
-export const BusinessProcessesQuestions = 'businessProcessesQuestions'
-export const CorporateCultureQuestions = 'corporateCultureQuestions'
-export const FinanceAndPlanningQuestions = 'financeAndPlanningQuestions'
-export const CorporateGovernanceQuestions = 'corporateGovernanceQuestions'
+export const PersonalManagementCall = 'personalManagementCall'
+export const DevelopmentStrategyCall = 'developmentStrategyCall'
+export const OrganizationalStructureCall = 'organizationalStructureCall'
+export const BusinessProcessesCall = 'businessProcessesCall'
+export const CorporateCultureCall = 'corporateCultureCall'
+export const FinanceAndPlanningCall = 'financeAndPlanningQuestions'
+export const CorporateGovernanceCall = 'corporateGovernanceQuestions'
 
 export const Stage1 = 'stage1'
 export const Stage2 = 'stage2'
 export const Stage3 = 'stage3'
 export const Stage4 = 'stage4'
 
-export const AllQuestionTitles = [
-    PersonalManagementQuestions,
-    DevelopmentStrategyQuestions,
-    OrganizationalStructureQuestions,
-    BusinessProcessesQuestions,
-    CorporateCultureQuestions,
-    FinanceAndPlanningQuestions,
-    CorporateGovernanceQuestions,
+export const AllCallsTitles = [
+    PersonalManagementCall,
+    DevelopmentStrategyCall,
+    OrganizationalStructureCall,
+    BusinessProcessesCall,
+    CorporateCultureCall,
+    FinanceAndPlanningCall,
+    CorporateGovernanceCall,
 ]
+
 const allStages = {
     stage1: {
         name: "Этап I: Становление",

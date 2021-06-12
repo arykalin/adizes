@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import {AllQuestionTitles, Stage1, Stage2, Stage3, Stage4} from "../data/stages";
+import {AllCallsTitles, Stage1, Stage2, Stage3, Stage4} from "../data/stages";
 import {showInfoModal} from "../state/actions/questions_modal";
 import {setCurrentStage} from "../state/actions/stage_set";
 
@@ -11,7 +11,7 @@ export function CalculateProgress(currentStage, allStages) {
     let correct = 0
     let wrong = 0
     let total = 0
-    for (const allQuestionTitle of AllQuestionTitles) {
+    for (const allQuestionTitle of AllCallsTitles) {
         for (const question of currentStageQuestions[allQuestionTitle]) {
 
             console.log("calculating question", question)
@@ -31,7 +31,7 @@ export function CalculateProgress(currentStage, allStages) {
 
 export function CheckStage(currentStage, allStages) {
     let {answered, unanswered, correct, wrong, total} = CalculateProgress(currentStage, allStages);
-    if (unanswered < 100) {
+    if (unanswered === 0) {
         return SetNextStage(currentStage)
     }
     return currentStage

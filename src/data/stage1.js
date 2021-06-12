@@ -1,7 +1,7 @@
 // call 1 Управление персоналом
-const personalManagementQuestions = [
+const personalManagementCall = [
     {
-        questionTitle: "Подбор команды",
+        callTitle: "Подбор команды",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -28,7 +28,7 @@ const personalManagementQuestions = [
         ]
     },
     {
-        questionTitle: "Мотивация персонала",
+        callTitle: "Мотивация персонала",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -52,7 +52,7 @@ const personalManagementQuestions = [
         ]
     },
     {
-        questionTitle: "Обучение персонала",
+        callTitle: "Обучение персонала",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -76,10 +76,10 @@ const personalManagementQuestions = [
     }
 ];
 // call 2 Стратегия развития
-const developmentStrategyQuestions = [
+const developmentStrategyCall = [
     {
         turn: 1,
-        questionTitle: "Миссия, видение и стратегия",
+        callTitle: "Миссия, видение и стратегия",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -97,7 +97,7 @@ const developmentStrategyQuestions = [
     },
     {
         turn: 2,
-        questionTitle: "Какую бизнес модель выбрать",
+        callTitle: "Какую бизнес модель выбрать",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -114,7 +114,7 @@ const developmentStrategyQuestions = [
     },
     {
         turn: 3,
-        questionTitle: "Анализ рынка",
+        callTitle: "Анализ рынка",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -132,7 +132,7 @@ const developmentStrategyQuestions = [
     },
     {
         turn: 4,
-        questionTitle: "Продукт и его продвижение",
+        callTitle: "Продукт и его продвижение",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -150,7 +150,7 @@ const developmentStrategyQuestions = [
     },
     {
         turn: 5,
-        questionTitle: "Маркетинг",
+        callTitle: "Маркетинг",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -168,10 +168,10 @@ const developmentStrategyQuestions = [
     },
 ];
 // call 3 Как создать наиболее эффективную оргструктуру
-const organizationalStructureQuestions = [
+const organizationalStructureCall = [
     {
         turn: 1,
-        questionTitle: "Выбор организационной структуры",
+        callTitle: "Выбор организационной структуры",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -190,7 +190,7 @@ const organizationalStructureQuestions = [
     },
     {
         turn: 2,
-        questionTitle: "Распредление полнеомочий и найм персонала",
+        callTitle: "Распредление полнеомочий и найм персонала",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -208,7 +208,7 @@ const organizationalStructureQuestions = [
     },
     {
         turn: 3,
-        questionTitle: "Оформление трудовых отношений",
+        callTitle: "Оформление трудовых отношений",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -226,10 +226,10 @@ const organizationalStructureQuestions = [
     },
 ];
 // call 4 Бизнес процессы
-const businessProcessesQuestions = [
+const businessProcessesCall = [
     {
         turn: 1,
-        questionTitle: "Формализация бизнес процессов",
+        callTitle: "Формализация бизнес процессов",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -247,7 +247,7 @@ const businessProcessesQuestions = [
     },
     {
         turn: 2,
-        questionTitle: "Управление бизнес процессами",
+        callTitle: "Управление бизнес процессами",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -265,7 +265,7 @@ const businessProcessesQuestions = [
     },
     {
         turn: 3,
-        questionTitle: "Что входит в управление бизнес процессами?",
+        callTitle: "Что входит в управление бизнес процессами?",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -283,7 +283,7 @@ const businessProcessesQuestions = [
     },
     {
         turn: 4,
-        questionTitle: "Какие виды бизнес процессов необходимо внедрять на этом этапе",
+        callTitle: "Какие виды бизнес процессов необходимо внедрять на этом этапе",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -301,10 +301,10 @@ const businessProcessesQuestions = [
     },
 ];
 // call 5 Формирование корпоративной культуры
-const corporateCultureQuestions = [
+const corporateCultureCall = [
     {
         turn: 1,
-        questionTitle: "Стиль управления",
+        callTitle: "Стиль управления",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -321,7 +321,7 @@ const corporateCultureQuestions = [
     },
     {
         turn: 2,
-        questionTitle: "Процесс принятия решений",
+        callTitle: "Процесс принятия решений",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -339,7 +339,7 @@ const corporateCultureQuestions = [
     },
     {
         turn: 3,
-        questionTitle: "Выработка  ценностей",
+        callTitle: "Выработка  ценностей",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -357,7 +357,7 @@ const corporateCultureQuestions = [
     },
     {
         turn: 4,
-        questionTitle: "Формирование культуры",
+        callTitle: "Формирование культуры",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -378,7 +378,7 @@ const corporateCultureQuestions = [
 const financeAndPlanningQuestions = [
     {
         turn: 1,
-        questionTitle: "Организация финансового учета",
+        callTitle: "Организация финансового учета",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -396,7 +396,7 @@ const financeAndPlanningQuestions = [
     },
     {
         turn: 2,
-        questionTitle: "Планирование",
+        callTitle: "Планирование",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -414,7 +414,7 @@ const financeAndPlanningQuestions = [
     },
     {
         turn: 3,
-        questionTitle: "Нужен ли нам контроль?",
+        callTitle: "Нужен ли нам контроль?",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -436,7 +436,7 @@ const financeAndPlanningQuestions = [
 const corporateGovernanceQuestions = [
     {
         turn: 1,
-        questionTitle: "Совет директоров",
+        callTitle: "Совет директоров",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -454,7 +454,7 @@ const corporateGovernanceQuestions = [
     },
     {
         turn: 2,
-        questionTitle: "Управление рисками",
+        callTitle: "Управление рисками",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -473,11 +473,11 @@ const corporateGovernanceQuestions = [
 ];
 
 const calls = {
-    'personalManagementQuestions': personalManagementQuestions,
-    'developmentStrategyQuestions': developmentStrategyQuestions,
-    'organizationalStructureQuestions': organizationalStructureQuestions,
-    'businessProcessesQuestions': businessProcessesQuestions,
-    'corporateCultureQuestions': corporateCultureQuestions,
+    'personalManagementCall': personalManagementCall,
+    'developmentStrategyCall': developmentStrategyCall,
+    'organizationalStructureCall': organizationalStructureCall,
+    'businessProcessesCall': businessProcessesCall,
+    'corporateCultureCall': corporateCultureCall,
     'financeAndPlanningQuestions': financeAndPlanningQuestions,
     'corporateGovernanceQuestions': corporateGovernanceQuestions,
 }

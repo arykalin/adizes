@@ -85,7 +85,7 @@ function QuestionComponent(props) {
         <View style={styles.container}>
             <View style={styles.rect}>
                 <Text style={styles.turnNumberText}>Ход {idx}.</Text>
-                <Text style={styles.turnName}>{questions[idx].questionTitle}</Text>
+                <Text style={styles.turnName}>{questions[idx].callTitle}</Text>
                 <FlatList
                     data={questions[idx].answers}
                     renderItem={renderItem}
@@ -153,8 +153,8 @@ const QuestionRow = ({question}) => {
     )
 }
 
-function getIndex(questionTitle, questions) {
-    return questions.findIndex(obj => obj.questionTitle === questionTitle);
+function getIndex(callTitle, questions) {
+    return questions.findIndex(obj => obj.callTitle === callTitle);
 }
 
 const styles = StyleSheet.create({
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     },
     turnName: {
         fontFamily: "montserrat-700",
-        color: "#121212",
+        color: "rgba(68,68,68,1)",
         alignSelf: 'center',
     },
     checkbox: {
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     questionText: {
         flex: 1,
         fontFamily: "montserrat-regular",
-        color: "#121212",
+        color: "rgba(68,68,68,1)",
         marginLeft: 14,
         marginTop: 14
     },

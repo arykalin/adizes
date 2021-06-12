@@ -47,7 +47,7 @@ const Questions = () => {
             <FlatList
                 data={questions}
                 renderItem={renderItem}
-                keyExtractor={item => item.questionTitle}
+                keyExtractor={item => item.callTitle}
                 // extraData={selectedId}
             >
             </FlatList>
@@ -64,9 +64,9 @@ const QuestionView = ({question}) => {
     const dispatch = useDispatch()
     const onPress = () => {
         if (question.answered === false) {
-            console.log("question title is: ", question.questionTitle)
+            console.log("question title is: ", question.callTitle)
             dispatch(showQuestionModal())
-            dispatch(setCurrentQuestion(question.questionTitle))
+            dispatch(setCurrentQuestion(question.callTitle))
         }
     }
     let questionColor =  "rgba(101,101,101,1)"
@@ -79,7 +79,7 @@ const QuestionView = ({question}) => {
                 style={[styles.questionRectangle, {backgroundColor: questionColor}]}
             >
                 <Text style={styles.questionText}>
-                    {question.questionTitle}
+                    {question.callTitle}
                 </Text>
             </TouchableOpacity>
         )

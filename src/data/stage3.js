@@ -1,7 +1,7 @@
 // call 1 Управление персоналом
-const personalManagementQuestions = [
+const personalManagementCall = [
     {
-        questionTitle: "Подбор команды",
+        callTitle: "Подбор команды",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -34,7 +34,7 @@ const personalManagementQuestions = [
         ]
     },
     {
-        questionTitle: "Мотивация персонала",
+        callTitle: "Мотивация персонала",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -50,7 +50,7 @@ const personalManagementQuestions = [
         ]
     },
     {
-        questionTitle: "Система оценки персонала",
+        callTitle: "Система оценки персонала",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -66,7 +66,7 @@ const personalManagementQuestions = [
         ]
     },
     {
-        questionTitle: "Обучение персонала",
+        callTitle: "Обучение персонала",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -85,9 +85,9 @@ const personalManagementQuestions = [
 ];
 
 // call 2 Организация управленческого цикла
-const developmentStrategyQuestions = [
+const developmentStrategyCall = [
     {
-        questionTitle: "Подбор команды",
+        callTitle: "Подбор команды",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -100,9 +100,9 @@ const developmentStrategyQuestions = [
 ]
 
 // call 3 Стратегия развития
-const organizationalStructureQuestions = [
+const organizationalStructureCall = [
     {
-        questionTitle: "Подбор команды",
+        callTitle: "Подбор команды",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -137,9 +137,9 @@ const organizationalStructureQuestions = [
 ]
 
 // call 4 Управление качеством
-const businessProcessesQuestions = [
+const businessProcessesCall = [
     {
-        questionTitle: "Подбор команды",
+        callTitle: "Подбор команды",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -154,7 +154,7 @@ const businessProcessesQuestions = [
 // call 5 Организационный дизайн
 const corporateGovernanceQuestions = [
     {
-        questionTitle: "Подбор команды",
+        callTitle: "Подбор команды",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -167,9 +167,9 @@ const corporateGovernanceQuestions = [
 ]
 
 // call 6 Корпоративная культура
-const corporateCultureQuestions = [
+const corporateCultureCall = [
     {
-        questionTitle: "Подбор команды",
+        callTitle: "Подбор команды",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -184,7 +184,7 @@ const corporateCultureQuestions = [
 // call 7 Финансы и планирование
 const financeAndPlanningQuestions = [
     {
-        questionTitle: "Подбор команды",
+        callTitle: "Подбор команды",
         answered: false,
         correct: 0,
         wrong: 0,
@@ -198,11 +198,11 @@ const financeAndPlanningQuestions = [
 
 
 const calls = {
-    'personalManagementQuestions': personalManagementQuestions,
-    'developmentStrategyQuestions': developmentStrategyQuestions,
-    'organizationalStructureQuestions': organizationalStructureQuestions,
-    'businessProcessesQuestions': businessProcessesQuestions,
-    'corporateCultureQuestions': corporateCultureQuestions,
+    'personalManagementCall': personalManagementCall,
+    'developmentStrategyCall': developmentStrategyCall,
+    'organizationalStructureCall': organizationalStructureCall,
+    'businessProcessesCall': businessProcessesCall,
+    'corporateCultureCall': corporateCultureCall,
     'financeAndPlanningQuestions': financeAndPlanningQuestions,
     'corporateGovernanceQuestions': corporateGovernanceQuestions,
 }

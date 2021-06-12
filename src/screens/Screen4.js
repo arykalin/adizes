@@ -30,7 +30,7 @@ function Screen4(props) {
         const onPressPersonalManagementQuestions = () => {
             dispatch({
                 type: 'SET_CURRENT_CALL_TITLE',
-                title: stageConstants.PersonalManagementQuestions,
+                title: stageConstants.PersonalManagementCall,
                 currentCall: "Управление персоналом",
             })
             dispatch({type: 'SHOW_CALL_MODAL'})
@@ -39,7 +39,7 @@ function Screen4(props) {
         const onPressDevelopmentStrategyQuestions = () => {
             dispatch({
                 type: 'SET_CURRENT_CALL_TITLE',
-                title: stageConstants.DevelopmentStrategyQuestions,
+                title: stageConstants.DevelopmentStrategyCall,
                 currentCall: "Стратегия развития",
             })
             dispatch({type: 'SHOW_CALL_MODAL'})
@@ -48,7 +48,7 @@ function Screen4(props) {
         const onPressOrganizationalStructureQuestions = () => {
             dispatch({
                 type: 'SET_CURRENT_CALL_TITLE',
-                title: stageConstants.OrganizationalStructureQuestions,
+                title: stageConstants.OrganizationalStructureCall,
                 currentCall: "Создание оргструктуры",
             })
             dispatch({type: 'SHOW_CALL_MODAL'})
@@ -57,7 +57,7 @@ function Screen4(props) {
         const onPressBusinessProcessesQuestions = () => {
             dispatch({
                 type: 'SET_CURRENT_CALL_TITLE',
-                title: stageConstants.BusinessProcessesQuestions,
+                title: stageConstants.BusinessProcessesCall,
                 currentCall: "Бизнес процессы",
             })
             dispatch({type: 'SHOW_CALL_MODAL'})
@@ -66,7 +66,7 @@ function Screen4(props) {
         const onPressCorporateCultureQuestions = () => {
             dispatch({
                 type: 'SET_CURRENT_CALL_TITLE',
-                title: stageConstants.CorporateCultureQuestions,
+                title: stageConstants.CorporateCultureCall,
                 currentCall: "Формирование корпоративной культуры",
             })
             dispatch({type: 'SHOW_CALL_MODAL'})
@@ -75,7 +75,7 @@ function Screen4(props) {
         const onPressFinanceAndPlanningQuestions = () => {
             dispatch({
                 type: 'SET_CURRENT_CALL_TITLE',
-                title: stageConstants.FinanceAndPlanningQuestions,
+                title: stageConstants.FinanceAndPlanningCall,
                 currentCall: "Финансы и планирование",
             })
             dispatch({type: 'SHOW_CALL_MODAL'})
@@ -84,7 +84,7 @@ function Screen4(props) {
         const onPressCorporateGovernanceQuestions = () => {
             dispatch({
                 type: 'SET_CURRENT_CALL_TITLE',
-                title: stageConstants.CorporateGovernanceQuestions,
+                title: stageConstants.CorporateGovernanceCall,
                 currentCall: "Корпоративное управление",
             })
             dispatch({type: 'SHOW_CALL_MODAL'})

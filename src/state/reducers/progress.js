@@ -30,8 +30,8 @@ export const progressReducer = (state = initialState, action) => {
     }
 }
 
-function getIndex(questionTitle, questions) {
-    return questions.findIndex(obj => obj.questionTitle === questionTitle);
+function getIndex(callTitle, questions) {
+    return questions.findIndex(obj => obj.callTitle === callTitle);
 }
 
 export default progressReducer
