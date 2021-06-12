@@ -69,14 +69,22 @@ const QuestionView = ({question}) => {
             dispatch(setCurrentQuestion(question.questionTitle))
         }
     }
-    let questionColor =  "rgba(101,101,101,1)"
+    let questionStyle = {
+        backgroundColor: "rgba(101,101,101,1)",
+        borderWidth: 3,
+        borderColor: "rgba(254,164,38,1)",
+    }
     if (question.answered === true) {
-        questionColor =  "rgba(80,80,80,1)"
+        questionStyle = {
+            backgroundColor:  "rgba(80,80,80,1)",
+            borderWidth: 3,
+            borderColor: "rgba(60,60,60,1)",
+        }
     }
         return (
             <TouchableOpacity
                 onPress={() => onPress()}
-                style={[styles.questionRectangle, {backgroundColor: questionColor}]}
+                style={[styles.questionRectangle, questionStyle]}
             >
                 <Text style={styles.questionText}>
                     {question.questionTitle}

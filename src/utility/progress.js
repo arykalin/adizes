@@ -56,17 +56,19 @@ export function CheckStage(currentStage, allStages) {
 }
 
 export function SetNextStage(currentStage) {
-    let nextStage
+    let nextStage = {
+        title: ""
+    }
     console.log("SetNextStage currentStage", currentStage)
     if (currentStage.title === Stage1) {
         console.log("SetNextStage next stage2", Stage2)
-        nextStage = Stage2
+        nextStage.title = Stage2
     }
     if (currentStage.title === Stage2) {
-        nextStage = Stage3
+        nextStage.title = Stage3
     }
     if (currentStage.title === Stage3) {
-        nextStage = Stage4
+        nextStage.title = Stage4
     }
     console.log("SetNextStage next stage", nextStage)
     return nextStage

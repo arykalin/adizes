@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         borderWidth: 3,
         borderColor: "rgba(254,164,38,1)",
+        alignSelf: "center"
     },
     popupButtonClose: {
         flex: 1,
