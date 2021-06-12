@@ -31,7 +31,7 @@ export function CalculateProgress(currentStage, allStages) {
 
 export function CheckStage(currentStage, allStages) {
     let {answered, unanswered, correct, wrong, total} = CalculateProgress(currentStage, allStages);
-    if (unanswered < 100) {
+    if (unanswered === 0) {
         return SetNextStage(currentStage)
     }
     return currentStage
