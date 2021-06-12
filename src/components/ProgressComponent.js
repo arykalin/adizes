@@ -14,14 +14,16 @@ function ProgressComponent(props) {
     const dispatch = useDispatch()
     return (
         <View style={styles.rect}>
-            <Text>Прогресс</Text>
-            <Text>
-                answered = {answered}{"\n"}
-                unanswered = {unanswered}{"\n"}
-                correct = {correct}{"\n"}
-                wrong = {wrong}{"\n"}
-                total = {total}{"\n"}
-            </Text>
+            <Text style={styles.infoText}>Прогресс</Text>
+            <View style={{flex: 1, marginVertical: 20}}>
+                <Text style={styles.descriptionText}>
+                    answered = {answered}{"\n"}
+                    unanswered = {unanswered}{"\n"}
+                    correct = {correct}{"\n"}
+                    wrong = {wrong}{"\n"}
+                    total = {total}{"\n"}
+                </Text>
+            </View>
             <TouchableOpacity
                 onPress={() => dispatch(hideProgressModal())}
                 style={ButtonStyle}
@@ -35,9 +37,23 @@ function ProgressComponent(props) {
 const styles = StyleSheet.create({
     rect: {
         flex: 1,
-        backgroundColor: "#E6E6E6",
+        backgroundColor: "white",
+        maxWidth: 400,
+        maxHeight: 600,
+        paddingVertical: 20,
+        paddingHorizontal: 10,
         borderWidth: 3,
         borderColor: "rgba(254,164,38,1)",
+    },
+    infoText: {
+        fontFamily: "montserrat-800",
+        color: "rgba(68,68,68,1)",
+        alignSelf: "center"
+    },
+    descriptionText: {
+        fontFamily: "montserrat-500",
+        color: "rgba(68,68,68,1)",
+        alignSelf: "center"
     },
 })
 

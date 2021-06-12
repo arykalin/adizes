@@ -13,8 +13,10 @@ function InfoComponent(props) {
     const dispatch = useDispatch()
     return (
         <View style={styles.rect}>
-            <Text>{show.name}</Text>
-            <Text>{show.text}</Text>
+            <Text style={styles.infoText}>{show.name}</Text>
+            <View style={{flex: 1, marginVertical: 20}}>
+            <Text  style={styles.descriptionText}>{show.text}</Text>
+            </View>
             <TouchableOpacity
                 onPress={() => dispatch(hideInfoModal())}
                 style={ButtonStyle}
@@ -28,7 +30,11 @@ function InfoComponent(props) {
 const styles = StyleSheet.create({
     rect: {
         flex: 1,
-        backgroundColor: "#E6E6E6",
+        backgroundColor: "white",
+        maxWidth: 400,
+        maxHeight: 600,
+        paddingVertical: 20,
+        paddingHorizontal: 10,
         borderWidth: 3,
         borderColor: "rgba(254,164,38,1)",
     },
@@ -38,6 +44,16 @@ const styles = StyleSheet.create({
         height: 40,
         alignSelf: 'center',
         marginTop: '5%',
+    },
+    infoText: {
+        fontFamily: "montserrat-800",
+        color: "rgba(68,68,68,1)",
+        alignSelf: "center"
+    },
+    descriptionText: {
+        fontFamily: "montserrat-500",
+        color: "rgba(68,68,68,1)",
+        alignSelf: "center"
     },
 })
 
