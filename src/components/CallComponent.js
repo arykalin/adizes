@@ -28,8 +28,8 @@ function CallComponent(props) {
 const Questions = () => {
     const stages = useSelector(state => state.progress.allStages)
     const currentStage = useSelector(state => state.currentStage.title)
-    const currentCall = useSelector(state => state.currentCall.title)
-    const questions = stages[currentStage].questions[currentCall]
+    const currentCallTitle = useSelector(state => state.currentCall.title)
+    const questions = stages[currentStage].questions[currentCallTitle]
 
     const showQuestion = useSelector(state => state.modal.showQuestionModal)
     console.log("{questions}: ", {questions})

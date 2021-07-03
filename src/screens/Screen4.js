@@ -25,68 +25,58 @@ function Screen4(props) {
     const showProgress = useSelector(state => state.modal.showProgressModal)
     const dispatch = useDispatch()
     const currentStage = useSelector(state => state.currentStage)
+    const currentCall = useSelector(state => state.currentCall)
 
-    const onPressPersonalManagementQuestions = () => {
+    const onPress = (callTitle, callDescription) => {
+        if (currentCall.title === callTitle) {
+            dispatch({type: 'SHOW_CALL_MODAL'})
+        }
         dispatch({
             type: 'SET_CURRENT_CALL_TITLE',
-            title: stageConstants.PersonalManagementQuestions,
-            currentCall: "Управление персоналом",
+            title: callTitle,
+            currentCall: callDescription,
         })
-        dispatch({type: 'SHOW_CALL_MODAL'})
+    }
+    const onPressPersonalManagementQuestions = () => {
+        const callTitle = stageConstants.PersonalManagementQuestions
+        const callDescription = "Управление персоналом"
+        onPress(callTitle, callDescription)
     }
 
     const onPressDevelopmentStrategyQuestions = () => {
-        dispatch({
-            type: 'SET_CURRENT_CALL_TITLE',
-            title: stageConstants.DevelopmentStrategyQuestions,
-            currentCall: "Стратегия развития",
-        })
-        dispatch({type: 'SHOW_CALL_MODAL'})
+        const callTitle = stageConstants.DevelopmentStrategyQuestions
+        const callDescription = "Стратегия развития"
+        onPress(callTitle, callDescription)
     }
 
     const onPressOrganizationalStructureQuestions = () => {
-        dispatch({
-            type: 'SET_CURRENT_CALL_TITLE',
-            title: stageConstants.OrganizationalStructureQuestions,
-            currentCall: "Создание оргструктуры",
-        })
-        dispatch({type: 'SHOW_CALL_MODAL'})
+        const callTitle = stageConstants.OrganizationalStructureQuestions
+        const callDescription = "Создание оргструктуры"
+        onPress(callTitle, callDescription)
     }
 
     const onPressBusinessProcessesQuestions = () => {
-        dispatch({
-            type: 'SET_CURRENT_CALL_TITLE',
-            title: stageConstants.BusinessProcessesQuestions,
-            currentCall: "Бизнес процессы",
-        })
-        dispatch({type: 'SHOW_CALL_MODAL'})
+        const callTitle = stageConstants.BusinessProcessesQuestions
+        const callDescription = "Бизнес процессы"
+        onPress(callTitle, callDescription)
     }
 
     const onPressCorporateCultureQuestions = () => {
-        dispatch({
-            type: 'SET_CURRENT_CALL_TITLE',
-            title: stageConstants.CorporateCultureQuestions,
-            currentCall: "Формирование корпоративной культуры",
-        })
-        dispatch({type: 'SHOW_CALL_MODAL'})
+        const callTitle = stageConstants.CorporateCultureQuestions
+        const callDescription = "Формирование корпоративной культуры"
+        onPress(callTitle, callDescription)
     }
 
     const onPressFinanceAndPlanningQuestions = () => {
-        dispatch({
-            type: 'SET_CURRENT_CALL_TITLE',
-            title: stageConstants.FinanceAndPlanningQuestions,
-            currentCall: "Финансы и планирование",
-        })
-        dispatch({type: 'SHOW_CALL_MODAL'})
+        const callTitle = stageConstants.FinanceAndPlanningQuestions
+        const callDescription = "Финансы и планирование"
+        onPress(callTitle, callDescription)
     }
 
     const onPressCorporateGovernanceQuestions = () => {
-        dispatch({
-            type: 'SET_CURRENT_CALL_TITLE',
-            title: stageConstants.CorporateGovernanceQuestions,
-            currentCall: "Корпоративное управление",
-        })
-        dispatch({type: 'SHOW_CALL_MODAL'})
+        const callTitle = stageConstants.CorporateGovernanceQuestions
+        const callDescription = "Корпоративное управление"
+        onPress(callTitle, callDescription)
     }
 
     const stageText = useSelector(state => state.currentCall.currentCall);
