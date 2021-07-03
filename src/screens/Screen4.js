@@ -6,7 +6,6 @@ import {
     Image,
     Text,
     ImageBackground, Modal,
-    TouchableHighlight,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux"
 import CallComponent from "../components/CallComponent";
@@ -146,10 +145,6 @@ function Screen4(props) {
                                         imageStyle={styles.circle_imageStyle}
                                     >
                                         <View style={styles.businessProcButtonRow}>
-                                            <TouchableHighlight
-                                                activeOpacity={0.6}
-                                                underlayColor="#DDDDDD"
-                                                onPress={() => alert('Pressed!')}>
                                                 <TouchableOpacity
                                                     onPress={onPressBusinessProcessesQuestions}
                                                     style={styles.businessProcButton}>
@@ -159,7 +154,6 @@ function Screen4(props) {
                                                         style={styles.procImage}
                                                     ></Image>
                                                 </TouchableOpacity>
-                                            </TouchableHighlight>
                                             <TouchableOpacity
                                                 onPress={onPressCorporateCultureQuestions}
                                                 style={styles.corpMngmtButton}>
@@ -261,14 +255,10 @@ const styles = StyleSheet.create({
         flex: 1,
         overflow: "scroll",
         alignItems: 'flex-start',
-        // borderWidth: 5,
-        // borderColor: "green",
     },
     mainGroup: {
         flex: 1,
         alignSelf: 'center',
-        // borderWidth: 4,
-        // borderColor: "blue",
     },
     infoScreen: {
         width: 340,
