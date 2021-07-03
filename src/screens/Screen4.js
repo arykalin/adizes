@@ -156,7 +156,7 @@ function Screen4(props) {
                                                     <Image
                                                         source={require("../assets/images/buisiness_proc.png")}
                                                         resizeMode="contain"
-                                                        style={styles.businecProcImage}
+                                                        style={styles.procImage}
                                                     ></Image>
                                                 </TouchableOpacity>
                                             </TouchableHighlight>
@@ -166,7 +166,7 @@ function Screen4(props) {
                                                 <Image
                                                     source={require("../assets/images/corp_leadership.png")}
                                                     resizeMode="contain"
-                                                    style={styles.corpMngmtImage}
+                                                    style={styles.procImage}
                                                 ></Image>
                                             </TouchableOpacity>
                                         </View>
@@ -177,7 +177,7 @@ function Screen4(props) {
                                                 <Image
                                                     source={require("../assets/images/scheme.png")}
                                                     resizeMode="contain"
-                                                    style={styles.strategyImage}
+                                                    style={styles.procImage}
                                                 ></Image>
                                             </TouchableOpacity>
                                             <TouchableOpacity
@@ -186,7 +186,7 @@ function Screen4(props) {
                                                 <Image
                                                     source={require("../assets/images/finances.png")}
                                                     resizeMode="contain"
-                                                    style={styles.financesImage}
+                                                    style={styles.procImage}
                                                 ></Image>
                                             </TouchableOpacity>
                                         </View>
@@ -197,7 +197,7 @@ function Screen4(props) {
                                         <Image
                                             source={require("../assets/images/developement.png")}
                                             resizeMode="contain"
-                                            style={styles.devStrategyImage}
+                                            style={styles.procImageSelected}
                                         ></Image>
                                     </TouchableOpacity>
                                     <TouchableOpacity
@@ -206,7 +206,7 @@ function Screen4(props) {
                                         <Image
                                             source={require("../assets/images/Group.png")}
                                             resizeMode="contain"
-                                            style={styles.orgStructureImage}
+                                            style={styles.procImage}
                                         ></Image>
                                     </TouchableOpacity>
                                     <TouchableOpacity
@@ -215,7 +215,7 @@ function Screen4(props) {
                                         <Image
                                             source={require("../assets/images/leadership.png")}
                                             resizeMode="contain"
-                                            style={styles.managementImage}
+                                            style={styles.procImage}
                                         ></Image>
                                     </TouchableOpacity>
                                 </View>
@@ -396,20 +396,24 @@ const styles = StyleSheet.create({
     circle_imageStyle: {},
     businessProcButton: {
         width: 70,
-        height: 70
+        height: 70,
     },
-    businecProcImage: {
+    procImage: {
         width: 70,
-        height: 70
+        height: 70,
+    },
+    procImageSelected: {
+        width: 70,
+        height: 70,
+        borderRadius: 70/2,
+        overflow: "hidden",
+        borderWidth: 4,
+        borderColor: "rgba(101,101,101,1)",
     },
     corpMngmtButton: {
         width: 70,
         height: 70,
         marginLeft: 160
-    },
-    corpMngmtImage: {
-        width: 70,
-        height: 70
     },
     businessProcButtonRow: {
         height: 70,
@@ -422,19 +426,11 @@ const styles = StyleSheet.create({
         width: 70,
         height: 70
     },
-    strategyImage: {
-        width: 70,
-        height: 70
-    },
     financesButton: {
         width: 70,
         height: 70,
         marginLeft: 200,
         marginTop: 7
-    },
-    financesImage: {
-        width: 70,
-        height: 70
     },
     strategyButtonRow: {
         height: 77,
@@ -448,10 +444,6 @@ const styles = StyleSheet.create({
         height: 70,
         position: "absolute"
     },
-    devStrategyImage: {
-        width: 70,
-        height: 70
-    },
     orgStructureButton: {
         top: 0,
         left: 135,
@@ -459,20 +451,12 @@ const styles = StyleSheet.create({
         height: 70,
         position: "absolute"
     },
-    orgStructureImage: {
-        width: 70,
-        height: 70
-    },
     managementButton: {
         top: 290,
         left: 210,
         width: 70,
         height: 70,
         position: "absolute"
-    },
-    managementImage: {
-        width: 70,
-        height: 70
     },
     stageTextStack: {
         width: 340,
