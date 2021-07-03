@@ -37,6 +37,15 @@ function Screen4(props) {
             currentCall: callDescription,
         })
     }
+
+    const procImageStyle = (title) => {
+        if (currentCall.title === title) {
+            return styles.procImageSelected
+        } else {
+            return styles.procImage
+        }
+    }
+
     const onPressPersonalManagementQuestions = () => {
         const callTitle = stageConstants.PersonalManagementQuestions
         const callDescription = "Управление персоналом"
@@ -141,7 +150,7 @@ function Screen4(props) {
                                             <Image
                                                 source={require("../assets/images/buisiness_proc.png")}
                                                 resizeMode="contain"
-                                                style={styles.procImage}
+                                                style={procImageStyle(stageConstants.BusinessProcessesQuestions)}
                                             ></Image>
                                         </TouchableOpacity>
                                         <TouchableOpacity
@@ -150,7 +159,7 @@ function Screen4(props) {
                                             <Image
                                                 source={require("../assets/images/corp_leadership.png")}
                                                 resizeMode="contain"
-                                                style={styles.procImage}
+                                                style={procImageStyle(stageConstants.CorporateCultureQuestions)}
                                             ></Image>
                                         </TouchableOpacity>
                                     </View>
@@ -161,7 +170,7 @@ function Screen4(props) {
                                             <Image
                                                 source={require("../assets/images/scheme.png")}
                                                 resizeMode="contain"
-                                                style={styles.procImage}
+                                                style={procImageStyle(stageConstants.OrganizationalStructureQuestions)}
                                             ></Image>
                                         </TouchableOpacity>
                                         <TouchableOpacity
@@ -170,7 +179,7 @@ function Screen4(props) {
                                             <Image
                                                 source={require("../assets/images/finances.png")}
                                                 resizeMode="contain"
-                                                style={styles.procImage}
+                                                style={procImageStyle(stageConstants.FinanceAndPlanningQuestions)}
                                             ></Image>
                                         </TouchableOpacity>
                                     </View>
@@ -181,7 +190,7 @@ function Screen4(props) {
                                     <Image
                                         source={require("../assets/images/developement.png")}
                                         resizeMode="contain"
-                                        style={styles.procImageSelected}
+                                        style={procImageStyle(stageConstants.DevelopmentStrategyQuestions)}
                                     ></Image>
                                 </TouchableOpacity>
                                 <TouchableOpacity
@@ -190,7 +199,7 @@ function Screen4(props) {
                                     <Image
                                         source={require("../assets/images/Group.png")}
                                         resizeMode="contain"
-                                        style={styles.procImage}
+                                        style={procImageStyle(stageConstants.PersonalManagementQuestions)}
                                     ></Image>
                                 </TouchableOpacity>
                                 <TouchableOpacity
@@ -199,7 +208,7 @@ function Screen4(props) {
                                     <Image
                                         source={require("../assets/images/leadership.png")}
                                         resizeMode="contain"
-                                        style={styles.procImage}
+                                        style={procImageStyle(stageConstants.CorporateGovernanceQuestions)}
                                     ></Image>
                                 </TouchableOpacity>
                             </View>
